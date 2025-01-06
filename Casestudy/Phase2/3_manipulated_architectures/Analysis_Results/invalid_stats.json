@@ -1,0 +1,22 @@
+{
+    "unknown_components": {
+        "occurence_per_architecture": {},
+        "total_occurence": {}
+    },
+    "unknown_relationships": {
+        "('JavaScript', 'Amazon EC2', 'hosted_on')": 1,
+        "('Amazon EC2', 'Node.js', 'hosted_on')": 1,
+        "('MinIO', 'MySQL DBMS', 'hosted_on')": 1,
+        "('Node.js', 'JavaScript', 'hosted_on')": 1,
+        "('JavaScript', 'Ubuntu', 'hosted_on')": 1,
+        "('MySQL DB', 'Ubuntu', 'hosted_on')": 1,
+        "('Java', 'Node.js', 'hosted_on')": 1
+    },
+    "unknown_subgraphs": {
+        "JavaScript --'hosted_on'--> Amazon EC2 --'hosted_on'--> Node.js": 1,
+        "MinIO --'hosted_on'--> MySQL DBMS": 1,
+        "Node.js --'hosted_on'--> JavaScript --'hosted_on'--> Ubuntu": 1,
+        "MySQL DB --'hosted_on'--> Ubuntu": 1,
+        "Java --'hosted_on'--> Node.js": 1
+    }
+}

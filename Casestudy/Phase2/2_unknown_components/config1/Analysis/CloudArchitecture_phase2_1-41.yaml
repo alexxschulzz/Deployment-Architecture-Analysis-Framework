@@ -1,0 +1,86 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture41
+  stacks:
+  - tier: WebApp_stack
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Python
+      id: 57101166-0d1b
+    - type: Webserver
+      variant: Apache HTTP Server
+      id: 714282ee-fec3
+    - type: OS
+      variant: Ubuntu
+      id: 9f82893e-0be4
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: d67bc83b-3383
+    relationships:
+    - source: 57101166-0d1b
+      target: 714282ee-fec3
+      type: hosted_on
+    - source: 714282ee-fec3
+      target: 9f82893e-0be4
+      type: hosted_on
+    - source: 9f82893e-0be4
+      target: d67bc83b-3383
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: C#
+      id: ae35464f-3822
+    - type: Webserver
+      variant: IIS
+      id: 567d46a7-6ae2
+    - type: OS
+      variant: Ubuntu
+      id: 54cc03ad-b0fa
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: 8e9e8b61-55aa
+    relationships:
+    - source: ae35464f-3822
+      target: 567d46a7-6ae2
+      type: hosted_on
+    - source: 567d46a7-6ae2
+      target: 54cc03ad-b0fa
+      type: hosted_on
+    - source: 54cc03ad-b0fa
+      target: 8e9e8b61-55aa
+      type: hosted_on
+  - tier: DB_stack
+    name: DB_IaaS
+    components:
+    - type: DB
+      variant: MySQL DB
+      id: 7d8bc270-1b97
+    - type: DBMS
+      variant: MySQL DBMS
+      id: 54eae8f8-cdf8
+    - type: OS
+      variant: Ubuntu
+      id: 3db82fc1-8f2f
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: 814b0a15-d31d
+    relationships:
+    - source: 7d8bc270-1b97
+      target: 54eae8f8-cdf8
+      type: hosted_on
+    - source: 54eae8f8-cdf8
+      target: 3db82fc1-8f2f
+      type: hosted_on
+    - source: 3db82fc1-8f2f
+      target: 814b0a15-d31d
+      type: hosted_on
+  relationships:
+  - source: 57101166-0d1b
+    target: ae35464f-3822
+    relationship: connects_to
+  - source: ae35464f-3822
+    target: 7d8bc270-1b97
+    relationship: connects_to

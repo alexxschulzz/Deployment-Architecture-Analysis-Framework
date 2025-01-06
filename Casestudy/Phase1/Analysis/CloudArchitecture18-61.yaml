@@ -1,0 +1,90 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture18
+  stacks:
+  - tier: WebApp_stack
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: Java
+      id: 762a00d4-a5b6
+    - type: WebApp-aaS
+      variant: Azure App Service
+      id: 6548e519-94fb
+    relationships:
+    - source: 762a00d4-a5b6
+      target: 6548e519-94fb
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_IaaS
+    components:
+    - type: Queue/Topic
+      variant: Topic
+      id: 9790a2f1-5699
+    - type: Message-Broker
+      variant: Mosquitto
+      id: 47b7874c-5581
+    - type: OS
+      variant: Ubuntu
+      id: 6338b14f-2b0e
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: 06c1f097-63d6
+    relationships:
+    - source: 9790a2f1-5699
+      target: 47b7874c-5581
+      type: hosted_on
+    - source: 47b7874c-5581
+      target: 6338b14f-2b0e
+      type: hosted_on
+    - source: 6338b14f-2b0e
+      target: 06c1f097-63d6
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: JavaScript
+      id: 7c77ee99-a58d
+    - type: Webserver
+      variant: Node.js
+      id: eaf1cd72-6d4d
+    - type: OS
+      variant: Ubuntu
+      id: 9753d7a0-faf9
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: 9e8ef59d-cf8b
+    relationships:
+    - source: 7c77ee99-a58d
+      target: eaf1cd72-6d4d
+      type: hosted_on
+    - source: eaf1cd72-6d4d
+      target: 9753d7a0-faf9
+      type: hosted_on
+    - source: 9753d7a0-faf9
+      target: 9e8ef59d-cf8b
+      type: hosted_on
+  - tier: DB_stack
+    name: DB_aaS
+    components:
+    - type: DB
+      variant: MongoDB
+      id: 4445162b-45e4
+    - type: DB-aaS
+      variant: Azure Cosmos DB
+      id: 59aa7f51-0e26
+    relationships:
+    - source: 4445162b-45e4
+      target: 59aa7f51-0e26
+      type: hosted_on
+  relationships:
+  - source: 762a00d4-a5b6
+    target: 9790a2f1-5699
+    relationship: connects_to
+  - source: 7c77ee99-a58d
+    target: 9790a2f1-5699
+    relationship: connects_to
+  - source: 7c77ee99-a58d
+    target: 4445162b-45e4
+    relationship: connects_to

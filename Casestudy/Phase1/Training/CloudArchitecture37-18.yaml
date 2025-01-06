@@ -1,0 +1,84 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture37
+  stacks:
+  - tier: WebApp_stack
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: Java
+      id: dae960b5-5d79
+    - type: WebApp-aaS
+      variant: Google App Engine
+      id: b86085b0-acf6
+    relationships:
+    - source: dae960b5-5d79
+      target: b86085b0-acf6
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_aaS
+    components:
+    - type: Queue/Topic
+      variant: Topic
+      id: f0e3f725-827c
+    - type: Messaging-aaS
+      variant: Google Cloud Pub/Sub
+      id: 1d255327-cdde
+    relationships:
+    - source: f0e3f725-827c
+      target: 1d255327-cdde
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: JavaScript
+      id: ec0023af-fdd7
+    - type: Webserver
+      variant: Node.js
+      id: 041e6f25-5144
+    - type: OS
+      variant: Ubuntu
+      id: 507b7d26-70c3
+    - type: IaaS
+      variant: Google Compute Engine
+      id: 010f7403-24fb
+    relationships:
+    - source: ec0023af-fdd7
+      target: 041e6f25-5144
+      type: hosted_on
+    - source: 041e6f25-5144
+      target: 507b7d26-70c3
+      type: hosted_on
+    - source: 507b7d26-70c3
+      target: 010f7403-24fb
+      type: hosted_on
+  - tier: Storage_stack
+    name: Storage_IaaS
+    components:
+    - type: Storage
+      variant: MinIO
+      id: ab4bbfe7-a6eb
+    - type: OS
+      variant: Ubuntu
+      id: 4e8d725e-0eca
+    - type: IaaS
+      variant: Google Compute Engine
+      id: 2e4e631c-f7c8
+    relationships:
+    - source: ab4bbfe7-a6eb
+      target: 4e8d725e-0eca
+      type: hosted_on
+    - source: 4e8d725e-0eca
+      target: 2e4e631c-f7c8
+      type: hosted_on
+  relationships:
+  - source: dae960b5-5d79
+    target: f0e3f725-827c
+    relationship: connects_to
+  - source: ec0023af-fdd7
+    target: f0e3f725-827c
+    relationship: connects_to
+  - source: ec0023af-fdd7
+    target: ab4bbfe7-a6eb
+    relationship: connects_to

@@ -1,0 +1,78 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture38
+  stacks:
+  - tier: WebApp_stack
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: Java
+      id: 08a8d164-e709
+    - type: WebApp-aaS
+      variant: Azure App Service
+      id: a73fe3cf-73cf
+    relationships:
+    - source: 08a8d164-e709
+      target: a73fe3cf-73cf
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_aaS
+    components:
+    - type: Queue/Topic
+      variant: Topic
+      id: 84a56d2b-a376
+    - type: Messaging-aaS
+      variant: Azure Service Bus
+      id: a048aa09-f08a
+    relationships:
+    - source: 84a56d2b-a376
+      target: a048aa09-f08a
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Java
+      id: 23a75f26-bb94
+    - type: Webserver
+      variant: Apache Tomcat
+      id: c1fc938b-1ab6
+    - type: OS
+      variant: Ubuntu
+      id: c4a4bb82-2623
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: 5f7951ed-7825
+    relationships:
+    - source: 23a75f26-bb94
+      target: c1fc938b-1ab6
+      type: hosted_on
+    - source: c1fc938b-1ab6
+      target: c4a4bb82-2623
+      type: hosted_on
+    - source: c4a4bb82-2623
+      target: 5f7951ed-7825
+      type: hosted_on
+  - tier: Storage_stack
+    name: Storage_aaS
+    components:
+    - type: Storage
+      variant: Azure Blob Storage Instance
+      id: a1f1cd3b-66f1
+    - type: Storage-aaS
+      variant: Azure Blob Storage
+      id: b112026d-778a
+    relationships:
+    - source: a1f1cd3b-66f1
+      target: b112026d-778a
+      type: hosted_on
+  relationships:
+  - source: 08a8d164-e709
+    target: 84a56d2b-a376
+    relationship: connects_to
+  - source: 23a75f26-bb94
+    target: 84a56d2b-a376
+    relationship: connects_to
+  - source: 23a75f26-bb94
+    target: a1f1cd3b-66f1
+    relationship: connects_to

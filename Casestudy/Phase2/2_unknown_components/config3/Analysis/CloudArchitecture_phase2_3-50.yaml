@@ -1,0 +1,50 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture28
+  stacks:
+  - tier: WebApp_stack
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: Go
+      id: 8554236d-7201
+    - type: WebApp-aaS
+      variant: Google App Engine
+      id: 7289a0de-ef6e
+    relationships:
+    - source: 8554236d-7201
+      target: 7289a0de-ef6e
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: Go
+      id: 1679edcd-122d
+    - type: WebApp-aaS
+      variant: Google App Engine
+      id: 36986f13-5d54
+    relationships:
+    - source: 1679edcd-122d
+      target: 36986f13-5d54
+      type: hosted_on
+  - tier: Cache_stack
+    name: Cache_aaS
+    components:
+    - type: Cache
+      variant: Google Cloud Memorystore Instance
+      id: 6b4bb1dc-fe79
+    - type: Cache-aaS
+      variant: Google Cloud Memorystore
+      id: f9a9e2b9-9474
+    relationships:
+    - source: 6b4bb1dc-fe79
+      target: f9a9e2b9-9474
+      type: hosted_on
+  relationships:
+  - source: 8554236d-7201
+    target: 1679edcd-122d
+    relationship: connects_to
+  - source: 1679edcd-122d
+    target: 6b4bb1dc-fe79
+    relationship: connects_to

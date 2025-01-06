@@ -1,0 +1,72 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture19
+  stacks:
+  - tier: WebApp_stack
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: Java
+      id: aac2a1a1-7a53
+    - type: WebApp-aaS
+      variant: Amazon Elastic Beanstalk
+      id: 22a6605f-866e
+    relationships:
+    - source: aac2a1a1-7a53
+      target: 22a6605f-866e
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_aaS
+    components:
+    - type: Queue/Topic
+      variant: Queue
+      id: e11d8013-e967
+    - type: Messaging-aaS
+      variant: Amazon MQ
+      id: b52e6909-b157
+    relationships:
+    - source: e11d8013-e967
+      target: b52e6909-b157
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: JavaScript
+      id: fbd31527-9b96
+    - type: WebApp-aaS
+      variant: Kubernetes
+      id: 85d467f4-19ab
+    relationships:
+    - source: fbd31527-9b96
+      target: 85d467f4-19ab
+      type: hosted_on
+  - tier: Cache_stack
+    name: Cache_IaaS
+    components:
+    - type: Cache
+      variant: Redis
+      id: ce9912f6-0703
+    - type: OS
+      variant: Ubuntu
+      id: c9f72658-e888
+    - type: IaaS
+      variant: Amazon EC2
+      id: 785f0d13-fef6
+    relationships:
+    - source: ce9912f6-0703
+      target: c9f72658-e888
+      type: hosted_on
+    - source: c9f72658-e888
+      target: 785f0d13-fef6
+      type: hosted_on
+  relationships:
+  - source: aac2a1a1-7a53
+    target: e11d8013-e967
+    relationship: connects_to
+  - source: fbd31527-9b96
+    target: e11d8013-e967
+    relationship: connects_to
+  - source: fbd31527-9b96
+    target: ce9912f6-0703
+    relationship: connects_to

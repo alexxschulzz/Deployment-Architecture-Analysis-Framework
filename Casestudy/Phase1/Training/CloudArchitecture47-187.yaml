@@ -1,0 +1,62 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture47
+  stacks:
+  - tier: WebApp_stack
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: JavaScript
+      id: 6996c96e-370d
+    - type: WebApp-aaS
+      variant: Docker Engine
+      id: f1f3aca0-115f
+    relationships:
+    - source: 6996c96e-370d
+      target: f1f3aca0-115f
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: Java
+      id: 51cf3ee6-f4a5
+    - type: WebApp-aaS
+      variant: Kubernetes
+      id: 66a8745c-fcbf
+    relationships:
+    - source: 51cf3ee6-f4a5
+      target: 66a8745c-fcbf
+      type: hosted_on
+  - tier: DB_stack
+    name: DB_IaaS
+    components:
+    - type: DB
+      variant: MySQL DB
+      id: 8e1fbba5-df75
+    - type: DBMS
+      variant: MySQL DBMS
+      id: 6ce66667-a8cb
+    - type: OS
+      variant: Ubuntu
+      id: 13b8e034-1013
+    - type: IaaS
+      variant: Amazon EC2
+      id: bdb3b3ca-4ca8
+    relationships:
+    - source: 8e1fbba5-df75
+      target: 6ce66667-a8cb
+      type: hosted_on
+    - source: 6ce66667-a8cb
+      target: 13b8e034-1013
+      type: hosted_on
+    - source: 13b8e034-1013
+      target: bdb3b3ca-4ca8
+      type: hosted_on
+  relationships:
+  - source: 6996c96e-370d
+    target: 51cf3ee6-f4a5
+    relationship: connects_to
+  - source: 51cf3ee6-f4a5
+    target: 8e1fbba5-df75
+    relationship: connects_to

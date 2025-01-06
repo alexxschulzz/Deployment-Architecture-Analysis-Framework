@@ -1,0 +1,84 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture11
+  stacks:
+  - tier: WebApp_stack
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: JavaScript
+      id: d24026f6-b24c
+    - type: Webserver
+      variant: Node.js
+      id: b6a54689-4a46
+    - type: OS
+      variant: Ubuntu
+      id: 84641068-75c9
+    - type: IaaS
+      variant: Google Compute Engine
+      id: a72d3c3c-f453
+    relationships:
+    - source: d24026f6-b24c
+      target: b6a54689-4a46
+      type: hosted_on
+    - source: b6a54689-4a46
+      target: 84641068-75c9
+      type: hosted_on
+    - source: 84641068-75c9
+      target: a72d3c3c-f453
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_aaS
+    components:
+    - type: Queue/Topic
+      variant: Queue
+      id: 94d85f64-04bb
+    - type: Messaging-aaS
+      variant: Google Cloud Pub/Sub
+      id: dea1b7db-05ba
+    relationships:
+    - source: 94d85f64-04bb
+      target: dea1b7db-05ba
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: JavaScript
+      id: 9c4005df-4a26
+    - type: WebApp-aaS
+      variant: Docker Engine
+      id: dadbc646-69d8
+    relationships:
+    - source: 9c4005df-4a26
+      target: dadbc646-69d8
+      type: hosted_on
+  - tier: Cache_stack
+    name: Cache_IaaS
+    components:
+    - type: Cache
+      variant: Redis
+      id: 653694ec-0a64
+    - type: OS
+      variant: Ubuntu
+      id: 7e31b533-fa70
+    - type: IaaS
+      variant: Google Compute Engine
+      id: 72dc68a6-c5dc
+    relationships:
+    - source: 653694ec-0a64
+      target: 7e31b533-fa70
+      type: hosted_on
+    - source: 7e31b533-fa70
+      target: 72dc68a6-c5dc
+      type: hosted_on
+  relationships:
+  - source: d24026f6-b24c
+    target: 94d85f64-04bb
+    relationship: connects_to
+  - source: 9c4005df-4a26
+    target: 94d85f64-04bb
+    relationship: connects_to
+  - source: 9c4005df-4a26
+    target: 653694ec-0a64
+    relationship: connects_to

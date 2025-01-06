@@ -1,0 +1,90 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture14
+  stacks:
+  - tier: WebApp_stack
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: JavaScript
+      id: 33735eed-5222
+    - type: Webserver
+      variant: Node.js
+      id: 28766c97-d501
+    - type: OS
+      variant: Ubuntu
+      id: b6389a0b-24e1
+    - type: IaaS
+      variant: Google Compute Engine
+      id: c3823a5a-5ba8
+    relationships:
+    - source: 33735eed-5222
+      target: 28766c97-d501
+      type: hosted_on
+    - source: 28766c97-d501
+      target: b6389a0b-24e1
+      type: hosted_on
+    - source: b6389a0b-24e1
+      target: c3823a5a-5ba8
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_aaS
+    components:
+    - type: Queue/Topic
+      variant: Queue
+      id: 2b717866-18f6
+    - type: Messaging-aaS
+      variant: Google Cloud Pub/Sub
+      id: f7cf26ca-9918
+    relationships:
+    - source: 2b717866-18f6
+      target: f7cf26ca-9918
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Java
+      id: ca0b2da0-b1da
+    - type: Webserver
+      variant: Apache Tomcat
+      id: 22597b67-0a36
+    - type: OS
+      variant: Ubuntu
+      id: 62e0abd4-c311
+    - type: IaaS
+      variant: Google Compute Engine
+      id: 84b591eb-3aaa
+    relationships:
+    - source: ca0b2da0-b1da
+      target: 22597b67-0a36
+      type: hosted_on
+    - source: 22597b67-0a36
+      target: 62e0abd4-c311
+      type: hosted_on
+    - source: 62e0abd4-c311
+      target: 84b591eb-3aaa
+      type: hosted_on
+  - tier: DB_stack
+    name: DB_aaS
+    components:
+    - type: DB
+      variant: MySQL DB
+      id: f76eff8d-0089
+    - type: DB-aaS
+      variant: Google Cloud SQL
+      id: 876af84c-30d6
+    relationships:
+    - source: f76eff8d-0089
+      target: 876af84c-30d6
+      type: hosted_on
+  relationships:
+  - source: 33735eed-5222
+    target: 2b717866-18f6
+    relationship: connects_to
+  - source: ca0b2da0-b1da
+    target: 2b717866-18f6
+    relationship: connects_to
+  - source: ca0b2da0-b1da
+    target: f76eff8d-0089
+    relationship: connects_to

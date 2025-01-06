@@ -1,0 +1,90 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture8
+  stacks:
+  - tier: WebApp_stack
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Python
+      id: 18c927f0-fed7
+    - type: Webserver
+      variant: NGINX
+      id: 76d048f1-c822
+    - type: OS
+      variant: Ubuntu
+      id: d2c30385-6822
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: 29efd66e-c1c2
+    relationships:
+    - source: 18c927f0-fed7
+      target: 76d048f1-c822
+      type: hosted_on
+    - source: 76d048f1-c822
+      target: d2c30385-6822
+      type: hosted_on
+    - source: d2c30385-6822
+      target: 29efd66e-c1c2
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_IaaS
+    components:
+    - type: Queue/Topic
+      variant: Topic
+      id: 9c527a1d-e50c
+    - type: Message-Broker
+      variant: Mosquitto
+      id: 8c9db972-8fcf
+    - type: OS
+      variant: Ubuntu
+      id: 8ed69bcc-9a27
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: 4f67c465-6e29
+    relationships:
+    - source: 9c527a1d-e50c
+      target: 8c9db972-8fcf
+      type: hosted_on
+    - source: 8c9db972-8fcf
+      target: 8ed69bcc-9a27
+      type: hosted_on
+    - source: 8ed69bcc-9a27
+      target: 4f67c465-6e29
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: Go
+      id: d728d126-84af
+    - type: WebApp-aaS
+      variant: Azure App Service
+      id: 2380a3b0-aeb7
+    relationships:
+    - source: d728d126-84af
+      target: 2380a3b0-aeb7
+      type: hosted_on
+  - tier: Cache_stack
+    name: Cache_aaS
+    components:
+    - type: Cache
+      variant: Azure Cache for Redis Instance
+      id: fa6c1e0c-6de9
+    - type: Cache-aaS
+      variant: Azure Cache for Redis
+      id: e5401b45-d7f6
+    relationships:
+    - source: fa6c1e0c-6de9
+      target: e5401b45-d7f6
+      type: hosted_on
+  relationships:
+  - source: 18c927f0-fed7
+    target: 9c527a1d-e50c
+    relationship: connects_to
+  - source: d728d126-84af
+    target: 9c527a1d-e50c
+    relationship: connects_to
+  - source: d728d126-84af
+    target: fa6c1e0c-6de9
+    relationship: connects_to

@@ -1,0 +1,78 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture18
+  stacks:
+  - tier: WebApp_stack
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: Go
+      id: 45fbfba0-a39b
+    - type: WebApp-aaS
+      variant: Docker Engine
+      id: f56b3dda-0e98
+    relationships:
+    - source: 45fbfba0-a39b
+      target: f56b3dda-0e98
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_aaS
+    components:
+    - type: Queue/Topic
+      variant: Topic
+      id: 55d1ed02-c5dc
+    - type: Messaging-aaS
+      variant: Azure Service Bus
+      id: 63d60bcc-0466
+    relationships:
+    - source: 55d1ed02-c5dc
+      target: 63d60bcc-0466
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Python
+      id: b7fdf952-1d51
+    - type: Webserver
+      variant: NGINX
+      id: ea868571-249b
+    - type: OS
+      variant: Ubuntu
+      id: 085a3638-dbd9
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: f443cebd-5630
+    relationships:
+    - source: b7fdf952-1d51
+      target: ea868571-249b
+      type: hosted_on
+    - source: ea868571-249b
+      target: 085a3638-dbd9
+      type: hosted_on
+    - source: 085a3638-dbd9
+      target: f443cebd-5630
+      type: hosted_on
+  - tier: Cache_stack
+    name: Cache_aaS
+    components:
+    - type: Cache
+      variant: Azure Cache for Redis Instance
+      id: 8fd4b935-e3cb
+    - type: Cache-aaS
+      variant: Azure Cache for Redis
+      id: 48846bb1-344f
+    relationships:
+    - source: 8fd4b935-e3cb
+      target: 48846bb1-344f
+      type: hosted_on
+  relationships:
+  - source: 45fbfba0-a39b
+    target: 55d1ed02-c5dc
+    relationship: connects_to
+  - source: b7fdf952-1d51
+    target: 55d1ed02-c5dc
+    relationship: connects_to
+  - source: b7fdf952-1d51
+    target: 8fd4b935-e3cb
+    relationship: connects_to

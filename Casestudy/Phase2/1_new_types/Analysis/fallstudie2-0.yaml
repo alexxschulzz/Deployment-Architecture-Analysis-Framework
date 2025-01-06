@@ -1,0 +1,28 @@
+pipes:
+  queues:
+    - id: 3b76043e
+      name: "OrderQueue"
+      host: "devRabbitMQ"
+      protocol: "amqp"
+    - id: 0910a8c3
+      name: "TaxQueue"
+      host: "devRabbitMQ"
+      protocol: "amqp"
+filters:
+- id: 577a26d2
+  name: "WebShopBackend"
+  host: "devKubernetes"
+  type: "Sender"
+  data: '{"product": "keyboard", "price": "499"}'
+  mappings: ["out:OrderQueue"]
+- id: 675071fa
+  name: "OrderTranslator"
+  host: "devKubernetes"
+  type: "Translator"
+  criteria: "translation.json"
+  mappings: ["in:OrderQueue", "out:TaxQueue"]
+- id: e4a4a657
+  name: "TaxProcessor"
+  host: "devDockerCompose"
+  type: "Receiver"
+  mappings: ["in:TaxQueue"]

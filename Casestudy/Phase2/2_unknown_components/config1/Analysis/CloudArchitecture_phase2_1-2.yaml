@@ -1,0 +1,40 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture7
+  stacks:
+  - tier: WebApp_stack
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: Python
+      id: 4b9684c6-9644
+    - type: WebApp-aaS
+      variant: Docker Engine
+      id: dee08256-6db6
+    relationships:
+    - source: 4b9684c6-9644
+      target: dee08256-6db6
+      type: hosted_on
+  - tier: Storage_stack
+    name: Storage_IaaS
+    components:
+    - type: Storage
+      variant: MinIO
+      id: b3fda409-e8a0
+    - type: OS
+      variant: Ubuntu
+      id: 90832e4e-305d
+    - type: IaaS
+      variant: Google Compute Engine
+      id: 129d851c-f7e6
+    relationships:
+    - source: b3fda409-e8a0
+      target: 90832e4e-305d
+      type: hosted_on
+    - source: 90832e4e-305d
+      target: 129d851c-f7e6
+      type: hosted_on
+  relationships:
+  - source: 4b9684c6-9644
+    target: b3fda409-e8a0
+    relationship: connects_to

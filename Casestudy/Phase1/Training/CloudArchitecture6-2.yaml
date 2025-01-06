@@ -1,0 +1,46 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture6
+  stacks:
+  - tier: WebApp_stack
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Java
+      id: 42890472-b1a6
+    - type: Webserver
+      variant: Apache Tomcat
+      id: 265ba5f3-6881
+    - type: OS
+      variant: Ubuntu
+      id: 80654bf4-b0f9
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: bd189a96-e8c3
+    relationships:
+    - source: 42890472-b1a6
+      target: 265ba5f3-6881
+      type: hosted_on
+    - source: 265ba5f3-6881
+      target: 80654bf4-b0f9
+      type: hosted_on
+    - source: 80654bf4-b0f9
+      target: bd189a96-e8c3
+      type: hosted_on
+  - tier: Storage_stack
+    name: Storage_aaS
+    components:
+    - type: Storage
+      variant: Azure Blob Storage Instance
+      id: 4981293a-fb10
+    - type: Storage-aaS
+      variant: Azure Blob Storage
+      id: 74b87395-764c
+    relationships:
+    - source: 4981293a-fb10
+      target: 74b87395-764c
+      type: hosted_on
+  relationships:
+  - source: 42890472-b1a6
+    target: 4981293a-fb10
+    relationship: connects_to

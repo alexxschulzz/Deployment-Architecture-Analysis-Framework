@@ -1,0 +1,46 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture2
+  stacks:
+  - tier: WebApp_stack
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: C#
+      id: a73ee499-3136
+    - type: Webserver
+      variant: IIS
+      id: 7bb469c6-04b3
+    - type: OS
+      variant: Ubuntu
+      id: 28a538c3-95b7
+    - type: IaaS
+      variant: Google Compute Engine
+      id: 7bdb9d3b-e70e
+    relationships:
+    - source: a73ee499-3136
+      target: 7bb469c6-04b3
+      type: hosted_on
+    - source: 7bb469c6-04b3
+      target: 28a538c3-95b7
+      type: hosted_on
+    - source: 28a538c3-95b7
+      target: 7bdb9d3b-e70e
+      type: hosted_on
+  - tier: DB_stack
+    name: DB_aaS
+    components:
+    - type: DB
+      variant: MongoDB
+      id: c38f88f6-0a99
+    - type: DB-aaS
+      variant: Google Bigtable
+      id: f66a54f6-5a5b
+    relationships:
+    - source: c38f88f6-0a99
+      target: f66a54f6-5a5b
+      type: hosted_on
+  relationships:
+  - source: a73ee499-3136
+    target: c38f88f6-0a99
+    relationship: connects_to

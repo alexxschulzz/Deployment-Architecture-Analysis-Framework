@@ -1,0 +1,68 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture51
+  stacks:
+  - tier: WebApp_stack
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: JavaScript
+      id: 5c3a7f60-dd9e
+    - type: Webserver
+      variant: Node.js
+      id: 04ddaf59-53bd
+    - type: OS
+      variant: Ubuntu
+      id: edee0f83-0215
+    - type: IaaS
+      variant: Amazon EC2
+      id: 83da7986-8799
+    relationships:
+    - source: 5c3a7f60-dd9e
+      target: 04ddaf59-53bd
+      type: hosted_on
+    - source: 04ddaf59-53bd
+      target: edee0f83-0215
+      type: hosted_on
+    - source: edee0f83-0215
+      target: 83da7986-8799
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: JavaScript
+      id: ca2c2ac0-2179
+    - type: WebApp-aaS
+      variant: Docker Engine
+      id: e3fb7400-0777
+    relationships:
+    - source: ca2c2ac0-2179
+      target: e3fb7400-0777
+      type: hosted_on
+  - tier: Storage_stack
+    name: Storage_IaaS
+    components:
+    - type: Storage
+      variant: MinIO
+      id: 16366c18-a5dc
+    - type: OS
+      variant: Ubuntu
+      id: 50aef995-86d9
+    - type: IaaS
+      variant: Amazon EC2
+      id: ea1bc9b0-08f9
+    relationships:
+    - source: 16366c18-a5dc
+      target: 50aef995-86d9
+      type: hosted_on
+    - source: 50aef995-86d9
+      target: ea1bc9b0-08f9
+      type: hosted_on
+  relationships:
+  - source: 5c3a7f60-dd9e
+    target: ca2c2ac0-2179
+    relationship: connects_to
+  - source: ca2c2ac0-2179
+    target: 16366c18-a5dc
+    relationship: connects_to

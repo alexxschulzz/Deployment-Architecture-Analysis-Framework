@@ -1,0 +1,74 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture42
+  stacks:
+  - tier: WebApp_stack
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: C#
+      id: e5863fc8-ec8a
+    - type: Webserver
+      variant: IIS
+      id: c3780534-8c29
+    - type: OS
+      variant: Ubuntu
+      id: 0a19a091-3673
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: 0fe44dad-5075
+    relationships:
+    - source: e5863fc8-ec8a
+      target: c3780534-8c29
+      type: hosted_on
+    - source: c3780534-8c29
+      target: 0a19a091-3673
+      type: hosted_on
+    - source: 0a19a091-3673
+      target: 0fe44dad-5075
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Go
+      id: c452894c-2fbc
+    - type: Webserver
+      variant: NGINX
+      id: 094fbc70-957a
+    - type: OS
+      variant: Ubuntu
+      id: f9b7bbd1-1ce8
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: 7449dfa1-c1ad
+    relationships:
+    - source: c452894c-2fbc
+      target: 094fbc70-957a
+      type: hosted_on
+    - source: 094fbc70-957a
+      target: f9b7bbd1-1ce8
+      type: hosted_on
+    - source: f9b7bbd1-1ce8
+      target: 7449dfa1-c1ad
+      type: hosted_on
+  - tier: DB_stack
+    name: DB_aaS
+    components:
+    - type: DB
+      variant: Azure Cosmos DB for NoSQL
+      id: 72e0b4a7-3916
+    - type: DB-aaS
+      variant: Azure Cosmos DB
+      id: 45d37b46-704a
+    relationships:
+    - source: 72e0b4a7-3916
+      target: 45d37b46-704a
+      type: hosted_on
+  relationships:
+  - source: e5863fc8-ec8a
+    target: c452894c-2fbc
+    relationship: connects_to
+  - source: c452894c-2fbc
+    target: 72e0b4a7-3916
+    relationship: connects_to

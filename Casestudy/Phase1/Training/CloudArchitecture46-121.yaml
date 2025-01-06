@@ -1,0 +1,62 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture46
+  stacks:
+  - tier: WebApp_stack
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: JavaScript
+      id: fd57ab6b-06bb
+    - type: WebApp-aaS
+      variant: Google App Engine
+      id: 4b7869b1-e2d0
+    relationships:
+    - source: fd57ab6b-06bb
+      target: 4b7869b1-e2d0
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Java
+      id: dbe11089-f9b8
+    - type: Webserver
+      variant: Apache Tomcat
+      id: 1fc092df-efb5
+    - type: OS
+      variant: Ubuntu
+      id: e98a077c-c25f
+    - type: IaaS
+      variant: Google Compute Engine
+      id: 28a6c454-d6ed
+    relationships:
+    - source: dbe11089-f9b8
+      target: 1fc092df-efb5
+      type: hosted_on
+    - source: 1fc092df-efb5
+      target: e98a077c-c25f
+      type: hosted_on
+    - source: e98a077c-c25f
+      target: 28a6c454-d6ed
+      type: hosted_on
+  - tier: DB_stack
+    name: DB_aaS
+    components:
+    - type: DB
+      variant: MySQL DB
+      id: 40e0c818-48fd
+    - type: DB-aaS
+      variant: Google Cloud SQL
+      id: 83b372d4-628d
+    relationships:
+    - source: 40e0c818-48fd
+      target: 83b372d4-628d
+      type: hosted_on
+  relationships:
+  - source: fd57ab6b-06bb
+    target: dbe11089-f9b8
+    relationship: connects_to
+  - source: dbe11089-f9b8
+    target: 40e0c818-48fd
+    relationship: connects_to

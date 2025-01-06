@@ -1,0 +1,102 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture17
+  stacks:
+  - tier: WebApp_stack
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: JavaScript
+      id: 734f9e56-cb10
+    - type: WebApp-aaS
+      variant: Azure App Service
+      id: 3f78b145-4c37
+    relationships:
+    - source: 734f9e56-cb10
+      target: 3f78b145-4c37
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_IaaS
+    components:
+    - type: Queue/Topic
+      variant: Topic
+      id: ceacb695-60ce
+    - type: Message-Broker
+      variant: RabbitMQ
+      id: 11e1824a-da10
+    - type: OS
+      variant: Ubuntu
+      id: a2b4dd35-9c49
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: c20b5bab-8f0b
+    relationships:
+    - source: ceacb695-60ce
+      target: 11e1824a-da10
+      type: hosted_on
+    - source: 11e1824a-da10
+      target: a2b4dd35-9c49
+      type: hosted_on
+    - source: a2b4dd35-9c49
+      target: c20b5bab-8f0b
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Java
+      id: 85332c45-e7e7
+    - type: Webserver
+      variant: Apache Tomcat
+      id: 0c0782bb-5487
+    - type: OS
+      variant: Ubuntu
+      id: 70881bb7-3196
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: 088bdf57-9bb8
+    relationships:
+    - source: 85332c45-e7e7
+      target: 0c0782bb-5487
+      type: hosted_on
+    - source: 0c0782bb-5487
+      target: 70881bb7-3196
+      type: hosted_on
+    - source: 70881bb7-3196
+      target: 088bdf57-9bb8
+      type: hosted_on
+  - tier: DB_stack
+    name: DB_IaaS
+    components:
+    - type: DB
+      variant: MySQL DB
+      id: 3187f4fc-67cc
+    - type: DBMS
+      variant: MySQL DBMS
+      id: ba437366-a1e2
+    - type: OS
+      variant: Ubuntu
+      id: 7154d219-1888
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: 1631e984-b7dd
+    relationships:
+    - source: 3187f4fc-67cc
+      target: ba437366-a1e2
+      type: hosted_on
+    - source: ba437366-a1e2
+      target: 7154d219-1888
+      type: hosted_on
+    - source: 7154d219-1888
+      target: 1631e984-b7dd
+      type: hosted_on
+  relationships:
+  - source: 734f9e56-cb10
+    target: ceacb695-60ce
+    relationship: connects_to
+  - source: 85332c45-e7e7
+    target: ceacb695-60ce
+    relationship: connects_to
+  - source: 85332c45-e7e7
+    target: 3187f4fc-67cc
+    relationship: connects_to

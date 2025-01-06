@@ -1,0 +1,84 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture15
+  stacks:
+  - tier: WebApp_stack
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: Python
+      id: 8e848aa3-37cf
+    - type: WebApp-aaS
+      variant: Kubernetes
+      id: ec7126ef-308c
+    relationships:
+    - source: 8e848aa3-37cf
+      target: ec7126ef-308c
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_IaaS
+    components:
+    - type: Queue/Topic
+      variant: Queue
+      id: 9bc26279-4357
+    - type: Message-Broker
+      variant: RabbitMQ
+      id: 2b290b73-4b51
+    - type: OS
+      variant: Ubuntu
+      id: 3f7b0b2c-8211
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: 32707dac-e88d
+    relationships:
+    - source: 9bc26279-4357
+      target: 2b290b73-4b51
+      type: hosted_on
+    - source: 2b290b73-4b51
+      target: 3f7b0b2c-8211
+      type: hosted_on
+    - source: 3f7b0b2c-8211
+      target: 32707dac-e88d
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: C#
+      id: b625bd41-26a5
+    - type: WebApp-aaS
+      variant: Kubernetes
+      id: 1eda3158-35cd
+    relationships:
+    - source: b625bd41-26a5
+      target: 1eda3158-35cd
+      type: hosted_on
+  - tier: Cache_stack
+    name: Cache_IaaS
+    components:
+    - type: Cache
+      variant: Redis
+      id: 8f737db7-e86f
+    - type: OS
+      variant: Ubuntu
+      id: 539f5338-e5c9
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: 0e8eaf18-aa73
+    relationships:
+    - source: 8f737db7-e86f
+      target: 539f5338-e5c9
+      type: hosted_on
+    - source: 539f5338-e5c9
+      target: 0e8eaf18-aa73
+      type: hosted_on
+  relationships:
+  - source: 8e848aa3-37cf
+    target: 9bc26279-4357
+    relationship: connects_to
+  - source: b625bd41-26a5
+    target: 9bc26279-4357
+    relationship: connects_to
+  - source: b625bd41-26a5
+    target: 8f737db7-e86f
+    relationship: connects_to

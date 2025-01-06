@@ -1,0 +1,80 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture49
+  stacks:
+  - tier: WebApp_stack
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: JavaScript
+      id: 3aa0fc0b-8bfc
+    - type: Webserver
+      variant: Node.js
+      id: 67c8e40e-2b8a
+    - type: OS
+      variant: Ubuntu
+      id: 35c5fb2a-5999
+    - type: IaaS
+      variant: Google Compute Engine
+      id: c5742c03-3abc
+    relationships:
+    - source: 3aa0fc0b-8bfc
+      target: 67c8e40e-2b8a
+      type: hosted_on
+    - source: 67c8e40e-2b8a
+      target: 35c5fb2a-5999
+      type: hosted_on
+    - source: 35c5fb2a-5999
+      target: c5742c03-3abc
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Java
+      id: b323b692-13af
+    - type: Webserver
+      variant: Apache Tomcat
+      id: b1abcda6-6c1e
+    - type: OS
+      variant: Ubuntu
+      id: 45493089-d81c
+    - type: IaaS
+      variant: Google Compute Engine
+      id: 3992b0e7-99df
+    relationships:
+    - source: b323b692-13af
+      target: b1abcda6-6c1e
+      type: hosted_on
+    - source: b1abcda6-6c1e
+      target: 45493089-d81c
+      type: hosted_on
+    - source: 45493089-d81c
+      target: 3992b0e7-99df
+      type: hosted_on
+  - tier: Storage_stack
+    name: Storage_IaaS
+    components:
+    - type: Storage
+      variant: MinIO
+      id: f019adf5-802a
+    - type: OS
+      variant: Ubuntu
+      id: bca6f80c-589b
+    - type: IaaS
+      variant: Google Compute Engine
+      id: 1c70b585-747d
+    relationships:
+    - source: f019adf5-802a
+      target: bca6f80c-589b
+      type: hosted_on
+    - source: bca6f80c-589b
+      target: 1c70b585-747d
+      type: hosted_on
+  relationships:
+  - source: 3aa0fc0b-8bfc
+    target: b323b692-13af
+    relationship: connects_to
+  - source: b323b692-13af
+    target: f019adf5-802a
+    relationship: connects_to

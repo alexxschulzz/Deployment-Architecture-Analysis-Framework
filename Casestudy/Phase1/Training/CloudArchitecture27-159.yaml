@@ -1,0 +1,96 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture27
+  stacks:
+  - tier: WebApp_stack
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: JavaScript
+      id: 85222e5e-4965
+    - type: Webserver
+      variant: Node.js
+      id: 1b7dffc0-f81c
+    - type: OS
+      variant: Ubuntu
+      id: 1fedd8d3-fbae
+    - type: IaaS
+      variant: Google Compute Engine
+      id: 787c9803-5d7d
+    relationships:
+    - source: 85222e5e-4965
+      target: 1b7dffc0-f81c
+      type: hosted_on
+    - source: 1b7dffc0-f81c
+      target: 1fedd8d3-fbae
+      type: hosted_on
+    - source: 1fedd8d3-fbae
+      target: 787c9803-5d7d
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_IaaS
+    components:
+    - type: Queue/Topic
+      variant: Topic
+      id: 88074617-8d48
+    - type: Message-Broker
+      variant: Mosquitto
+      id: 4693c933-dea5
+    - type: OS
+      variant: Ubuntu
+      id: 5a04f914-30a7
+    - type: IaaS
+      variant: Google Compute Engine
+      id: bf7fc081-8cac
+    relationships:
+    - source: 88074617-8d48
+      target: 4693c933-dea5
+      type: hosted_on
+    - source: 4693c933-dea5
+      target: 5a04f914-30a7
+      type: hosted_on
+    - source: 5a04f914-30a7
+      target: bf7fc081-8cac
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: Java
+      id: eed03fcc-e371
+    - type: WebApp-aaS
+      variant: Docker Engine
+      id: a8349e67-5d6a
+    relationships:
+    - source: eed03fcc-e371
+      target: a8349e67-5d6a
+      type: hosted_on
+  - tier: Storage_stack
+    name: Storage_IaaS
+    components:
+    - type: Storage
+      variant: MinIO
+      id: 5304a00f-a45a
+    - type: OS
+      variant: Ubuntu
+      id: f2b2aa93-b026
+    - type: IaaS
+      variant: Google Compute Engine
+      id: 43162278-1822
+    relationships:
+    - source: 5304a00f-a45a
+      target: f2b2aa93-b026
+      type: hosted_on
+    - source: f2b2aa93-b026
+      target: 43162278-1822
+      type: hosted_on
+  relationships:
+  - source: 85222e5e-4965
+    target: 88074617-8d48
+    relationship: connects_to
+  - source: eed03fcc-e371
+    target: 88074617-8d48
+    relationship: connects_to
+  - source: eed03fcc-e371
+    target: 5304a00f-a45a
+    relationship: connects_to

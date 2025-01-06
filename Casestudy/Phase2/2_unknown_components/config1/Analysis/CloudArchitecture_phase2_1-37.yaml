@@ -1,0 +1,72 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture39
+  stacks:
+  - tier: WebApp_stack
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: C#
+      id: 790b42a8-f4ee
+    - type: WebApp-aaS
+      variant: Docker Engine
+      id: 43b1cafd-9275
+    relationships:
+    - source: 790b42a8-f4ee
+      target: 43b1cafd-9275
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_aaS
+    components:
+    - type: Queue/Topic
+      variant: Queue
+      id: c59ba7b4-836a
+    - type: Messaging-aaS
+      variant: Azure Service Bus
+      id: 1ac23624-63ee
+    relationships:
+    - source: c59ba7b4-836a
+      target: 1ac23624-63ee
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: C#
+      id: 53493314-22bd
+    - type: WebApp-aaS
+      variant: Kubernetes
+      id: 29d61dab-fbd7
+    relationships:
+    - source: 53493314-22bd
+      target: 29d61dab-fbd7
+      type: hosted_on
+  - tier: Storage_stack
+    name: Storage_IaaS
+    components:
+    - type: Storage
+      variant: MinIO
+      id: 4fa62ac5-98ec
+    - type: OS
+      variant: Ubuntu
+      id: 1460148c-4309
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: a2f3e5ad-973a
+    relationships:
+    - source: 4fa62ac5-98ec
+      target: 1460148c-4309
+      type: hosted_on
+    - source: 1460148c-4309
+      target: a2f3e5ad-973a
+      type: hosted_on
+  relationships:
+  - source: 790b42a8-f4ee
+    target: c59ba7b4-836a
+    relationship: connects_to
+  - source: 53493314-22bd
+    target: c59ba7b4-836a
+    relationship: connects_to
+  - source: 53493314-22bd
+    target: 4fa62ac5-98ec
+    relationship: connects_to

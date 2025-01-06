@@ -1,0 +1,102 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture17
+  stacks:
+  - tier: WebApp_stack
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: C#
+      id: d9946234-322b
+    - type: WebApp-aaS
+      variant: Google App Engine
+      id: 12c17aeb-ff2a
+    relationships:
+    - source: d9946234-322b
+      target: 12c17aeb-ff2a
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_IaaS
+    components:
+    - type: Queue/Topic
+      variant: Queue
+      id: 3463e796-9bd3
+    - type: Message-Broker
+      variant: RabbitMQ
+      id: 7c2aa94c-3dcd
+    - type: OS
+      variant: Ubuntu
+      id: 189dff70-b9d9
+    - type: IaaS
+      variant: Google Compute Engine
+      id: c51d52b3-e5f0
+    relationships:
+    - source: 3463e796-9bd3
+      target: 7c2aa94c-3dcd
+      type: hosted_on
+    - source: 7c2aa94c-3dcd
+      target: 189dff70-b9d9
+      type: hosted_on
+    - source: 189dff70-b9d9
+      target: c51d52b3-e5f0
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Python
+      id: 95cbf839-ad20
+    - type: Webserver
+      variant: NGINX
+      id: d69dccac-0d48
+    - type: OS
+      variant: Ubuntu
+      id: 11564033-d613
+    - type: IaaS
+      variant: Google Compute Engine
+      id: 567302d2-7e9a
+    relationships:
+    - source: 95cbf839-ad20
+      target: d69dccac-0d48
+      type: hosted_on
+    - source: d69dccac-0d48
+      target: 11564033-d613
+      type: hosted_on
+    - source: 11564033-d613
+      target: 567302d2-7e9a
+      type: hosted_on
+  - tier: DB_stack
+    name: DB_IaaS
+    components:
+    - type: DB
+      variant: MongoDB
+      id: 89782c15-41da
+    - type: DBMS
+      variant: MongoDB DBMS
+      id: ec3a360b-903e
+    - type: OS
+      variant: Ubuntu
+      id: fc5eb008-82de
+    - type: IaaS
+      variant: Google Compute Engine
+      id: 5e1a0d5f-7429
+    relationships:
+    - source: 89782c15-41da
+      target: ec3a360b-903e
+      type: hosted_on
+    - source: ec3a360b-903e
+      target: fc5eb008-82de
+      type: hosted_on
+    - source: fc5eb008-82de
+      target: 5e1a0d5f-7429
+      type: hosted_on
+  relationships:
+  - source: d9946234-322b
+    target: 3463e796-9bd3
+    relationship: connects_to
+  - source: 95cbf839-ad20
+    target: 3463e796-9bd3
+    relationship: connects_to
+  - source: 95cbf839-ad20
+    target: 89782c15-41da
+    relationship: connects_to

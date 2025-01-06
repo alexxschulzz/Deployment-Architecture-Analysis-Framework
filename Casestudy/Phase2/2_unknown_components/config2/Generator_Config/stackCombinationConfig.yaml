@@ -1,0 +1,170 @@
+combinations:
+  # - name: "WebApp_stack-DB_stack"
+  #   description: "tbd"
+  #   stacks:
+  #     - "WebApp_stack"
+  #     - "DB_stack"
+  #   relationships:
+  #     - source: "WebApp_stack"
+  #       target: "DB_stack"
+  #       relationship: "connects_to"
+  
+  - name: "WebApp_stack-Cache_stack"
+    description: "tbd"
+    stacks:
+      - "WebApp_stack"
+      - "Cache_stack"
+    relationships:
+      - source: "WebApp_stack"
+        target: "Cache_stack"
+        relationship: "connects_to"
+
+  # - name: "WebApp_stack-Storage_stack"
+  #   description: "tbd"
+  #   stacks:
+  #     - "WebApp_stack"
+  #     - "Storage_stack"
+  #   relationships:
+  #     - source: "WebApp_stack"
+  #       target: "Storage_stack"
+  #       relationship: "connects_to"
+
+  # - name: "WebApp_stack-Broker_stack-WebApp_stack2-DB_stack"
+  #   description: "tbd"
+  #   stacks:
+  #     - "WebApp_stack"
+  #     - "Broker_stack"
+  #     - "WebApp_stack-2"
+  #     - "DB_stack"
+  #   relationships:
+  #     - source: "WebApp_stack"
+  #       target: "Broker_stack"
+  #       relationship: "connects_to"
+  #     - source: "WebApp_stack-2"
+  #       target: "Broker_stack"
+  #       relationship: "connects_to"
+  #     - source: "WebApp_stack-2"
+  #       target: "DB_stack"
+  #       relationship: "connects_to"
+
+  - name: "WebApp_stack-Broker_stack-WebApp_stack2-Cache_stack"
+    description: "tbd"
+    stacks:
+      - "WebApp_stack"
+      - "Broker_stack"
+      - "WebApp_stack-2"
+      - "Cache_stack"
+    relationships:
+      - source: "WebApp_stack"
+        target: "Broker_stack"
+        relationship: "connects_to"
+      - source: "WebApp_stack-2"
+        target: "Broker_stack"
+        relationship: "connects_to"
+      - source: "WebApp_stack-2"
+        target: "Cache_stack"
+        relationship: "connects_to"
+
+  # - name: "WebApp_stack-Broker_stack-WebApp_stack2-Storage_stack"
+  #   description: "tbd"
+  #   stacks:
+  #     - "WebApp_stack"
+  #     - "Broker_stack"
+  #     - "WebApp_stack-2"
+  #     - "Storage_stack"
+  #   relationships:
+  #     - source: "WebApp_stack"
+  #       target: "Broker_stack"
+  #       relationship: "connects_to"
+  #     - source: "WebApp_stack-2"
+  #       target: "Broker_stack"
+  #       relationship: "connects_to"
+  #     - source: "WebApp_stack-2"
+  #       target: "Storage_stack"
+  #       relationship: "connects_to"
+
+  # - name: "WebApp_stack-WebApp_stack2-DB_stack"
+  #   description: "tbd"
+  #   stacks:
+  #     - "WebApp_stack"
+  #     - "WebApp_stack-2"
+  #     - "DB_stack"
+  #   relationships:
+  #     - source: "WebApp_stack"
+  #       target: "WebApp_stack-2"
+  #       relationship: "connects_to"
+  #     - source: "WebApp_stack-2"
+  #       target: "DB_stack"
+  #       relationship: "connects_to"
+
+  - name: "WebApp_stack-WebApp_stack2-Cache_stack"
+    description: "tbd"
+    stacks:
+      - "WebApp_stack"
+      - "WebApp_stack-2"
+      - "Cache_stack"
+    relationships:
+      - source: "WebApp_stack"
+        target: "WebApp_stack-2"
+        relationship: "connects_to"
+      - source: "WebApp_stack-2"
+        target: "Cache_stack"
+        relationship: "connects_to"
+
+  # - name: "WebApp_stack-WebApp_stack2-Storage_stack"
+  #   description: "tbd"
+  #   stacks:
+  #     - "WebApp_stack"
+  #     - "WebApp_stack-2"
+  #     - "Storage_stack"
+  #   relationships:
+  #     - source: "WebApp_stack"
+  #       target: "WebApp_stack-2"
+  #       relationship: "connects_to"
+  #     - source: "WebApp_stack-2"
+  #       target: "Storage_stack"
+  #       relationship: "connects_to"
+
+  # - name: "Cache_stack-WebApp_stack-Broker_stack-WebApp_stack2-DB_stack"
+  #   description: "tbd"
+  #   stacks:
+  #     - "Cache_stack"
+  #     - "WebApp_stack"
+  #     - "Broker_stack"
+  #     - "WebApp_stack-2"
+  #     - "DB_stack"
+  #   relationships:
+  #     - source: "WebApp_stack"
+  #       target: "Cache_stack"
+  #       relationship: "connects_to"
+  #     - source: "WebApp_stack"
+  #       target: "Broker_stack"
+  #       relationship: "connects_to"
+  #     - source: "WebApp_stack-2"
+  #       target: "Broker_stack"
+  #       relationship: "connects_to"
+  #     - source: "WebApp_stack-2"
+  #       target: "DB_stack"
+  #       relationship: "connects_to"
+
+  # - name: "Cache_stack-WebApp_stack-Broker_stack-WebApp_stack2-Storage_stack"
+  #   description: "tbd"
+  #   stacks:
+  #     - "Cache_stack"
+  #     - "WebApp_stack"
+  #     - "Broker_stack"
+  #     - "WebApp_stack-2"
+  #     - "Storage_stack"
+  #   relationships:
+  #     - source: "WebApp_stack"
+  #       target: "Cache_stack"
+  #       relationship: "connects_to"
+  #     - source: "WebApp_stack"
+  #       target: "Broker_stack"
+  #       relationship: "connects_to"
+  #     - source: "WebApp_stack-2"
+  #       target: "Broker_stack"
+  #       relationship: "connects_to"
+  #     - source: "WebApp_stack-2"
+  #       target: "Storage_stack"
+  #       relationship: "connects_to"

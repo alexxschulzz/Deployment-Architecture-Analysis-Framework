@@ -1,0 +1,62 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture46
+  stacks:
+  - tier: WebApp_stack
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: C#
+      id: fae86782-cfab
+    - type: WebApp-aaS
+      variant: Docker Engine
+      id: 2021bc65-1c4d
+    relationships:
+    - source: fae86782-cfab
+      target: 2021bc65-1c4d
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: C#
+      id: 9d329045-999b
+    - type: Webserver
+      variant: IIS
+      id: 1dc89da6-3561
+    - type: OS
+      variant: Ubuntu
+      id: e7f4208a-e514
+    - type: IaaS
+      variant: Google Compute Engine
+      id: 136d9d5c-89aa
+    relationships:
+    - source: 9d329045-999b
+      target: 1dc89da6-3561
+      type: hosted_on
+    - source: 1dc89da6-3561
+      target: e7f4208a-e514
+      type: hosted_on
+    - source: e7f4208a-e514
+      target: 136d9d5c-89aa
+      type: hosted_on
+  - tier: DB_stack
+    name: DB_aaS
+    components:
+    - type: DB
+      variant: MongoDB
+      id: 5ad9d41a-43ff
+    - type: DB-aaS
+      variant: Google Bigtable
+      id: 680a3145-64c3
+    relationships:
+    - source: 5ad9d41a-43ff
+      target: 680a3145-64c3
+      type: hosted_on
+  relationships:
+  - source: fae86782-cfab
+    target: 9d329045-999b
+    relationship: connects_to
+  - source: 9d329045-999b
+    target: 5ad9d41a-43ff
+    relationship: connects_to

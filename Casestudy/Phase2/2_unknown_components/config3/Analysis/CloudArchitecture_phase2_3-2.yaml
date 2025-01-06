@@ -1,0 +1,40 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture3
+  stacks:
+  - tier: WebApp_stack
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: C#
+      id: 7e3785e0-6eb1
+    - type: WebApp-aaS
+      variant: Google App Engine
+      id: 9af203f5-39f9
+    relationships:
+    - source: 7e3785e0-6eb1
+      target: 9af203f5-39f9
+      type: hosted_on
+  - tier: Cache_stack
+    name: Cache_IaaS
+    components:
+    - type: Cache
+      variant: Redis
+      id: dda1d3f2-5c5d
+    - type: OS
+      variant: Ubuntu
+      id: 343e14aa-2d07
+    - type: IaaS
+      variant: Google Compute Engine
+      id: 8c289145-445f
+    relationships:
+    - source: dda1d3f2-5c5d
+      target: 343e14aa-2d07
+      type: hosted_on
+    - source: 343e14aa-2d07
+      target: 8c289145-445f
+      type: hosted_on
+  relationships:
+  - source: 7e3785e0-6eb1
+    target: dda1d3f2-5c5d
+    relationship: connects_to

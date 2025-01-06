@@ -1,0 +1,40 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture7
+  stacks:
+  - tier: WebApp_stack
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: Java
+      id: 9781c8ab-39ed
+    - type: WebApp-aaS
+      variant: Kubernetes
+      id: 736df799-0b1b
+    relationships:
+    - source: 9781c8ab-39ed
+      target: 736df799-0b1b
+      type: hosted_on
+  - tier: Storage_stack
+    name: Storage_IaaS
+    components:
+    - type: Storage
+      variant: MinIO
+      id: 42c1cd7b-c777
+    - type: OS
+      variant: Ubuntu
+      id: 68d14215-3a4e
+    - type: IaaS
+      variant: Amazon EC2
+      id: 9f421700-3fc0
+    relationships:
+    - source: 42c1cd7b-c777
+      target: 68d14215-3a4e
+      type: hosted_on
+    - source: 68d14215-3a4e
+      target: 9f421700-3fc0
+      type: hosted_on
+  relationships:
+  - source: 9781c8ab-39ed
+    target: 42c1cd7b-c777
+    relationship: connects_to

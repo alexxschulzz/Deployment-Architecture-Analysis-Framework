@@ -1,0 +1,3797 @@
+{
+    "total_invalid_architectures": 50,
+    "invalid_architectures": {
+        "CloudArchitecture_phase2_1-6": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Python",
+                        "Apache HTTP Server",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Apache HTTP Server",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Google App Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Google Cloud SQL for MySQL",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Python --'hosted_on'--> Apache HTTP Server --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: Python --'connects_to'--> Topic",
+                "Unknown Graph 3: Go --'hosted_on'--> Google App Engine",
+                "Unknown Graph 4: Go --'connects_to'--> Topic",
+                "Unknown Graph 5: Go --'connects_to'--> Google Cloud SQL for MySQL"
+            ]
+        },
+        "CloudArchitecture_phase2_1-7": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "IIS",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "IIS",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "C#",
+                        "IIS",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "IIS",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Google App Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Google Cloud SQL for MySQL",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: C# --'hosted_on'--> IIS --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: C# --'connects_to'--> Topic",
+                "Unknown Graph 3: Go --'hosted_on'--> Google App Engine",
+                "Unknown Graph 4: Go --'connects_to'--> Topic",
+                "Unknown Graph 5: Go --'connects_to'--> Google Cloud SQL for MySQL"
+            ]
+        },
+        "CloudArchitecture_phase2_1-8": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Go",
+                        "Apache HTTP Server",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Apache HTTP Server",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Apache HTTP Server",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Apache HTTP Server",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "MongoDB",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Go --'hosted_on'--> Apache HTTP Server --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: Go --'connects_to'--> Topic",
+                "Unknown Graph 3: Python --'hosted_on'--> Apache HTTP Server --'hosted_on'--> Ubuntu",
+                "Unknown Graph 4: Python --'connects_to'--> Topic",
+                "Unknown Graph 5: Python --'connects_to'--> MongoDB"
+            ]
+        },
+        "CloudArchitecture_phase2_1-9": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "IIS",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "IIS",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "C#",
+                        "IIS",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "IIS",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Apache HTTP Server",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Apache HTTP Server",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "MongoDB",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: C# --'hosted_on'--> IIS --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: C# --'connects_to'--> Queue",
+                "Unknown Graph 3: Go --'hosted_on'--> Apache HTTP Server --'hosted_on'--> Ubuntu",
+                "Unknown Graph 4: Go --'connects_to'--> Queue",
+                "Unknown Graph 5: Go --'connects_to'--> MongoDB"
+            ]
+        },
+        "CloudArchitecture_phase2_1-10": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Python",
+                        "Apache HTTP Server",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Apache HTTP Server",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "MySQL DB",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Python --'hosted_on'--> Apache HTTP Server --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: Python --'connects_to'--> Topic",
+                "Unknown Graph 3: Go --'hosted_on'--> Kubernetes",
+                "Unknown Graph 4: Go --'connects_to'--> Topic",
+                "Unknown Graph 5: Go --'connects_to'--> MySQL DB"
+            ]
+        },
+        "CloudArchitecture_phase2_1-11": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Python",
+                        "Apache HTTP Server",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Apache HTTP Server",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "MongoDB",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Python --'hosted_on'--> Apache HTTP Server --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: Python --'connects_to'--> Queue",
+                "Unknown Graph 3: C# --'hosted_on'--> Kubernetes",
+                "Unknown Graph 4: C# --'connects_to'--> Queue",
+                "Unknown Graph 5: C# --'connects_to'--> MongoDB"
+            ]
+        },
+        "CloudArchitecture_phase2_1-12": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Python",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Apache HTTP Server",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Apache HTTP Server",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "MySQL DB",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Python --'hosted_on'--> Kubernetes",
+                "Unknown Graph 2: Python --'hosted_on'--> Apache HTTP Server --'hosted_on'--> Ubuntu",
+                "Unknown Graph 3: Python --'connects_to'--> Topic",
+                "Unknown Graph 4: Python --'connects_to'--> MySQL DB"
+            ]
+        },
+        "CloudArchitecture_phase2_1-13": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "C#",
+                        "Google App Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "NGINX",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "NGINX",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "MongoDB",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: C# --'hosted_on'--> Google App Engine",
+                "Unknown Graph 2: C# --'connects_to'--> Queue",
+                "Unknown Graph 3: Python --'hosted_on'--> NGINX --'hosted_on'--> Ubuntu",
+                "Unknown Graph 4: Python --'connects_to'--> Queue",
+                "Unknown Graph 5: Python --'connects_to'--> MongoDB"
+            ]
+        },
+        "CloudArchitecture_phase2_1-14": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Python",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Apache HTTP Server",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Apache HTTP Server",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "MySQL DB",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Python --'hosted_on'--> Docker Engine",
+                "Unknown Graph 2: Python --'connects_to'--> Topic",
+                "Unknown Graph 3: Go --'hosted_on'--> Apache HTTP Server --'hosted_on'--> Ubuntu",
+                "Unknown Graph 4: Go --'connects_to'--> Topic",
+                "Unknown Graph 5: Go --'connects_to'--> MySQL DB"
+            ]
+        },
+        "CloudArchitecture_phase2_1-15": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "IIS",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "IIS",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "C#",
+                        "Amazon Elastic Beanstalk",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "IIS",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "IIS",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Amazon DynamoDB for NoSQL",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: C# --'hosted_on'--> Amazon Elastic Beanstalk",
+                "Unknown Graph 2: C# --'hosted_on'--> IIS --'hosted_on'--> Ubuntu",
+                "Unknown Graph 3: C# --'connects_to'--> Queue",
+                "Unknown Graph 4: C# --'connects_to'--> Amazon DynamoDB for NoSQL"
+            ]
+        },
+        "CloudArchitecture_phase2_1-16": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Go",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Apache HTTP Server",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Apache HTTP Server",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Azure Cosmos DB for NoSQL",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Go --'hosted_on'--> Docker Engine",
+                "Unknown Graph 2: Go --'hosted_on'--> Apache HTTP Server --'hosted_on'--> Ubuntu",
+                "Unknown Graph 3: Go --'connects_to'--> Topic",
+                "Unknown Graph 4: Go --'connects_to'--> Azure Cosmos DB for NoSQL"
+            ]
+        },
+        "CloudArchitecture_phase2_1-17": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Python",
+                        "Azure App Service",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "MongoDB",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Python --'hosted_on'--> Azure App Service",
+                "Unknown Graph 2: Python --'connects_to'--> Topic",
+                "Unknown Graph 3: Go --'hosted_on'--> Docker Engine",
+                "Unknown Graph 4: Go --'connects_to'--> Topic",
+                "Unknown Graph 5: Go --'connects_to'--> MongoDB"
+            ]
+        },
+        "CloudArchitecture_phase2_1-18": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Python",
+                        "Google App Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Google App Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "MySQL DB",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Python --'hosted_on'--> Google App Engine",
+                "Unknown Graph 2: Python --'connects_to'--> Topic",
+                "Unknown Graph 3: C# --'hosted_on'--> Google App Engine",
+                "Unknown Graph 4: C# --'connects_to'--> Topic",
+                "Unknown Graph 5: C# --'connects_to'--> MySQL DB"
+            ]
+        },
+        "CloudArchitecture_phase2_1-19": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Go",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Azure App Service",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "MongoDB",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Go --'hosted_on'--> Docker Engine",
+                "Unknown Graph 2: Go --'hosted_on'--> Azure App Service",
+                "Unknown Graph 3: Go --'connects_to'--> Queue",
+                "Unknown Graph 4: Go --'connects_to'--> MongoDB"
+            ]
+        },
+        "CloudArchitecture_phase2_1-20": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Python",
+                        "Amazon Elastic Beanstalk",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Amazon Elastic Beanstalk",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "MongoDB",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Python --'hosted_on'--> Amazon Elastic Beanstalk",
+                "Unknown Graph 2: Python --'connects_to'--> Queue",
+                "Unknown Graph 3: C# --'hosted_on'--> Amazon Elastic Beanstalk",
+                "Unknown Graph 4: C# --'connects_to'--> Queue",
+                "Unknown Graph 5: C# --'connects_to'--> MongoDB"
+            ]
+        },
+        "CloudArchitecture_phase2_1-21": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Python",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Google Cloud SQL for MySQL",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Python --'hosted_on'--> Kubernetes",
+                "Unknown Graph 2: Python --'connects_to'--> Topic",
+                "Unknown Graph 3: C# --'hosted_on'--> Kubernetes",
+                "Unknown Graph 4: C# --'connects_to'--> Topic",
+                "Unknown Graph 5: C# --'connects_to'--> Google Cloud SQL for MySQL"
+            ]
+        },
+        "CloudArchitecture_phase2_1-22": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Python",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Azure App Service",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Azure Database for MySQL",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Python --'hosted_on'--> Docker Engine",
+                "Unknown Graph 2: Python --'hosted_on'--> Azure App Service",
+                "Unknown Graph 3: Python --'connects_to'--> Queue",
+                "Unknown Graph 4: Python --'connects_to'--> Azure Database for MySQL"
+            ]
+        },
+        "CloudArchitecture_phase2_1-23": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "C#",
+                        "Amazon Elastic Beanstalk",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Amazon Elastic Beanstalk",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "MySQL DB",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: C# --'hosted_on'--> Amazon Elastic Beanstalk",
+                "Unknown Graph 2: C# --'connects_to'--> Topic",
+                "Unknown Graph 3: Go --'hosted_on'--> Amazon Elastic Beanstalk",
+                "Unknown Graph 4: Go --'connects_to'--> Topic",
+                "Unknown Graph 5: Go --'connects_to'--> MySQL DB"
+            ]
+        },
+        "CloudArchitecture_phase2_1-24": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "C#",
+                        "Amazon Elastic Beanstalk",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Amazon Elastic Beanstalk",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "MongoDB",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: C# --'hosted_on'--> Amazon Elastic Beanstalk",
+                "Unknown Graph 2: C# --'connects_to'--> Topic",
+                "Unknown Graph 3: C# --'connects_to'--> MongoDB"
+            ]
+        },
+        "CloudArchitecture_phase2_1-25": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "C#",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Google Cloud SQL for MySQL",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: C# --'hosted_on'--> Docker Engine",
+                "Unknown Graph 2: C# --'connects_to'--> Queue",
+                "Unknown Graph 3: C# --'connects_to'--> Google Cloud SQL for MySQL"
+            ]
+        },
+        "CloudArchitecture_phase2_1-26": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Go",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Amazon Elastic Beanstalk",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Amazon DynamoDB for NoSQL",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Go --'hosted_on'--> Kubernetes",
+                "Unknown Graph 2: Go --'hosted_on'--> Amazon Elastic Beanstalk",
+                "Unknown Graph 3: Go --'connects_to'--> Topic",
+                "Unknown Graph 4: Go --'connects_to'--> Amazon DynamoDB for NoSQL"
+            ]
+        },
+        "CloudArchitecture_phase2_1-27": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "C#",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Apache HTTP Server",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Apache HTTP Server",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "MySQL DB",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: C# --'hosted_on'--> Kubernetes",
+                "Unknown Graph 2: C# --'connects_to'--> Queue",
+                "Unknown Graph 3: Python --'hosted_on'--> Apache HTTP Server --'hosted_on'--> Ubuntu",
+                "Unknown Graph 4: Python --'connects_to'--> Queue",
+                "Unknown Graph 5: Python --'connects_to'--> MySQL DB"
+            ]
+        },
+        "CloudArchitecture_phase2_1-28": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "C#",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "NGINX",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "NGINX",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "MongoDB",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: C# --'hosted_on'--> Docker Engine",
+                "Unknown Graph 2: C# --'connects_to'--> Queue",
+                "Unknown Graph 3: Go --'hosted_on'--> NGINX --'hosted_on'--> Ubuntu",
+                "Unknown Graph 4: Go --'connects_to'--> Queue",
+                "Unknown Graph 5: Go --'connects_to'--> MongoDB"
+            ]
+        },
+        "CloudArchitecture_phase2_1-29": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Python",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "MySQL DB",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Python --'hosted_on'--> Docker Engine",
+                "Unknown Graph 2: Python --'connects_to'--> Topic",
+                "Unknown Graph 3: Python --'connects_to'--> MySQL DB"
+            ]
+        },
+        "CloudArchitecture_phase2_1-30": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "C#",
+                        "Amazon Elastic Beanstalk",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "MongoDB",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: C# --'hosted_on'--> Amazon Elastic Beanstalk",
+                "Unknown Graph 2: C# --'connects_to'--> Topic",
+                "Unknown Graph 3: Go --'hosted_on'--> Docker Engine",
+                "Unknown Graph 4: Go --'connects_to'--> Topic",
+                "Unknown Graph 5: Go --'connects_to'--> MongoDB"
+            ]
+        },
+        "CloudArchitecture_phase2_1-31": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Python",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Amazon Elastic Beanstalk",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Amazon RDS for MySQL",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Python --'hosted_on'--> Kubernetes",
+                "Unknown Graph 2: Python --'connects_to'--> Queue",
+                "Unknown Graph 3: C# --'hosted_on'--> Amazon Elastic Beanstalk",
+                "Unknown Graph 4: C# --'connects_to'--> Queue",
+                "Unknown Graph 5: C# --'connects_to'--> Amazon RDS for MySQL"
+            ]
+        },
+        "CloudArchitecture_phase2_1-32": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "C#",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Google Bigtable for NoSQL",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: C# --'hosted_on'--> Docker Engine",
+                "Unknown Graph 2: C# --'connects_to'--> Topic",
+                "Unknown Graph 3: Python --'hosted_on'--> Kubernetes",
+                "Unknown Graph 4: Python --'connects_to'--> Topic",
+                "Unknown Graph 5: Python --'connects_to'--> Google Bigtable for NoSQL"
+            ]
+        },
+        "CloudArchitecture_phase2_1-33": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Go",
+                        "NGINX",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "NGINX",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Apache HTTP Server",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Apache HTTP Server",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "MinIO",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Go --'hosted_on'--> NGINX --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: Go --'hosted_on'--> Apache HTTP Server --'hosted_on'--> Ubuntu",
+                "Unknown Graph 3: Go --'connects_to'--> Queue",
+                "Unknown Graph 4: Go --'connects_to'--> MinIO"
+            ]
+        },
+        "CloudArchitecture_phase2_1-34": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "IIS",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "IIS",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "C#",
+                        "Amazon Elastic Beanstalk",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "IIS",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "IIS",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Amazon S3 Instance",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: C# --'hosted_on'--> Amazon Elastic Beanstalk",
+                "Unknown Graph 2: C# --'hosted_on'--> IIS --'hosted_on'--> Ubuntu",
+                "Unknown Graph 3: C# --'connects_to'--> Queue",
+                "Unknown Graph 4: C# --'connects_to'--> Amazon S3 Instance"
+            ]
+        },
+        "CloudArchitecture_phase2_1-35": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Go",
+                        "Google App Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Google App Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Google Cloud Storage Instance",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Go --'hosted_on'--> Google App Engine",
+                "Unknown Graph 2: Go --'connects_to'--> Queue",
+                "Unknown Graph 3: Go --'connects_to'--> Google Cloud Storage Instance"
+            ]
+        },
+        "CloudArchitecture_phase2_1-36": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Go",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Amazon S3 Instance",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Go --'hosted_on'--> Kubernetes",
+                "Unknown Graph 2: Go --'connects_to'--> Topic",
+                "Unknown Graph 3: Python --'hosted_on'--> Docker Engine",
+                "Unknown Graph 4: Python --'connects_to'--> Topic",
+                "Unknown Graph 5: Python --'connects_to'--> Amazon S3 Instance"
+            ]
+        },
+        "CloudArchitecture_phase2_1-37": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "C#",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "MinIO",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: C# --'hosted_on'--> Docker Engine",
+                "Unknown Graph 2: C# --'hosted_on'--> Kubernetes",
+                "Unknown Graph 3: C# --'connects_to'--> Queue",
+                "Unknown Graph 4: C# --'connects_to'--> MinIO"
+            ]
+        },
+        "CloudArchitecture_phase2_1-38": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "C#",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "MinIO",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: C# --'hosted_on'--> Docker Engine",
+                "Unknown Graph 2: C# --'connects_to'--> Topic",
+                "Unknown Graph 3: Python --'hosted_on'--> Docker Engine",
+                "Unknown Graph 4: Python --'connects_to'--> Topic",
+                "Unknown Graph 5: Python --'connects_to'--> MinIO"
+            ]
+        },
+        "CloudArchitecture_phase2_1-39": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Go",
+                        "Azure App Service",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Azure App Service",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "MinIO",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Go --'hosted_on'--> Azure App Service",
+                "Unknown Graph 2: Go --'connects_to'--> Queue",
+                "Unknown Graph 3: C# --'hosted_on'--> Azure App Service",
+                "Unknown Graph 4: C# --'connects_to'--> Queue",
+                "Unknown Graph 5: C# --'connects_to'--> MinIO"
+            ]
+        },
+        "CloudArchitecture_phase2_1-40": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Go",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "MinIO",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Go --'hosted_on'--> Kubernetes",
+                "Unknown Graph 2: Go --'hosted_on'--> Docker Engine",
+                "Unknown Graph 3: Go --'connects_to'--> Queue",
+                "Unknown Graph 4: Go --'connects_to'--> MinIO"
+            ]
+        },
+        "CloudArchitecture_phase2_1-41": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "IIS",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "IIS",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Python",
+                        "Apache HTTP Server",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Apache HTTP Server",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "IIS",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "IIS",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "C#",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "MySQL DB",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Python --'hosted_on'--> Apache HTTP Server --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: Python --'connects_to'--> C# --'hosted_on'--> IIS --'hosted_on'--> Ubuntu C# --'connects_to'--> MySQL DB"
+            ]
+        },
+        "CloudArchitecture_phase2_1-42": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "IIS",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "IIS",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "C#",
+                        "IIS",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "IIS",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Apache HTTP Server",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Apache HTTP Server",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Go",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "MongoDB",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: C# --'hosted_on'--> IIS --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: C# --'connects_to'--> Go --'hosted_on'--> Apache HTTP Server --'hosted_on'--> Ubuntu Go --'connects_to'--> MongoDB"
+            ]
+        },
+        "CloudArchitecture_phase2_1-43": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "IIS",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "IIS",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "C#",
+                        "IIS",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "IIS",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "NGINX",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "NGINX",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Go",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Azure Cosmos DB for NoSQL",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: C# --'hosted_on'--> IIS --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: C# --'connects_to'--> Go --'hosted_on'--> NGINX --'hosted_on'--> Ubuntu Go --'connects_to'--> Azure Cosmos DB for NoSQL"
+            ]
+        },
+        "CloudArchitecture_phase2_1-44": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "IIS",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "IIS",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "C#",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "IIS",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "IIS",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "C#",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "MongoDB",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: C# --'hosted_on'--> Docker Engine",
+                "Unknown Graph 2: C# --'hosted_on'--> IIS --'hosted_on'--> Ubuntu",
+                "Unknown Graph 3: C# --'connects_to'--> C#",
+                "Unknown Graph 4: C# --'connects_to'--> MongoDB"
+            ]
+        },
+        "CloudArchitecture_phase2_1-45": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "C#",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "NGINX",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "NGINX",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Go",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Amazon RDS for MySQL",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: C# --'hosted_on'--> Docker Engine",
+                "Unknown Graph 2: C# --'connects_to'--> Go --'hosted_on'--> NGINX --'hosted_on'--> Ubuntu Go --'connects_to'--> Amazon RDS for MySQL"
+            ]
+        },
+        "CloudArchitecture_phase2_1-46": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Go",
+                        "Amazon Elastic Beanstalk",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Go",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "MySQL DB",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Go --'hosted_on'--> Amazon Elastic Beanstalk",
+                "Unknown Graph 2: Go --'hosted_on'--> Kubernetes",
+                "Unknown Graph 3: Go --'connects_to'--> Go",
+                "Unknown Graph 4: Go --'connects_to'--> MySQL DB"
+            ]
+        },
+        "CloudArchitecture_phase2_1-47": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Go",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Azure App Service",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "C#",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "MongoDB",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Go --'hosted_on'--> Docker Engine",
+                "Unknown Graph 2: Go --'connects_to'--> C# --'hosted_on'--> Azure App Service C# --'connects_to'--> MongoDB"
+            ]
+        },
+        "CloudArchitecture_phase2_1-48": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "C#",
+                        "Amazon Elastic Beanstalk",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Go",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "MySQL DB",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: C# --'hosted_on'--> Amazon Elastic Beanstalk",
+                "Unknown Graph 2: C# --'connects_to'--> Go --'hosted_on'--> Docker Engine Go --'connects_to'--> MySQL DB"
+            ]
+        },
+        "CloudArchitecture_phase2_1-49": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Go",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Amazon Elastic Beanstalk",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Go",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Amazon DynamoDB for NoSQL",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Go --'hosted_on'--> Docker Engine",
+                "Unknown Graph 2: Go --'hosted_on'--> Amazon Elastic Beanstalk",
+                "Unknown Graph 3: Go --'connects_to'--> Go",
+                "Unknown Graph 4: Go --'connects_to'--> Amazon DynamoDB for NoSQL"
+            ]
+        },
+        "CloudArchitecture_phase2_1-50": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Go",
+                        "Apache HTTP Server",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Apache HTTP Server",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "C#",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "MinIO",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Go --'hosted_on'--> Apache HTTP Server --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: Go --'connects_to'--> C# --'hosted_on'--> Kubernetes C# --'connects_to'--> MinIO"
+            ]
+        },
+        "CloudArchitecture_phase2_1-1": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "IIS",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "IIS",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "C#",
+                        "IIS",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "IIS",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "MongoDB",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: C# --'hosted_on'--> IIS --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: C# --'connects_to'--> MongoDB"
+            ]
+        },
+        "CloudArchitecture_phase2_1-2": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Python",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "MinIO",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Python --'hosted_on'--> Docker Engine",
+                "Unknown Graph 2: Python --'connects_to'--> MinIO"
+            ]
+        },
+        "CloudArchitecture_phase2_1-3": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Python",
+                        "Apache HTTP Server",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Apache HTTP Server",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Google App Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "MySQL DB",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Python --'hosted_on'--> Apache HTTP Server --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: Python --'hosted_on'--> Google App Engine",
+                "Unknown Graph 3: Python --'connects_to'--> Topic",
+                "Unknown Graph 4: Python --'connects_to'--> MySQL DB"
+            ]
+        },
+        "CloudArchitecture_phase2_1-4": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Python",
+                        "NGINX",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "NGINX",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Azure App Service",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "MySQL DB",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Python --'hosted_on'--> NGINX --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: Python --'connects_to'--> Queue",
+                "Unknown Graph 3: C# --'hosted_on'--> Azure App Service",
+                "Unknown Graph 4: C# --'connects_to'--> Queue",
+                "Unknown Graph 5: C# --'connects_to'--> MySQL DB"
+            ]
+        },
+        "CloudArchitecture_phase2_1-5": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "IIS",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "IIS",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "C#",
+                        "IIS",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "IIS",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "MongoDB",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: C# --'hosted_on'--> IIS --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: C# --'hosted_on'--> Kubernetes",
+                "Unknown Graph 3: C# --'connects_to'--> Topic",
+                "Unknown Graph 4: C# --'connects_to'--> MongoDB"
+            ]
+        }
+    }
+}

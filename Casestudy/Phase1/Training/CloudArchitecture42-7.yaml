@@ -1,0 +1,74 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture42
+  stacks:
+  - tier: WebApp_stack
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Java
+      id: e51e743a-4eb5
+    - type: Webserver
+      variant: Apache Tomcat
+      id: 2a72c4d4-b598
+    - type: OS
+      variant: Ubuntu
+      id: 518b5aab-6944
+    - type: IaaS
+      variant: Amazon EC2
+      id: e1cacfc1-b2cf
+    relationships:
+    - source: e51e743a-4eb5
+      target: 2a72c4d4-b598
+      type: hosted_on
+    - source: 2a72c4d4-b598
+      target: 518b5aab-6944
+      type: hosted_on
+    - source: 518b5aab-6944
+      target: e1cacfc1-b2cf
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Java
+      id: 0d9e4a1b-d06b
+    - type: Webserver
+      variant: JBoss
+      id: 4c8b56ff-f99c
+    - type: OS
+      variant: Ubuntu
+      id: 9ee008f0-3641
+    - type: IaaS
+      variant: Amazon EC2
+      id: 70b181d2-4be2
+    relationships:
+    - source: 0d9e4a1b-d06b
+      target: 4c8b56ff-f99c
+      type: hosted_on
+    - source: 4c8b56ff-f99c
+      target: 9ee008f0-3641
+      type: hosted_on
+    - source: 9ee008f0-3641
+      target: 70b181d2-4be2
+      type: hosted_on
+  - tier: DB_stack
+    name: DB_aaS
+    components:
+    - type: DB
+      variant: Amazon RDS for MySQL
+      id: e19db76b-2a8c
+    - type: DB-aaS
+      variant: Amazon RDS
+      id: 850380c3-e692
+    relationships:
+    - source: e19db76b-2a8c
+      target: 850380c3-e692
+      type: hosted_on
+  relationships:
+  - source: e51e743a-4eb5
+    target: 0d9e4a1b-d06b
+    relationship: connects_to
+  - source: 0d9e4a1b-d06b
+    target: e19db76b-2a8c
+    relationship: connects_to

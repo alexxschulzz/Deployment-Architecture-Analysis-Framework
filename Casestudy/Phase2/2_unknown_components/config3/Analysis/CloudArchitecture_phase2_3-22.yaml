@@ -1,0 +1,96 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture13
+  stacks:
+  - tier: WebApp_stack
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: C#
+      id: 1e548a09-fd57
+    - type: WebApp-aaS
+      variant: Kubernetes
+      id: 701da1ac-c69e
+    relationships:
+    - source: 1e548a09-fd57
+      target: 701da1ac-c69e
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_IaaS
+    components:
+    - type: Queue/Topic
+      variant: Topic
+      id: 76bc9c3d-431d
+    - type: Message-Broker
+      variant: Mosquitto
+      id: 08a0cf22-7309
+    - type: OS
+      variant: Ubuntu
+      id: eb244de9-7c94
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: a795263e-4f4e
+    relationships:
+    - source: 76bc9c3d-431d
+      target: 08a0cf22-7309
+      type: hosted_on
+    - source: 08a0cf22-7309
+      target: eb244de9-7c94
+      type: hosted_on
+    - source: eb244de9-7c94
+      target: a795263e-4f4e
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Python
+      id: b0aae78a-98b6
+    - type: Webserver
+      variant: Apache HTTP Server
+      id: 87badde5-282c
+    - type: OS
+      variant: Ubuntu
+      id: 29f992b5-4f58
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: 93546e1b-855a
+    relationships:
+    - source: b0aae78a-98b6
+      target: 87badde5-282c
+      type: hosted_on
+    - source: 87badde5-282c
+      target: 29f992b5-4f58
+      type: hosted_on
+    - source: 29f992b5-4f58
+      target: 93546e1b-855a
+      type: hosted_on
+  - tier: Cache_stack
+    name: Cache_IaaS
+    components:
+    - type: Cache
+      variant: Redis
+      id: 59d87884-0159
+    - type: OS
+      variant: Ubuntu
+      id: c9fb49a7-1ee8
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: 69c8e8d9-0646
+    relationships:
+    - source: 59d87884-0159
+      target: c9fb49a7-1ee8
+      type: hosted_on
+    - source: c9fb49a7-1ee8
+      target: 69c8e8d9-0646
+      type: hosted_on
+  relationships:
+  - source: 1e548a09-fd57
+    target: 76bc9c3d-431d
+    relationship: connects_to
+  - source: b0aae78a-98b6
+    target: 76bc9c3d-431d
+    relationship: connects_to
+  - source: b0aae78a-98b6
+    target: 59d87884-0159
+    relationship: connects_to

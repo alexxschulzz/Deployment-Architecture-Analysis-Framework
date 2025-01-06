@@ -1,0 +1,10 @@
+{
+    "total_valid_architectures": 5,
+    "valid_architectures": [
+        "fallstudie1-0",
+        "fallstudie2-0",
+        "fallstudie3-0",
+        "fallstudie4-0",
+        "WebApplication_Winery"
+    ]
+}

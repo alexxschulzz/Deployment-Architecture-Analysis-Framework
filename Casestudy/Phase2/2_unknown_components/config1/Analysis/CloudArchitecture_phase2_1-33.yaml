@@ -1,0 +1,108 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture25
+  stacks:
+  - tier: WebApp_stack
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Go
+      id: eaca74ad-356c
+    - type: Webserver
+      variant: NGINX
+      id: 053e0c0e-076f
+    - type: OS
+      variant: Ubuntu
+      id: 1cc86724-c2bb
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: bc3ff2b0-c074
+    relationships:
+    - source: eaca74ad-356c
+      target: 053e0c0e-076f
+      type: hosted_on
+    - source: 053e0c0e-076f
+      target: 1cc86724-c2bb
+      type: hosted_on
+    - source: 1cc86724-c2bb
+      target: bc3ff2b0-c074
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_IaaS
+    components:
+    - type: Queue/Topic
+      variant: Queue
+      id: 1f2d0503-935c
+    - type: Message-Broker
+      variant: RabbitMQ
+      id: 8614d9ce-613f
+    - type: OS
+      variant: Ubuntu
+      id: e7f3228b-5fb3
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: 9d800f29-5132
+    relationships:
+    - source: 1f2d0503-935c
+      target: 8614d9ce-613f
+      type: hosted_on
+    - source: 8614d9ce-613f
+      target: e7f3228b-5fb3
+      type: hosted_on
+    - source: e7f3228b-5fb3
+      target: 9d800f29-5132
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Go
+      id: 6173e55b-f732
+    - type: Webserver
+      variant: Apache HTTP Server
+      id: c896d4b0-4c34
+    - type: OS
+      variant: Ubuntu
+      id: cb3c0c58-0062
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: baf3a5d3-25fc
+    relationships:
+    - source: 6173e55b-f732
+      target: c896d4b0-4c34
+      type: hosted_on
+    - source: c896d4b0-4c34
+      target: cb3c0c58-0062
+      type: hosted_on
+    - source: cb3c0c58-0062
+      target: baf3a5d3-25fc
+      type: hosted_on
+  - tier: Storage_stack
+    name: Storage_IaaS
+    components:
+    - type: Storage
+      variant: MinIO
+      id: 5aa7c2e3-0e20
+    - type: OS
+      variant: Ubuntu
+      id: a58fe0c1-7afd
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: f617c7b9-a565
+    relationships:
+    - source: 5aa7c2e3-0e20
+      target: a58fe0c1-7afd
+      type: hosted_on
+    - source: a58fe0c1-7afd
+      target: f617c7b9-a565
+      type: hosted_on
+  relationships:
+  - source: eaca74ad-356c
+    target: 1f2d0503-935c
+    relationship: connects_to
+  - source: 6173e55b-f732
+    target: 1f2d0503-935c
+    relationship: connects_to
+  - source: 6173e55b-f732
+    target: 5aa7c2e3-0e20
+    relationship: connects_to

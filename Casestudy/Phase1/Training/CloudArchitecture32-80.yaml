@@ -1,0 +1,78 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture32
+  stacks:
+  - tier: WebApp_stack
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: JavaScript
+      id: f83485aa-2977
+    - type: Webserver
+      variant: Node.js
+      id: fb659709-692b
+    - type: OS
+      variant: Ubuntu
+      id: 0e2cc392-9fb8
+    - type: IaaS
+      variant: Amazon EC2
+      id: 97498228-d42d
+    relationships:
+    - source: f83485aa-2977
+      target: fb659709-692b
+      type: hosted_on
+    - source: fb659709-692b
+      target: 0e2cc392-9fb8
+      type: hosted_on
+    - source: 0e2cc392-9fb8
+      target: 97498228-d42d
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_aaS
+    components:
+    - type: Queue/Topic
+      variant: Topic
+      id: 16a9568e-9500
+    - type: Messaging-aaS
+      variant: Amazon MQ
+      id: b8ef9692-4970
+    relationships:
+    - source: 16a9568e-9500
+      target: b8ef9692-4970
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: Java
+      id: eae5fe46-8262
+    - type: WebApp-aaS
+      variant: Kubernetes
+      id: 4f7fb1f0-f22a
+    relationships:
+    - source: eae5fe46-8262
+      target: 4f7fb1f0-f22a
+      type: hosted_on
+  - tier: Storage_stack
+    name: Storage_aaS
+    components:
+    - type: Storage
+      variant: Amazon S3 Instance
+      id: a59e1715-8d6e
+    - type: Storage-aaS
+      variant: Amazon S3
+      id: de5d2a07-6cb9
+    relationships:
+    - source: a59e1715-8d6e
+      target: de5d2a07-6cb9
+      type: hosted_on
+  relationships:
+  - source: f83485aa-2977
+    target: 16a9568e-9500
+    relationship: connects_to
+  - source: eae5fe46-8262
+    target: 16a9568e-9500
+    relationship: connects_to
+  - source: eae5fe46-8262
+    target: a59e1715-8d6e
+    relationship: connects_to

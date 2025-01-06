@@ -1,0 +1,52 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture1
+  stacks:
+  - tier: WebApp_stack
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Go
+      id: 04029ecd-9ee5
+    - type: Webserver
+      variant: NGINX
+      id: 9a4864c4-ff5e
+    - type: OS
+      variant: Ubuntu
+      id: 55a2f0f3-d1bd
+    - type: IaaS
+      variant: Google Compute Engine
+      id: 86506672-c260
+    relationships:
+    - source: 04029ecd-9ee5
+      target: 9a4864c4-ff5e
+      type: hosted_on
+    - source: 9a4864c4-ff5e
+      target: 55a2f0f3-d1bd
+      type: hosted_on
+    - source: 55a2f0f3-d1bd
+      target: 86506672-c260
+      type: hosted_on
+  - tier: Cache_stack
+    name: Cache_IaaS
+    components:
+    - type: Cache
+      variant: Redis
+      id: 9dbde962-7860
+    - type: OS
+      variant: Ubuntu
+      id: e30b5d42-0e7d
+    - type: IaaS
+      variant: Google Compute Engine
+      id: 1ae166bf-c42b
+    relationships:
+    - source: 9dbde962-7860
+      target: e30b5d42-0e7d
+      type: hosted_on
+    - source: e30b5d42-0e7d
+      target: 1ae166bf-c42b
+      type: hosted_on
+  relationships:
+  - source: 04029ecd-9ee5
+    target: 9dbde962-7860
+    relationship: connects_to

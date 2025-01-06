@@ -1,0 +1,102 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture11
+  stacks:
+  - tier: WebApp_stack
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: C#
+      id: 7ca8b395-be4f
+    - type: Webserver
+      variant: IIS
+      id: 7902588c-0d14
+    - type: OS
+      variant: Ubuntu
+      id: f7b87ad1-6370
+    - type: IaaS
+      variant: Amazon EC2
+      id: 1ee64d3c-47c4
+    relationships:
+    - source: 7ca8b395-be4f
+      target: 7902588c-0d14
+      type: hosted_on
+    - source: 7902588c-0d14
+      target: f7b87ad1-6370
+      type: hosted_on
+    - source: f7b87ad1-6370
+      target: 1ee64d3c-47c4
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_IaaS
+    components:
+    - type: Queue/Topic
+      variant: Topic
+      id: 8482c703-1951
+    - type: Message-Broker
+      variant: Mosquitto
+      id: 46eaf8d2-1cab
+    - type: OS
+      variant: Ubuntu
+      id: 331ccaab-4c5a
+    - type: IaaS
+      variant: Amazon EC2
+      id: 58c7816f-29b4
+    relationships:
+    - source: 8482c703-1951
+      target: 46eaf8d2-1cab
+      type: hosted_on
+    - source: 46eaf8d2-1cab
+      target: 331ccaab-4c5a
+      type: hosted_on
+    - source: 331ccaab-4c5a
+      target: 58c7816f-29b4
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: C#
+      id: 4cc4d326-06b7
+    - type: WebApp-aaS
+      variant: Kubernetes
+      id: 1ec92aca-7e9c
+    relationships:
+    - source: 4cc4d326-06b7
+      target: 1ec92aca-7e9c
+      type: hosted_on
+  - tier: DB_stack
+    name: DB_IaaS
+    components:
+    - type: DB
+      variant: MongoDB
+      id: 1ec2abf5-d409
+    - type: DBMS
+      variant: MongoDB DBMS
+      id: 6915ac19-a1ac
+    - type: OS
+      variant: Ubuntu
+      id: cdafe384-3842
+    - type: IaaS
+      variant: Amazon EC2
+      id: f7bac498-6e51
+    relationships:
+    - source: 1ec2abf5-d409
+      target: 6915ac19-a1ac
+      type: hosted_on
+    - source: 6915ac19-a1ac
+      target: cdafe384-3842
+      type: hosted_on
+    - source: cdafe384-3842
+      target: f7bac498-6e51
+      type: hosted_on
+  relationships:
+  - source: 7ca8b395-be4f
+    target: 8482c703-1951
+    relationship: connects_to
+  - source: 4cc4d326-06b7
+    target: 8482c703-1951
+    relationship: connects_to
+  - source: 4cc4d326-06b7
+    target: 1ec2abf5-d409
+    relationship: connects_to

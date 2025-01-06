@@ -1,0 +1,49 @@
+pipes:
+  queues:
+    - id: 3b76043e
+      name: "OrderQueue"
+      host: "devRabbitMQ"
+      protocol: "amqp"
+    - id: 0910a8c3
+      name: "InvoiceQueue"
+      host: "devRabbitMQ"
+      protocol: "amqp"
+    - id: 0910a8c
+      name: "ResultQueue"
+      host: "devRabbitMQ"
+      protocol: "amqp"
+  topics:
+    - id: 3b7604
+      name: "TranslatedTopic"
+      host: "devRabbitMQ"
+      protocol: "amqp"
+filters:
+- id: 577a26d2
+  name: "WebShopBackend"
+  host: "devKubernetes"
+  type: "Sender"
+  data: '{"product": "keyboard", "price": "499"}'
+  mappings: ["out:OrderQueue"]
+- id: 675071fa
+  name: "OrderTranslator"
+  host: "devKubernetes"
+  type: "Translator"
+  criteria: "translation.json"
+  mappings: ["in:OrderQueue", "out:TranslatedTopic"]
+- id: e4a4a657
+  name: "InvoiceRequestorA"
+  host: "devKubernetes"
+  type: "Logger"
+  mappings: ["in:TranslatedTopic", "out:InvoiceQueue"]
+- id: e4a4sadaf
+  name: "InvoiceRequestorB"
+  host: "devKubernetes"
+  type: "Logger"
+  mappings: ["in:TranslatedTopic", "out:InvoiceQueue"]
+- id: e4a4a6yxg
+  name: "InvoiceAggregator"
+  host: "devDockerCompose"
+  type: "Aggregator"
+  count: 2
+  data: "message.data.product,message.data.price"
+  mappings: ["in:InvoiceQueue", "out:ResultQueue"]

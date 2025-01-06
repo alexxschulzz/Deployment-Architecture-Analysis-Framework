@@ -1,0 +1,102 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture11
+  stacks:
+  - tier: WebApp_stack
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Java
+      id: d5c359be-6b7b
+    - type: Webserver
+      variant: Apache Tomcat
+      id: 3ecc0ceb-d7f2
+    - type: OS
+      variant: Ubuntu
+      id: e26d7fb9-003c
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: 042d145e-5b24
+    relationships:
+    - source: d5c359be-6b7b
+      target: 3ecc0ceb-d7f2
+      type: hosted_on
+    - source: 3ecc0ceb-d7f2
+      target: e26d7fb9-003c
+      type: hosted_on
+    - source: e26d7fb9-003c
+      target: 042d145e-5b24
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_IaaS
+    components:
+    - type: Queue/Topic
+      variant: Topic
+      id: 282ee04e-ec56
+    - type: Message-Broker
+      variant: RabbitMQ
+      id: 46b387c0-6ecf
+    - type: OS
+      variant: Ubuntu
+      id: 47c0427d-7bda
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: 9499f286-46c9
+    relationships:
+    - source: 282ee04e-ec56
+      target: 46b387c0-6ecf
+      type: hosted_on
+    - source: 46b387c0-6ecf
+      target: 47c0427d-7bda
+      type: hosted_on
+    - source: 47c0427d-7bda
+      target: 9499f286-46c9
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: JavaScript
+      id: 70d1b398-dbfa
+    - type: WebApp-aaS
+      variant: Kubernetes
+      id: 6f476c8e-d39c
+    relationships:
+    - source: 70d1b398-dbfa
+      target: 6f476c8e-d39c
+      type: hosted_on
+  - tier: DB_stack
+    name: DB_IaaS
+    components:
+    - type: DB
+      variant: MySQL DB
+      id: dcbc734a-dcae
+    - type: DBMS
+      variant: MySQL DBMS
+      id: 81a33255-6706
+    - type: OS
+      variant: Ubuntu
+      id: 9c3ba4fb-872a
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: 9e997c16-4367
+    relationships:
+    - source: dcbc734a-dcae
+      target: 81a33255-6706
+      type: hosted_on
+    - source: 81a33255-6706
+      target: 9c3ba4fb-872a
+      type: hosted_on
+    - source: 9c3ba4fb-872a
+      target: 9e997c16-4367
+      type: hosted_on
+  relationships:
+  - source: d5c359be-6b7b
+    target: 282ee04e-ec56
+    relationship: connects_to
+  - source: 70d1b398-dbfa
+    target: 282ee04e-ec56
+    relationship: connects_to
+  - source: 70d1b398-dbfa
+    target: dcbc734a-dcae
+    relationship: connects_to

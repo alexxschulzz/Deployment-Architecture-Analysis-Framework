@@ -1,0 +1,102 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture10
+  stacks:
+  - tier: WebApp_stack
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Java
+      id: 08855eca-5b65
+    - type: Webserver
+      variant: Apache Tomcat
+      id: 2157d1d6-b585
+    - type: OS
+      variant: Ubuntu
+      id: 2511ad28-3492
+    - type: IaaS
+      variant: Amazon EC2
+      id: 2e64494b-3633
+    relationships:
+    - source: 08855eca-5b65
+      target: 2157d1d6-b585
+      type: hosted_on
+    - source: 2157d1d6-b585
+      target: 2511ad28-3492
+      type: hosted_on
+    - source: 2511ad28-3492
+      target: 2e64494b-3633
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_IaaS
+    components:
+    - type: Queue/Topic
+      variant: Queue
+      id: 05dce205-c20c
+    - type: Message-Broker
+      variant: RabbitMQ
+      id: 0dcf5ba8-9537
+    - type: OS
+      variant: Ubuntu
+      id: 0e10be80-ebf5
+    - type: IaaS
+      variant: Amazon EC2
+      id: d923801f-2011
+    relationships:
+    - source: 05dce205-c20c
+      target: 0dcf5ba8-9537
+      type: hosted_on
+    - source: 0dcf5ba8-9537
+      target: 0e10be80-ebf5
+      type: hosted_on
+    - source: 0e10be80-ebf5
+      target: d923801f-2011
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: JavaScript
+      id: 816ed26d-1bcb
+    - type: Webserver
+      variant: Node.js
+      id: 336925a9-e621
+    - type: OS
+      variant: Ubuntu
+      id: acb413b8-88ef
+    - type: IaaS
+      variant: Amazon EC2
+      id: 7efc0346-ca2b
+    relationships:
+    - source: 816ed26d-1bcb
+      target: 336925a9-e621
+      type: hosted_on
+    - source: 336925a9-e621
+      target: acb413b8-88ef
+      type: hosted_on
+    - source: acb413b8-88ef
+      target: 7efc0346-ca2b
+      type: hosted_on
+  - tier: DB_stack
+    name: DB_aaS
+    components:
+    - type: DB
+      variant: Amazon RDS for MySQL
+      id: 56212d12-87e4
+    - type: DB-aaS
+      variant: Amazon RDS
+      id: 5afaf693-d8ce
+    relationships:
+    - source: 56212d12-87e4
+      target: 5afaf693-d8ce
+      type: hosted_on
+  relationships:
+  - source: 08855eca-5b65
+    target: 05dce205-c20c
+    relationship: connects_to
+  - source: 816ed26d-1bcb
+    target: 05dce205-c20c
+    relationship: connects_to
+  - source: 816ed26d-1bcb
+    target: 56212d12-87e4
+    relationship: connects_to

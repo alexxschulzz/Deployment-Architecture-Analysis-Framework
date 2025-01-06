@@ -1,0 +1,62 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture52
+  stacks:
+  - tier: WebApp_stack
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Java
+      id: 98554af6-cd62
+    - type: Webserver
+      variant: JBoss
+      id: 24da14b8-2eef
+    - type: OS
+      variant: Ubuntu
+      id: 083933f4-cfb2
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: db4d3c50-1e70
+    relationships:
+    - source: 98554af6-cd62
+      target: 24da14b8-2eef
+      type: hosted_on
+    - source: 24da14b8-2eef
+      target: 083933f4-cfb2
+      type: hosted_on
+    - source: 083933f4-cfb2
+      target: db4d3c50-1e70
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: JavaScript
+      id: 0d4588c4-94fe
+    - type: WebApp-aaS
+      variant: Docker Engine
+      id: fc9397c0-0aa3
+    relationships:
+    - source: 0d4588c4-94fe
+      target: fc9397c0-0aa3
+      type: hosted_on
+  - tier: Storage_stack
+    name: Storage_aaS
+    components:
+    - type: Storage
+      variant: Azure Blob Storage Instance
+      id: 8cdb77f9-e94d
+    - type: Storage-aaS
+      variant: Azure Blob Storage
+      id: 7247ee77-ad30
+    relationships:
+    - source: 8cdb77f9-e94d
+      target: 7247ee77-ad30
+      type: hosted_on
+  relationships:
+  - source: 98554af6-cd62
+    target: 0d4588c4-94fe
+    relationship: connects_to
+  - source: 0d4588c4-94fe
+    target: 8cdb77f9-e94d
+    relationship: connects_to

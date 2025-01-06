@@ -1,0 +1,62 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture44
+  stacks:
+  - tier: WebApp_stack
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: JavaScript
+      id: 05a949fd-c51e
+    - type: Webserver
+      variant: Node.js
+      id: 2e6313ed-4c96
+    - type: OS
+      variant: Ubuntu
+      id: ec4ef773-8145
+    - type: IaaS
+      variant: Google Compute Engine
+      id: adba26b2-4994
+    relationships:
+    - source: 05a949fd-c51e
+      target: 2e6313ed-4c96
+      type: hosted_on
+    - source: 2e6313ed-4c96
+      target: ec4ef773-8145
+      type: hosted_on
+    - source: ec4ef773-8145
+      target: adba26b2-4994
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: JavaScript
+      id: d75169cc-9fde
+    - type: WebApp-aaS
+      variant: Google App Engine
+      id: d0706352-cb58
+    relationships:
+    - source: d75169cc-9fde
+      target: d0706352-cb58
+      type: hosted_on
+  - tier: DB_stack
+    name: DB_aaS
+    components:
+    - type: DB
+      variant: MongoDB
+      id: 799772b9-2749
+    - type: DB-aaS
+      variant: Google Bigtable
+      id: d9f29372-a407
+    relationships:
+    - source: 799772b9-2749
+      target: d9f29372-a407
+      type: hosted_on
+  relationships:
+  - source: 05a949fd-c51e
+    target: d75169cc-9fde
+    relationship: connects_to
+  - source: d75169cc-9fde
+    target: 799772b9-2749
+    relationship: connects_to

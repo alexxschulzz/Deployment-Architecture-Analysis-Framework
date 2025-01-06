@@ -1,0 +1,90 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture21
+  stacks:
+  - tier: WebApp_stack
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: Java
+      id: 97fe6b49-e75b
+    - type: WebApp-aaS
+      variant: Kubernetes
+      id: 41f3d159-0173
+    relationships:
+    - source: 97fe6b49-e75b
+      target: 41f3d159-0173
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_aaS
+    components:
+    - type: Queue/Topic
+      variant: Queue
+      id: 100ae753-6e54
+    - type: Messaging-aaS
+      variant: Amazon MQ
+      id: 155714e1-062f
+    relationships:
+    - source: 100ae753-6e54
+      target: 155714e1-062f
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Java
+      id: b3cf793b-3ac9
+    - type: Webserver
+      variant: JBoss
+      id: f0e3969b-0cd6
+    - type: OS
+      variant: Ubuntu
+      id: 9da76925-b4a2
+    - type: IaaS
+      variant: Amazon EC2
+      id: ccb3a905-f8cc
+    relationships:
+    - source: b3cf793b-3ac9
+      target: f0e3969b-0cd6
+      type: hosted_on
+    - source: f0e3969b-0cd6
+      target: 9da76925-b4a2
+      type: hosted_on
+    - source: 9da76925-b4a2
+      target: ccb3a905-f8cc
+      type: hosted_on
+  - tier: DB_stack
+    name: DB_IaaS
+    components:
+    - type: DB
+      variant: MySQL DB
+      id: e6566c85-c11f
+    - type: DBMS
+      variant: MySQL DBMS
+      id: b9658c5d-c158
+    - type: OS
+      variant: Ubuntu
+      id: 0e9d9674-61cb
+    - type: IaaS
+      variant: Amazon EC2
+      id: 04ae7dd0-e364
+    relationships:
+    - source: e6566c85-c11f
+      target: b9658c5d-c158
+      type: hosted_on
+    - source: b9658c5d-c158
+      target: 0e9d9674-61cb
+      type: hosted_on
+    - source: 0e9d9674-61cb
+      target: 04ae7dd0-e364
+      type: hosted_on
+  relationships:
+  - source: 97fe6b49-e75b
+    target: 100ae753-6e54
+    relationship: connects_to
+  - source: b3cf793b-3ac9
+    target: 100ae753-6e54
+    relationship: connects_to
+  - source: b3cf793b-3ac9
+    target: e6566c85-c11f
+    relationship: connects_to

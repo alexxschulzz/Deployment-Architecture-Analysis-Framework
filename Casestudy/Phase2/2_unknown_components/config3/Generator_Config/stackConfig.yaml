@@ -1,0 +1,127 @@
+stacks:
+  - stack: "WebApp_stack"
+    tiers:
+      - name: "Webserver"
+        components:
+          - type: "WebApp"
+          - type: "Webserver"
+          - type: "OS"
+          - type: "IaaS"
+        relationships:
+          - source: "WebApp"
+            target: "Webserver"
+            type: "hosted_on"
+          - source: "Webserver"
+            target: "OS"
+            type: "hosted_on"
+          - source: "OS"
+            target: "IaaS"
+            type: "hosted_on"
+      - name: "WebApp_aaS"
+        components:
+          - type: "WebApp"
+          - type: "WebApp-aaS"
+        relationships:
+          - source: "WebApp"
+            target: "WebApp-aaS"
+            type: "hosted_on"
+
+  - stack: "Broker_stack"
+    tiers:
+      - name: "Broker_IaaS"
+        components:
+          - type: "Queue/Topic"
+          - type: "Message-Broker"
+          - type: "OS"
+          - type: "IaaS"
+        relationships:
+          - source: "Queue/Topic"
+            target: "Message-Broker"
+            type: "hosted_on"
+          - source: "Message-Broker"
+            target: "OS"
+            type: "hosted_on"
+          - source: "OS"
+            target: "IaaS"
+            type: "hosted_on"
+      - name: "Broker_aaS"
+        components:
+          - type: "Queue/Topic"
+          - type: "Messaging-aaS"
+        relationships:
+          - source: "Queue/Topic"
+            target: "Messaging-aaS"
+            type: "hosted_on"
+
+  - stack: "Cache_stack"
+    tiers:
+      - name: "Cache_IaaS"
+        components:
+          - type: "Cache"
+          - type: "OS"
+          - type: "IaaS"
+        relationships:
+          - source: "Cache"
+            target: "OS"
+            type: "hosted_on"
+          - source: "OS"
+            target: "IaaS"
+            type: "hosted_on"
+      - name: "Cache_aaS"
+        components:
+          - type: "Cache"
+          - type: "Cache-aaS"
+        relationships:
+          - source: "Cache"
+            target: "Cache-aaS"
+            type: "hosted_on"
+
+  - stack: "DB_stack"
+    tiers:
+      - name: "DB_IaaS"
+        components:
+          - type: "DB"
+          - type: "DBMS"
+          - type: "OS"
+          - type: "IaaS"
+        relationships:
+          - source: "DB"
+            target: "DBMS"
+            type: "hosted_on"
+          - source: "DBMS"
+            target: "OS"
+            type: "hosted_on"
+          - source: "OS"
+            target: "IaaS"
+            type: "hosted_on"
+      - name: "DB_aaS"
+        components:
+          - type: "DB"
+          - type: "DB-aaS"
+        relationships:
+          - source: "DB"
+            target: "DB-aaS"
+            type: "hosted_on"
+
+  - stack: "Storage_stack"
+    tiers:
+      - name: "Storage_IaaS"
+        components:
+          - type: "Storage"
+          - type: "OS"
+          - type: "IaaS"
+        relationships:
+          - source: "Storage"
+            target: "OS"
+            type: "hosted_on"
+          - source: "OS"
+            target: "IaaS"
+            type: "hosted_on"
+      - name: "Storage_aaS"
+        components:
+          - type: "Storage"
+          - type: "Storage-aaS"
+        relationships:
+          - source: "Storage"
+            target: "Storage-aaS"
+            type: "hosted_on"

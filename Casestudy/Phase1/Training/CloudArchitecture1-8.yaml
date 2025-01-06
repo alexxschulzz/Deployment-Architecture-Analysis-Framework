@@ -1,0 +1,58 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture1
+  stacks:
+  - tier: WebApp_stack
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Java
+      id: cce29421-fb33
+    - type: Webserver
+      variant: JBoss
+      id: 7455a3ec-f80e
+    - type: OS
+      variant: Ubuntu
+      id: 94639746-7923
+    - type: IaaS
+      variant: Amazon EC2
+      id: 7a1005f7-9da4
+    relationships:
+    - source: cce29421-fb33
+      target: 7455a3ec-f80e
+      type: hosted_on
+    - source: 7455a3ec-f80e
+      target: 94639746-7923
+      type: hosted_on
+    - source: 94639746-7923
+      target: 7a1005f7-9da4
+      type: hosted_on
+  - tier: DB_stack
+    name: DB_IaaS
+    components:
+    - type: DB
+      variant: MongoDB
+      id: 2ea912db-e9c8
+    - type: DBMS
+      variant: MongoDB DBMS
+      id: 49385a7a-be56
+    - type: OS
+      variant: Ubuntu
+      id: ac7e8c7a-115e
+    - type: IaaS
+      variant: Amazon EC2
+      id: f0d63ef3-c496
+    relationships:
+    - source: 2ea912db-e9c8
+      target: 49385a7a-be56
+      type: hosted_on
+    - source: 49385a7a-be56
+      target: ac7e8c7a-115e
+      type: hosted_on
+    - source: ac7e8c7a-115e
+      target: f0d63ef3-c496
+      type: hosted_on
+  relationships:
+  - source: cce29421-fb33
+    target: 2ea912db-e9c8
+    relationship: connects_to

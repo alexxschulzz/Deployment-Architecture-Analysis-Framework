@@ -1,0 +1,96 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture29
+  stacks:
+  - tier: WebApp_stack
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: JavaScript
+      id: a6817520-ba29
+    - type: Webserver
+      variant: Node.js
+      id: b7e7dd1f-6bff
+    - type: OS
+      variant: Ubuntu
+      id: e98ed6d5-363d
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: ddcf1c8e-c5c1
+    relationships:
+    - source: a6817520-ba29
+      target: b7e7dd1f-6bff
+      type: hosted_on
+    - source: b7e7dd1f-6bff
+      target: e98ed6d5-363d
+      type: hosted_on
+    - source: e98ed6d5-363d
+      target: ddcf1c8e-c5c1
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_aaS
+    components:
+    - type: Queue/Topic
+      variant: Queue
+      id: 02c78e68-9df6
+    - type: Messaging-aaS
+      variant: Azure Service Bus
+      id: ca3608ef-20ff
+    relationships:
+    - source: 02c78e68-9df6
+      target: ca3608ef-20ff
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: JavaScript
+      id: c5f22ced-8aee
+    - type: Webserver
+      variant: Node.js
+      id: 6c54b3c9-dc7a
+    - type: OS
+      variant: Ubuntu
+      id: dc4270e6-a293
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: 777aceb9-ed95
+    relationships:
+    - source: c5f22ced-8aee
+      target: 6c54b3c9-dc7a
+      type: hosted_on
+    - source: 6c54b3c9-dc7a
+      target: dc4270e6-a293
+      type: hosted_on
+    - source: dc4270e6-a293
+      target: 777aceb9-ed95
+      type: hosted_on
+  - tier: Storage_stack
+    name: Storage_IaaS
+    components:
+    - type: Storage
+      variant: MinIO
+      id: 30a1dd9e-3499
+    - type: OS
+      variant: Ubuntu
+      id: 5c6e6b6d-7559
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: feef0041-ef0f
+    relationships:
+    - source: 30a1dd9e-3499
+      target: 5c6e6b6d-7559
+      type: hosted_on
+    - source: 5c6e6b6d-7559
+      target: feef0041-ef0f
+      type: hosted_on
+  relationships:
+  - source: a6817520-ba29
+    target: 02c78e68-9df6
+    relationship: connects_to
+  - source: c5f22ced-8aee
+    target: 02c78e68-9df6
+    relationship: connects_to
+  - source: c5f22ced-8aee
+    target: 30a1dd9e-3499
+    relationship: connects_to

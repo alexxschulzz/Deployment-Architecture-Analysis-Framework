@@ -1,0 +1,78 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture20
+  stacks:
+  - tier: WebApp_stack
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: Python
+      id: b0f8b012-4c62
+    - type: WebApp-aaS
+      variant: Amazon Elastic Beanstalk
+      id: ad832c63-31cf
+    relationships:
+    - source: b0f8b012-4c62
+      target: ad832c63-31cf
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_IaaS
+    components:
+    - type: Queue/Topic
+      variant: Queue
+      id: ef2da1c3-3543
+    - type: Message-Broker
+      variant: RabbitMQ
+      id: 71345a2b-0f9c
+    - type: OS
+      variant: Ubuntu
+      id: 3b3cbe55-6735
+    - type: IaaS
+      variant: Amazon EC2
+      id: b129ce9d-f407
+    relationships:
+    - source: ef2da1c3-3543
+      target: 71345a2b-0f9c
+      type: hosted_on
+    - source: 71345a2b-0f9c
+      target: 3b3cbe55-6735
+      type: hosted_on
+    - source: 3b3cbe55-6735
+      target: b129ce9d-f407
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: C#
+      id: a298f183-932d
+    - type: WebApp-aaS
+      variant: Amazon Elastic Beanstalk
+      id: 7302ab64-5415
+    relationships:
+    - source: a298f183-932d
+      target: 7302ab64-5415
+      type: hosted_on
+  - tier: DB_stack
+    name: DB_aaS
+    components:
+    - type: DB
+      variant: MongoDB
+      id: 5eebfbbd-6752
+    - type: DB-aaS
+      variant: Amazon DynamoDB
+      id: 9b9d856a-07d9
+    relationships:
+    - source: 5eebfbbd-6752
+      target: 9b9d856a-07d9
+      type: hosted_on
+  relationships:
+  - source: b0f8b012-4c62
+    target: ef2da1c3-3543
+    relationship: connects_to
+  - source: a298f183-932d
+    target: ef2da1c3-3543
+    relationship: connects_to
+  - source: a298f183-932d
+    target: 5eebfbbd-6752
+    relationship: connects_to

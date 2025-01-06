@@ -1,0 +1,102 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture6
+  stacks:
+  - tier: WebApp_stack
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: JavaScript
+      id: 561aa9f1-78f2
+    - type: Webserver
+      variant: Node.js
+      id: 1c2daf48-3028
+    - type: OS
+      variant: Ubuntu
+      id: 864f7066-dfe4
+    - type: IaaS
+      variant: Amazon EC2
+      id: e999816c-0455
+    relationships:
+    - source: 561aa9f1-78f2
+      target: 1c2daf48-3028
+      type: hosted_on
+    - source: 1c2daf48-3028
+      target: 864f7066-dfe4
+      type: hosted_on
+    - source: 864f7066-dfe4
+      target: e999816c-0455
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_IaaS
+    components:
+    - type: Queue/Topic
+      variant: Queue
+      id: d47be04e-ce23
+    - type: Message-Broker
+      variant: RabbitMQ
+      id: 6a4816dd-991d
+    - type: OS
+      variant: Ubuntu
+      id: 42f23100-4535
+    - type: IaaS
+      variant: Amazon EC2
+      id: 24075f68-974d
+    relationships:
+    - source: d47be04e-ce23
+      target: 6a4816dd-991d
+      type: hosted_on
+    - source: 6a4816dd-991d
+      target: 42f23100-4535
+      type: hosted_on
+    - source: 42f23100-4535
+      target: 24075f68-974d
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: JavaScript
+      id: aa537ddf-eaf3
+    - type: Webserver
+      variant: Node.js
+      id: 99cda78a-0cbc
+    - type: OS
+      variant: Ubuntu
+      id: cf2d4ff2-87e1
+    - type: IaaS
+      variant: Amazon EC2
+      id: 31c1482f-22c2
+    relationships:
+    - source: aa537ddf-eaf3
+      target: 99cda78a-0cbc
+      type: hosted_on
+    - source: 99cda78a-0cbc
+      target: cf2d4ff2-87e1
+      type: hosted_on
+    - source: cf2d4ff2-87e1
+      target: 31c1482f-22c2
+      type: hosted_on
+  - tier: Cache_stack
+    name: Cache_aaS
+    components:
+    - type: Cache
+      variant: Amazon ElastiCache Instance
+      id: 081c995a-9742
+    - type: Cache-aaS
+      variant: Amazon ElastiCache
+      id: 27731197-9247
+    relationships:
+    - source: 081c995a-9742
+      target: 27731197-9247
+      type: hosted_on
+  relationships:
+  - source: 561aa9f1-78f2
+    target: d47be04e-ce23
+    relationship: connects_to
+  - source: aa537ddf-eaf3
+    target: d47be04e-ce23
+    relationship: connects_to
+  - source: aa537ddf-eaf3
+    target: 081c995a-9742
+    relationship: connects_to

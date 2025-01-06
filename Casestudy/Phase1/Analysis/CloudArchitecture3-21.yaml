@@ -1,0 +1,46 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture3
+  stacks:
+  - tier: WebApp_stack
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: JavaScript
+      id: 7090a315-c82b
+    - type: WebApp-aaS
+      variant: Azure App Service
+      id: c6e5b2a0-fcee
+    relationships:
+    - source: 7090a315-c82b
+      target: c6e5b2a0-fcee
+      type: hosted_on
+  - tier: DB_stack
+    name: DB_IaaS
+    components:
+    - type: DB
+      variant: MySQL DB
+      id: 231cafd1-2a0e
+    - type: DBMS
+      variant: MySQL DBMS
+      id: e6e375ca-6b4f
+    - type: OS
+      variant: Ubuntu
+      id: 11595a3d-1709
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: ba96159a-70a4
+    relationships:
+    - source: 231cafd1-2a0e
+      target: e6e375ca-6b4f
+      type: hosted_on
+    - source: e6e375ca-6b4f
+      target: 11595a3d-1709
+      type: hosted_on
+    - source: 11595a3d-1709
+      target: ba96159a-70a4
+      type: hosted_on
+  relationships:
+  - source: 7090a315-c82b
+    target: 231cafd1-2a0e
+    relationship: connects_to

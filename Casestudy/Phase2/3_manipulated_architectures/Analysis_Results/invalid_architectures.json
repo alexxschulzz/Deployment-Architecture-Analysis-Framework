@@ -1,0 +1,116 @@
+{
+    "total_invalid_architectures": 5,
+    "invalid_architectures": {
+        "CloudArchitecture_phase2-1": {
+            "components": {
+                "occurence_per_architecture": [],
+                "total_occurence": []
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "JavaScript",
+                        "Amazon EC2",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Amazon EC2",
+                        "Node.js",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: JavaScript --'hosted_on'--> Amazon EC2 --'hosted_on'--> Node.js"
+            ]
+        },
+        "CloudArchitecture_phase2-2": {
+            "components": {
+                "occurence_per_architecture": [],
+                "total_occurence": []
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "MinIO",
+                        "MySQL DBMS",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: MinIO --'hosted_on'--> MySQL DBMS"
+            ]
+        },
+        "CloudArchitecture_phase2-3": {
+            "components": {
+                "occurence_per_architecture": [],
+                "total_occurence": []
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Node.js",
+                        "JavaScript",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "JavaScript",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Node.js --'hosted_on'--> JavaScript --'hosted_on'--> Ubuntu"
+            ]
+        },
+        "CloudArchitecture_phase2-4": {
+            "components": {
+                "occurence_per_architecture": [],
+                "total_occurence": []
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "MySQL DB",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: MySQL DB --'hosted_on'--> Ubuntu"
+            ]
+        },
+        "CloudArchitecture_phase2-5": {
+            "components": {
+                "occurence_per_architecture": [],
+                "total_occurence": []
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Java",
+                        "Node.js",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Java --'hosted_on'--> Node.js"
+            ]
+        }
+    }
+}

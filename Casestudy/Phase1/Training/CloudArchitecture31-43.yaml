@@ -1,0 +1,84 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture31
+  stacks:
+  - tier: WebApp_stack
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Java
+      id: 3f90cd47-b2a2
+    - type: Webserver
+      variant: JBoss
+      id: e3c900c5-2907
+    - type: OS
+      variant: Ubuntu
+      id: d45886ad-9b19
+    - type: IaaS
+      variant: Amazon EC2
+      id: 3469ed84-b61d
+    relationships:
+    - source: 3f90cd47-b2a2
+      target: e3c900c5-2907
+      type: hosted_on
+    - source: e3c900c5-2907
+      target: d45886ad-9b19
+      type: hosted_on
+    - source: d45886ad-9b19
+      target: 3469ed84-b61d
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_aaS
+    components:
+    - type: Queue/Topic
+      variant: Topic
+      id: 56f66f82-16ca
+    - type: Messaging-aaS
+      variant: Amazon MQ
+      id: b35cfedf-18d2
+    relationships:
+    - source: 56f66f82-16ca
+      target: b35cfedf-18d2
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: Java
+      id: 89ddccf1-fcd7
+    - type: WebApp-aaS
+      variant: Amazon Elastic Beanstalk
+      id: 7392d098-f62a
+    relationships:
+    - source: 89ddccf1-fcd7
+      target: 7392d098-f62a
+      type: hosted_on
+  - tier: Storage_stack
+    name: Storage_IaaS
+    components:
+    - type: Storage
+      variant: MinIO
+      id: 41bd3d51-ff13
+    - type: OS
+      variant: Ubuntu
+      id: fc3df2e0-f392
+    - type: IaaS
+      variant: Amazon EC2
+      id: ba118407-43d4
+    relationships:
+    - source: 41bd3d51-ff13
+      target: fc3df2e0-f392
+      type: hosted_on
+    - source: fc3df2e0-f392
+      target: ba118407-43d4
+      type: hosted_on
+  relationships:
+  - source: 3f90cd47-b2a2
+    target: 56f66f82-16ca
+    relationship: connects_to
+  - source: 89ddccf1-fcd7
+    target: 56f66f82-16ca
+    relationship: connects_to
+  - source: 89ddccf1-fcd7
+    target: 41bd3d51-ff13
+    relationship: connects_to

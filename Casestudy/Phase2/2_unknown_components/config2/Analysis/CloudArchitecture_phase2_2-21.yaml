@@ -1,0 +1,84 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture15
+  stacks:
+  - tier: WebApp_stack
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: Java
+      id: fa96f938-148c
+    - type: WebApp-aaS
+      variant: Docker Engine
+      id: d66861fc-4897
+    relationships:
+    - source: fa96f938-148c
+      target: d66861fc-4897
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_IaaS
+    components:
+    - type: Queue/Topic
+      variant: Topic
+      id: fbc1c760-c53b
+    - type: Message-Broker
+      variant: RabbitMQ
+      id: 2c51da3a-a1dc
+    - type: OS
+      variant: Ubuntu
+      id: 521f6449-3a14
+    - type: IaaS
+      variant: Amazon EC2
+      id: 42b66400-1e10
+    relationships:
+    - source: fbc1c760-c53b
+      target: 2c51da3a-a1dc
+      type: hosted_on
+    - source: 2c51da3a-a1dc
+      target: 521f6449-3a14
+      type: hosted_on
+    - source: 521f6449-3a14
+      target: 42b66400-1e10
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: Java
+      id: ac23c7f2-7d33
+    - type: WebApp-aaS
+      variant: Amazon Elastic Beanstalk
+      id: 5ae7a6bc-85c7
+    relationships:
+    - source: ac23c7f2-7d33
+      target: 5ae7a6bc-85c7
+      type: hosted_on
+  - tier: Cache_stack
+    name: Cache_IaaS
+    components:
+    - type: Cache
+      variant: Redis
+      id: f6455442-5a28
+    - type: OS
+      variant: Ubuntu
+      id: 83be6524-1007
+    - type: IaaS
+      variant: Amazon EC2
+      id: ea0ca93f-1b68
+    relationships:
+    - source: f6455442-5a28
+      target: 83be6524-1007
+      type: hosted_on
+    - source: 83be6524-1007
+      target: ea0ca93f-1b68
+      type: hosted_on
+  relationships:
+  - source: fa96f938-148c
+    target: fbc1c760-c53b
+    relationship: connects_to
+  - source: ac23c7f2-7d33
+    target: fbc1c760-c53b
+    relationship: connects_to
+  - source: ac23c7f2-7d33
+    target: f6455442-5a28
+    relationship: connects_to

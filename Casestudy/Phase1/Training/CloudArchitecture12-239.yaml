@@ -1,0 +1,90 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture12
+  stacks:
+  - tier: WebApp_stack
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Java
+      id: 7e50c019-8f4b
+    - type: Webserver
+      variant: JBoss
+      id: cbab85fa-0ecd
+    - type: OS
+      variant: Ubuntu
+      id: 8dc9ac8e-831f
+    - type: IaaS
+      variant: Amazon EC2
+      id: e42c1f47-b796
+    relationships:
+    - source: 7e50c019-8f4b
+      target: cbab85fa-0ecd
+      type: hosted_on
+    - source: cbab85fa-0ecd
+      target: 8dc9ac8e-831f
+      type: hosted_on
+    - source: 8dc9ac8e-831f
+      target: e42c1f47-b796
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_IaaS
+    components:
+    - type: Queue/Topic
+      variant: Topic
+      id: ebe0c7c1-8087
+    - type: Message-Broker
+      variant: RabbitMQ
+      id: 717b4917-bc4f
+    - type: OS
+      variant: Ubuntu
+      id: 963b7750-f21e
+    - type: IaaS
+      variant: Amazon EC2
+      id: 26d2cb91-29ed
+    relationships:
+    - source: ebe0c7c1-8087
+      target: 717b4917-bc4f
+      type: hosted_on
+    - source: 717b4917-bc4f
+      target: 963b7750-f21e
+      type: hosted_on
+    - source: 963b7750-f21e
+      target: 26d2cb91-29ed
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: JavaScript
+      id: 4c608450-352d
+    - type: WebApp-aaS
+      variant: Kubernetes
+      id: 055bab79-c233
+    relationships:
+    - source: 4c608450-352d
+      target: 055bab79-c233
+      type: hosted_on
+  - tier: DB_stack
+    name: DB_aaS
+    components:
+    - type: DB
+      variant: MySQL DB
+      id: 5bede646-7eee
+    - type: DB-aaS
+      variant: Amazon RDS
+      id: 5d9f04a2-6e90
+    relationships:
+    - source: 5bede646-7eee
+      target: 5d9f04a2-6e90
+      type: hosted_on
+  relationships:
+  - source: 7e50c019-8f4b
+    target: ebe0c7c1-8087
+    relationship: connects_to
+  - source: 4c608450-352d
+    target: ebe0c7c1-8087
+    relationship: connects_to
+  - source: 4c608450-352d
+    target: 5bede646-7eee
+    relationship: connects_to

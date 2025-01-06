@@ -1,0 +1,90 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture10
+  stacks:
+  - tier: WebApp_stack
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: C#
+      id: e0a4019c-81dc
+    - type: Webserver
+      variant: IIS
+      id: d08816f9-5a1d
+    - type: OS
+      variant: Ubuntu
+      id: 8d1f84c1-7640
+    - type: IaaS
+      variant: Google Compute Engine
+      id: 43f763a3-e769
+    relationships:
+    - source: e0a4019c-81dc
+      target: d08816f9-5a1d
+      type: hosted_on
+    - source: d08816f9-5a1d
+      target: 8d1f84c1-7640
+      type: hosted_on
+    - source: 8d1f84c1-7640
+      target: 43f763a3-e769
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_aaS
+    components:
+    - type: Queue/Topic
+      variant: Topic
+      id: 889a547b-9c6b
+    - type: Messaging-aaS
+      variant: Google Cloud Pub/Sub
+      id: 780675a5-de61
+    relationships:
+    - source: 889a547b-9c6b
+      target: 780675a5-de61
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Python
+      id: 1ed53ae9-e704
+    - type: Webserver
+      variant: NGINX
+      id: 9acff7d1-b9a5
+    - type: OS
+      variant: Ubuntu
+      id: 7640bc4d-f9b1
+    - type: IaaS
+      variant: Google Compute Engine
+      id: 1b0e791d-47bb
+    relationships:
+    - source: 1ed53ae9-e704
+      target: 9acff7d1-b9a5
+      type: hosted_on
+    - source: 9acff7d1-b9a5
+      target: 7640bc4d-f9b1
+      type: hosted_on
+    - source: 7640bc4d-f9b1
+      target: 1b0e791d-47bb
+      type: hosted_on
+  - tier: Cache_stack
+    name: Cache_aaS
+    components:
+    - type: Cache
+      variant: Google Cloud Memorystore Instance
+      id: ebffd111-4a40
+    - type: Cache-aaS
+      variant: Google Cloud Memorystore
+      id: 6727ee45-413f
+    relationships:
+    - source: ebffd111-4a40
+      target: 6727ee45-413f
+      type: hosted_on
+  relationships:
+  - source: e0a4019c-81dc
+    target: 889a547b-9c6b
+    relationship: connects_to
+  - source: 1ed53ae9-e704
+    target: 889a547b-9c6b
+    relationship: connects_to
+  - source: 1ed53ae9-e704
+    target: ebffd111-4a40
+    relationship: connects_to

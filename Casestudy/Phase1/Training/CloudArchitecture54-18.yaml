@@ -1,0 +1,62 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture54
+  stacks:
+  - tier: WebApp_stack
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: Java
+      id: 302c00e8-6db9
+    - type: WebApp-aaS
+      variant: Kubernetes
+      id: cf583983-3bc7
+    relationships:
+    - source: 302c00e8-6db9
+      target: cf583983-3bc7
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: JavaScript
+      id: 0c152e3d-e5a2
+    - type: Webserver
+      variant: Node.js
+      id: e1e05474-5679
+    - type: OS
+      variant: Ubuntu
+      id: 1ef49b3b-bde8
+    - type: IaaS
+      variant: Google Compute Engine
+      id: f8654f15-898b
+    relationships:
+    - source: 0c152e3d-e5a2
+      target: e1e05474-5679
+      type: hosted_on
+    - source: e1e05474-5679
+      target: 1ef49b3b-bde8
+      type: hosted_on
+    - source: 1ef49b3b-bde8
+      target: f8654f15-898b
+      type: hosted_on
+  - tier: Storage_stack
+    name: Storage_aaS
+    components:
+    - type: Storage
+      variant: Google Cloud Storage Instance
+      id: dfe6428b-5238
+    - type: Storage-aaS
+      variant: Google Cloud Storage
+      id: 6e178e9e-e402
+    relationships:
+    - source: dfe6428b-5238
+      target: 6e178e9e-e402
+      type: hosted_on
+  relationships:
+  - source: 302c00e8-6db9
+    target: 0c152e3d-e5a2
+    relationship: connects_to
+  - source: 0c152e3d-e5a2
+    target: dfe6428b-5238
+    relationship: connects_to

@@ -1,0 +1,74 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture43
+  stacks:
+  - tier: WebApp_stack
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: JavaScript
+      id: 38e52c8a-7f11
+    - type: Webserver
+      variant: Node.js
+      id: 5777817a-150a
+    - type: OS
+      variant: Ubuntu
+      id: f119fa7b-b3f6
+    - type: IaaS
+      variant: Google Compute Engine
+      id: 0bf62211-19d5
+    relationships:
+    - source: 38e52c8a-7f11
+      target: 5777817a-150a
+      type: hosted_on
+    - source: 5777817a-150a
+      target: f119fa7b-b3f6
+      type: hosted_on
+    - source: f119fa7b-b3f6
+      target: 0bf62211-19d5
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: Java
+      id: 1198d238-dd5a
+    - type: WebApp-aaS
+      variant: Google App Engine
+      id: b663d25a-290a
+    relationships:
+    - source: 1198d238-dd5a
+      target: b663d25a-290a
+      type: hosted_on
+  - tier: DB_stack
+    name: DB_IaaS
+    components:
+    - type: DB
+      variant: MongoDB
+      id: 4b665e3f-63ef
+    - type: DBMS
+      variant: MongoDB DBMS
+      id: e093f6a9-f2a4
+    - type: OS
+      variant: Ubuntu
+      id: 997fbf45-ad98
+    - type: IaaS
+      variant: Google Compute Engine
+      id: 2d047739-e17e
+    relationships:
+    - source: 4b665e3f-63ef
+      target: e093f6a9-f2a4
+      type: hosted_on
+    - source: e093f6a9-f2a4
+      target: 997fbf45-ad98
+      type: hosted_on
+    - source: 997fbf45-ad98
+      target: 2d047739-e17e
+      type: hosted_on
+  relationships:
+  - source: 38e52c8a-7f11
+    target: 1198d238-dd5a
+    relationship: connects_to
+  - source: 1198d238-dd5a
+    target: 4b665e3f-63ef
+    relationship: connects_to

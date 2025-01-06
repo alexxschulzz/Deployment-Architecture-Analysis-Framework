@@ -1,0 +1,90 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture14
+  stacks:
+  - tier: WebApp_stack
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: C#
+      id: 04b15b38-ef55
+    - type: Webserver
+      variant: IIS
+      id: a00a6e80-cbd8
+    - type: OS
+      variant: Ubuntu
+      id: 71b8d2c0-7d71
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: ff476053-5c98
+    relationships:
+    - source: 04b15b38-ef55
+      target: a00a6e80-cbd8
+      type: hosted_on
+    - source: a00a6e80-cbd8
+      target: 71b8d2c0-7d71
+      type: hosted_on
+    - source: 71b8d2c0-7d71
+      target: ff476053-5c98
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_aaS
+    components:
+    - type: Queue/Topic
+      variant: Queue
+      id: 4ee37d4d-dfea
+    - type: Messaging-aaS
+      variant: Azure Service Bus
+      id: 31199c18-0fa4
+    relationships:
+    - source: 4ee37d4d-dfea
+      target: 31199c18-0fa4
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Go
+      id: 5b36c084-8dd4
+    - type: Webserver
+      variant: Apache HTTP Server
+      id: a1645fd1-5e47
+    - type: OS
+      variant: Ubuntu
+      id: 1c82ab04-d4af
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: 80d38f3f-17cf
+    relationships:
+    - source: 5b36c084-8dd4
+      target: a1645fd1-5e47
+      type: hosted_on
+    - source: a1645fd1-5e47
+      target: 1c82ab04-d4af
+      type: hosted_on
+    - source: 1c82ab04-d4af
+      target: 80d38f3f-17cf
+      type: hosted_on
+  - tier: DB_stack
+    name: DB_aaS
+    components:
+    - type: DB
+      variant: MongoDB
+      id: 940ac4be-a598
+    - type: DB-aaS
+      variant: Azure Cosmos DB
+      id: 59281d81-8564
+    relationships:
+    - source: 940ac4be-a598
+      target: 59281d81-8564
+      type: hosted_on
+  relationships:
+  - source: 04b15b38-ef55
+    target: 4ee37d4d-dfea
+    relationship: connects_to
+  - source: 5b36c084-8dd4
+    target: 4ee37d4d-dfea
+    relationship: connects_to
+  - source: 5b36c084-8dd4
+    target: 940ac4be-a598
+    relationship: connects_to

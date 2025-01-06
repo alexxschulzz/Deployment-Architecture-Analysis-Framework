@@ -1,0 +1,68 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture23
+  stacks:
+  - tier: WebApp_stack
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Python
+      id: ac60e178-1cb5
+    - type: Webserver
+      variant: NGINX
+      id: cff2f558-a727
+    - type: OS
+      variant: Ubuntu
+      id: 0a46207d-17d4
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: 06ae1d27-7fad
+    relationships:
+    - source: ac60e178-1cb5
+      target: cff2f558-a727
+      type: hosted_on
+    - source: cff2f558-a727
+      target: 0a46207d-17d4
+      type: hosted_on
+    - source: 0a46207d-17d4
+      target: 06ae1d27-7fad
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: Go
+      id: 386be521-c944
+    - type: WebApp-aaS
+      variant: Azure App Service
+      id: 7b0cf9bf-4862
+    relationships:
+    - source: 386be521-c944
+      target: 7b0cf9bf-4862
+      type: hosted_on
+  - tier: Cache_stack
+    name: Cache_IaaS
+    components:
+    - type: Cache
+      variant: Redis
+      id: 9f08f156-a92c
+    - type: OS
+      variant: Ubuntu
+      id: 458c7ad9-3f39
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: 471c219b-f0f8
+    relationships:
+    - source: 9f08f156-a92c
+      target: 458c7ad9-3f39
+      type: hosted_on
+    - source: 458c7ad9-3f39
+      target: 471c219b-f0f8
+      type: hosted_on
+  relationships:
+  - source: ac60e178-1cb5
+    target: 386be521-c944
+    relationship: connects_to
+  - source: 386be521-c944
+    target: 9f08f156-a92c
+    relationship: connects_to

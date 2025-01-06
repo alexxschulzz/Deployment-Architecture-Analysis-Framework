@@ -1,0 +1,114 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture9
+  stacks:
+  - tier: WebApp_stack
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Java
+      id: 56d78881-e413
+    - type: Webserver
+      variant: JBoss
+      id: 4c93f751-9b20
+    - type: OS
+      variant: Ubuntu
+      id: 9ed4e724-37c9
+    - type: IaaS
+      variant: Google Compute Engine
+      id: 1ccef669-3bcc
+    relationships:
+    - source: 56d78881-e413
+      target: 4c93f751-9b20
+      type: hosted_on
+    - source: 4c93f751-9b20
+      target: 9ed4e724-37c9
+      type: hosted_on
+    - source: 9ed4e724-37c9
+      target: 1ccef669-3bcc
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_IaaS
+    components:
+    - type: Queue/Topic
+      variant: Topic
+      id: 9b761c95-901e
+    - type: Message-Broker
+      variant: RabbitMQ
+      id: 027d6efe-786a
+    - type: OS
+      variant: Ubuntu
+      id: 66ce6d0b-1720
+    - type: IaaS
+      variant: Google Compute Engine
+      id: cc1d3594-29b8
+    relationships:
+    - source: 9b761c95-901e
+      target: 027d6efe-786a
+      type: hosted_on
+    - source: 027d6efe-786a
+      target: 66ce6d0b-1720
+      type: hosted_on
+    - source: 66ce6d0b-1720
+      target: cc1d3594-29b8
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Java
+      id: eaff4a8d-b950
+    - type: Webserver
+      variant: Apache Tomcat
+      id: febc8597-07b6
+    - type: OS
+      variant: Ubuntu
+      id: 611d76ec-527c
+    - type: IaaS
+      variant: Google Compute Engine
+      id: a5f4592e-9ae4
+    relationships:
+    - source: eaff4a8d-b950
+      target: febc8597-07b6
+      type: hosted_on
+    - source: febc8597-07b6
+      target: 611d76ec-527c
+      type: hosted_on
+    - source: 611d76ec-527c
+      target: a5f4592e-9ae4
+      type: hosted_on
+  - tier: DB_stack
+    name: DB_IaaS
+    components:
+    - type: DB
+      variant: MySQL DB
+      id: 65da9777-b914
+    - type: DBMS
+      variant: MySQL DBMS
+      id: 8d6e1e71-b0f6
+    - type: OS
+      variant: Ubuntu
+      id: 9e5bb61a-ef8a
+    - type: IaaS
+      variant: Google Compute Engine
+      id: d8f569d6-1cd0
+    relationships:
+    - source: 65da9777-b914
+      target: 8d6e1e71-b0f6
+      type: hosted_on
+    - source: 8d6e1e71-b0f6
+      target: 9e5bb61a-ef8a
+      type: hosted_on
+    - source: 9e5bb61a-ef8a
+      target: d8f569d6-1cd0
+      type: hosted_on
+  relationships:
+  - source: 56d78881-e413
+    target: 9b761c95-901e
+    relationship: connects_to
+  - source: eaff4a8d-b950
+    target: 9b761c95-901e
+    relationship: connects_to
+  - source: eaff4a8d-b950
+    target: 65da9777-b914
+    relationship: connects_to

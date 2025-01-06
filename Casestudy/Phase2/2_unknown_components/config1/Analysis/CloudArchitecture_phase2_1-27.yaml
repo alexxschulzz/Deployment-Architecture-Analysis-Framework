@@ -1,0 +1,90 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture21
+  stacks:
+  - tier: WebApp_stack
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: C#
+      id: c0e470c6-702f
+    - type: WebApp-aaS
+      variant: Kubernetes
+      id: 661c0c1e-59c1
+    relationships:
+    - source: c0e470c6-702f
+      target: 661c0c1e-59c1
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_aaS
+    components:
+    - type: Queue/Topic
+      variant: Queue
+      id: e694e034-0f22
+    - type: Messaging-aaS
+      variant: Amazon MQ
+      id: 863c778b-809b
+    relationships:
+    - source: e694e034-0f22
+      target: 863c778b-809b
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Python
+      id: 7a311325-4a15
+    - type: Webserver
+      variant: Apache HTTP Server
+      id: c29b75ac-6028
+    - type: OS
+      variant: Ubuntu
+      id: 2c7eb668-e04f
+    - type: IaaS
+      variant: Amazon EC2
+      id: fa2f64cd-4508
+    relationships:
+    - source: 7a311325-4a15
+      target: c29b75ac-6028
+      type: hosted_on
+    - source: c29b75ac-6028
+      target: 2c7eb668-e04f
+      type: hosted_on
+    - source: 2c7eb668-e04f
+      target: fa2f64cd-4508
+      type: hosted_on
+  - tier: DB_stack
+    name: DB_IaaS
+    components:
+    - type: DB
+      variant: MySQL DB
+      id: 06ae5aef-bba6
+    - type: DBMS
+      variant: MySQL DBMS
+      id: 6d6e3b2f-3e08
+    - type: OS
+      variant: Ubuntu
+      id: ba301e33-eaa2
+    - type: IaaS
+      variant: Amazon EC2
+      id: 99cc13fc-4b03
+    relationships:
+    - source: 06ae5aef-bba6
+      target: 6d6e3b2f-3e08
+      type: hosted_on
+    - source: 6d6e3b2f-3e08
+      target: ba301e33-eaa2
+      type: hosted_on
+    - source: ba301e33-eaa2
+      target: 99cc13fc-4b03
+      type: hosted_on
+  relationships:
+  - source: c0e470c6-702f
+    target: e694e034-0f22
+    relationship: connects_to
+  - source: 7a311325-4a15
+    target: e694e034-0f22
+    relationship: connects_to
+  - source: 7a311325-4a15
+    target: 06ae5aef-bba6
+    relationship: connects_to

@@ -1,0 +1,90 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture15
+  stacks:
+  - tier: WebApp_stack
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: JavaScript
+      id: 9840e1fe-5ae1
+    - type: Webserver
+      variant: Node.js
+      id: 336f1fb2-4c9e
+    - type: OS
+      variant: Ubuntu
+      id: ff6812c1-31d7
+    - type: IaaS
+      variant: Google Compute Engine
+      id: 9694e988-a72d
+    relationships:
+    - source: 9840e1fe-5ae1
+      target: 336f1fb2-4c9e
+      type: hosted_on
+    - source: 336f1fb2-4c9e
+      target: ff6812c1-31d7
+      type: hosted_on
+    - source: ff6812c1-31d7
+      target: 9694e988-a72d
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_aaS
+    components:
+    - type: Queue/Topic
+      variant: Queue
+      id: 32834955-a3dd
+    - type: Messaging-aaS
+      variant: Google Cloud Pub/Sub
+      id: 597e2f48-4711
+    relationships:
+    - source: 32834955-a3dd
+      target: 597e2f48-4711
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: Java
+      id: aa785015-fe3f
+    - type: WebApp-aaS
+      variant: Docker Engine
+      id: d36c3452-909f
+    relationships:
+    - source: aa785015-fe3f
+      target: d36c3452-909f
+      type: hosted_on
+  - tier: DB_stack
+    name: DB_IaaS
+    components:
+    - type: DB
+      variant: MongoDB
+      id: 357907a8-7de5
+    - type: DBMS
+      variant: MongoDB DBMS
+      id: a95b797c-9ad4
+    - type: OS
+      variant: Ubuntu
+      id: 253180e9-0174
+    - type: IaaS
+      variant: Google Compute Engine
+      id: 1554886f-1eaa
+    relationships:
+    - source: 357907a8-7de5
+      target: a95b797c-9ad4
+      type: hosted_on
+    - source: a95b797c-9ad4
+      target: 253180e9-0174
+      type: hosted_on
+    - source: 253180e9-0174
+      target: 1554886f-1eaa
+      type: hosted_on
+  relationships:
+  - source: 9840e1fe-5ae1
+    target: 32834955-a3dd
+    relationship: connects_to
+  - source: aa785015-fe3f
+    target: 32834955-a3dd
+    relationship: connects_to
+  - source: aa785015-fe3f
+    target: 357907a8-7de5
+    relationship: connects_to

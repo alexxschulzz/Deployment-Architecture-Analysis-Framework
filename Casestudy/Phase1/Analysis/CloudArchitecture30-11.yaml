@@ -1,0 +1,90 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture30
+  stacks:
+  - tier: WebApp_stack
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Java
+      id: 610bd3d5-87e7
+    - type: Webserver
+      variant: Apache Tomcat
+      id: 2d438521-2bd8
+    - type: OS
+      variant: Ubuntu
+      id: ee9373d8-8c40
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: 03d540ab-5a52
+    relationships:
+    - source: 610bd3d5-87e7
+      target: 2d438521-2bd8
+      type: hosted_on
+    - source: 2d438521-2bd8
+      target: ee9373d8-8c40
+      type: hosted_on
+    - source: ee9373d8-8c40
+      target: 03d540ab-5a52
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_aaS
+    components:
+    - type: Queue/Topic
+      variant: Topic
+      id: 0fe03ae5-11c9
+    - type: Messaging-aaS
+      variant: Azure Service Bus
+      id: d70df2f6-32d0
+    relationships:
+    - source: 0fe03ae5-11c9
+      target: d70df2f6-32d0
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Java
+      id: 89356761-f6f4
+    - type: Webserver
+      variant: JBoss
+      id: 1d223f18-f2be
+    - type: OS
+      variant: Ubuntu
+      id: 2ad76778-5d99
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: 9bf0e76d-38ec
+    relationships:
+    - source: 89356761-f6f4
+      target: 1d223f18-f2be
+      type: hosted_on
+    - source: 1d223f18-f2be
+      target: 2ad76778-5d99
+      type: hosted_on
+    - source: 2ad76778-5d99
+      target: 9bf0e76d-38ec
+      type: hosted_on
+  - tier: Storage_stack
+    name: Storage_aaS
+    components:
+    - type: Storage
+      variant: Azure Blob Storage Instance
+      id: 23f4d545-5193
+    - type: Storage-aaS
+      variant: Azure Blob Storage
+      id: 99e34702-71c7
+    relationships:
+    - source: 23f4d545-5193
+      target: 99e34702-71c7
+      type: hosted_on
+  relationships:
+  - source: 610bd3d5-87e7
+    target: 0fe03ae5-11c9
+    relationship: connects_to
+  - source: 89356761-f6f4
+    target: 0fe03ae5-11c9
+    relationship: connects_to
+  - source: 89356761-f6f4
+    target: 23f4d545-5193
+    relationship: connects_to

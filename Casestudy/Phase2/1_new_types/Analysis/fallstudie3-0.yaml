@@ -1,0 +1,37 @@
+pipes:
+  queues:
+    - id: 3b76043e
+      name: "OrderQueue"
+      host: "devRabbitMQ"
+      protocol: "amqp"
+    - id: 0910a8c3
+      name: "HighPriceQueue"
+      host: "devRabbitMQ"
+      protocol: "amqp"
+    - id: 0910a8c
+      name: "LowPriceQueue"
+      host: "devRabbitMQ"
+      protocol: "amqp"
+filters:
+- id: 577a26d2
+  name: "WebShopBackend"
+  host: "devKubernetes"
+  type: "Sender"
+  data: '{"product": "keyboard", "price": "499"}'
+  mappings: ["out:OrderQueue"]
+- id: 675071fa
+  name: "OrderRouter"
+  host: "devKubernetes"
+  type: "FlexRouter"
+  criteria: "routing.json"
+  mappings: ["in:OrderQueue", "outOne:HighPriceQueue", "outTwo:LowPriceQueue"]
+- id: e4a4a657
+  name: "PremiumOrderProcessor"
+  host: "devDockerCompose"
+  type: "Receiver"
+  mappings: ["in:HighPriceQueue"]
+- id: e4a4a6
+  name: "NormalOrderProcessor"
+  host: "devDockerCompose"
+  type: "Receiver"
+  mappings: ["in:LowPriceQueue"]

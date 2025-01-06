@@ -1,0 +1,34 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture4
+  stacks:
+  - tier: WebApp_stack
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: JavaScript
+      id: a621d0b1-1f79
+    - type: WebApp-aaS
+      variant: Docker Engine
+      id: b21e968b-53e5
+    relationships:
+    - source: a621d0b1-1f79
+      target: b21e968b-53e5
+      type: hosted_on
+  - tier: DB_stack
+    name: DB_aaS
+    components:
+    - type: DB
+      variant: Google Bigtable for NoSQL
+      id: 21854833-cba5
+    - type: DB-aaS
+      variant: Google Bigtable
+      id: c2f632a1-ee0c
+    relationships:
+    - source: 21854833-cba5
+      target: c2f632a1-ee0c
+      type: hosted_on
+  relationships:
+  - source: a621d0b1-1f79
+    target: 21854833-cba5
+    relationship: connects_to

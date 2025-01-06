@@ -1,0 +1,78 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture16
+  stacks:
+  - tier: WebApp_stack
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: Python
+      id: a9f1fd66-f7ae
+    - type: WebApp-aaS
+      variant: Docker Engine
+      id: 9a30c54e-f5cb
+    relationships:
+    - source: a9f1fd66-f7ae
+      target: 9a30c54e-f5cb
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_IaaS
+    components:
+    - type: Queue/Topic
+      variant: Topic
+      id: 5e303d91-aa4f
+    - type: Message-Broker
+      variant: Mosquitto
+      id: 0347bc8b-aeaa
+    - type: OS
+      variant: Ubuntu
+      id: fd7583ac-1a45
+    - type: IaaS
+      variant: Amazon EC2
+      id: f91473cb-5e2a
+    relationships:
+    - source: 5e303d91-aa4f
+      target: 0347bc8b-aeaa
+      type: hosted_on
+    - source: 0347bc8b-aeaa
+      target: fd7583ac-1a45
+      type: hosted_on
+    - source: fd7583ac-1a45
+      target: f91473cb-5e2a
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: C#
+      id: 580df6d8-36f5
+    - type: WebApp-aaS
+      variant: Kubernetes
+      id: 5d5e6ad7-6c3b
+    relationships:
+    - source: 580df6d8-36f5
+      target: 5d5e6ad7-6c3b
+      type: hosted_on
+  - tier: Cache_stack
+    name: Cache_aaS
+    components:
+    - type: Cache
+      variant: Amazon ElastiCache Instance
+      id: 8193dda4-2813
+    - type: Cache-aaS
+      variant: Amazon ElastiCache
+      id: 4425b9a5-c496
+    relationships:
+    - source: 8193dda4-2813
+      target: 4425b9a5-c496
+      type: hosted_on
+  relationships:
+  - source: a9f1fd66-f7ae
+    target: 5e303d91-aa4f
+    relationship: connects_to
+  - source: 580df6d8-36f5
+    target: 5e303d91-aa4f
+    relationship: connects_to
+  - source: 580df6d8-36f5
+    target: 8193dda4-2813
+    relationship: connects_to

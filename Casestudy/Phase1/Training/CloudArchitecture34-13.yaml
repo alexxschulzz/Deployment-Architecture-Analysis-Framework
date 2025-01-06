@@ -1,0 +1,90 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture34
+  stacks:
+  - tier: WebApp_stack
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: Java
+      id: a4a3bc08-ba74
+    - type: WebApp-aaS
+      variant: Azure App Service
+      id: 35579dbc-14a9
+    relationships:
+    - source: a4a3bc08-ba74
+      target: 35579dbc-14a9
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_IaaS
+    components:
+    - type: Queue/Topic
+      variant: Topic
+      id: 9612c2f2-6377
+    - type: Message-Broker
+      variant: RabbitMQ
+      id: 7e0e0509-f02f
+    - type: OS
+      variant: Ubuntu
+      id: 53a12d83-4530
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: ce2700df-3ba3
+    relationships:
+    - source: 9612c2f2-6377
+      target: 7e0e0509-f02f
+      type: hosted_on
+    - source: 7e0e0509-f02f
+      target: 53a12d83-4530
+      type: hosted_on
+    - source: 53a12d83-4530
+      target: ce2700df-3ba3
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Java
+      id: c92a1f34-3079
+    - type: Webserver
+      variant: Apache Tomcat
+      id: eeb998f7-e9ea
+    - type: OS
+      variant: Ubuntu
+      id: 5591c8a6-35e5
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: 3d295b7d-79a2
+    relationships:
+    - source: c92a1f34-3079
+      target: eeb998f7-e9ea
+      type: hosted_on
+    - source: eeb998f7-e9ea
+      target: 5591c8a6-35e5
+      type: hosted_on
+    - source: 5591c8a6-35e5
+      target: 3d295b7d-79a2
+      type: hosted_on
+  - tier: Storage_stack
+    name: Storage_aaS
+    components:
+    - type: Storage
+      variant: Azure Blob Storage Instance
+      id: f0a180d6-d6fd
+    - type: Storage-aaS
+      variant: Azure Blob Storage
+      id: f66452bf-0a90
+    relationships:
+    - source: f0a180d6-d6fd
+      target: f66452bf-0a90
+      type: hosted_on
+  relationships:
+  - source: a4a3bc08-ba74
+    target: 9612c2f2-6377
+    relationship: connects_to
+  - source: c92a1f34-3079
+    target: 9612c2f2-6377
+    relationship: connects_to
+  - source: c92a1f34-3079
+    target: f0a180d6-d6fd
+    relationship: connects_to

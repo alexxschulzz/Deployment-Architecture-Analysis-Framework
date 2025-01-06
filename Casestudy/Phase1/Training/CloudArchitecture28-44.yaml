@@ -1,0 +1,90 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture28
+  stacks:
+  - tier: WebApp_stack
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Java
+      id: 19b75db7-8bd9
+    - type: Webserver
+      variant: Apache Tomcat
+      id: 89b86257-65e6
+    - type: OS
+      variant: Ubuntu
+      id: 1e3d4489-4cca
+    - type: IaaS
+      variant: Google Compute Engine
+      id: a84679ac-ea14
+    relationships:
+    - source: 19b75db7-8bd9
+      target: 89b86257-65e6
+      type: hosted_on
+    - source: 89b86257-65e6
+      target: 1e3d4489-4cca
+      type: hosted_on
+    - source: 1e3d4489-4cca
+      target: a84679ac-ea14
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_IaaS
+    components:
+    - type: Queue/Topic
+      variant: Topic
+      id: 8fe057f1-2e7f
+    - type: Message-Broker
+      variant: RabbitMQ
+      id: 43bad7bb-e3c4
+    - type: OS
+      variant: Ubuntu
+      id: 71f96732-d17c
+    - type: IaaS
+      variant: Google Compute Engine
+      id: 5b6ba125-3cd5
+    relationships:
+    - source: 8fe057f1-2e7f
+      target: 43bad7bb-e3c4
+      type: hosted_on
+    - source: 43bad7bb-e3c4
+      target: 71f96732-d17c
+      type: hosted_on
+    - source: 71f96732-d17c
+      target: 5b6ba125-3cd5
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: Java
+      id: aa361ead-9540
+    - type: WebApp-aaS
+      variant: Kubernetes
+      id: eac43a9a-5f49
+    relationships:
+    - source: aa361ead-9540
+      target: eac43a9a-5f49
+      type: hosted_on
+  - tier: Storage_stack
+    name: Storage_aaS
+    components:
+    - type: Storage
+      variant: Google Cloud Storage Instance
+      id: 6ab40fa8-f20a
+    - type: Storage-aaS
+      variant: Google Cloud Storage
+      id: 371ef900-c0b2
+    relationships:
+    - source: 6ab40fa8-f20a
+      target: 371ef900-c0b2
+      type: hosted_on
+  relationships:
+  - source: 19b75db7-8bd9
+    target: 8fe057f1-2e7f
+    relationship: connects_to
+  - source: aa361ead-9540
+    target: 8fe057f1-2e7f
+    relationship: connects_to
+  - source: aa361ead-9540
+    target: 6ab40fa8-f20a
+    relationship: connects_to

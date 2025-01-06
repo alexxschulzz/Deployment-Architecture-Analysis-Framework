@@ -1,0 +1,34 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture8
+  stacks:
+  - tier: WebApp_stack
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: JavaScript
+      id: c9e2b4e2-0bad
+    - type: WebApp-aaS
+      variant: Amazon Elastic Beanstalk
+      id: 0c85afe2-1204
+    relationships:
+    - source: c9e2b4e2-0bad
+      target: 0c85afe2-1204
+      type: hosted_on
+  - tier: Storage_stack
+    name: Storage_aaS
+    components:
+    - type: Storage
+      variant: Amazon S3 Instance
+      id: 752972bc-44b9
+    - type: Storage-aaS
+      variant: Amazon S3
+      id: 953e9602-69e3
+    relationships:
+    - source: 752972bc-44b9
+      target: 953e9602-69e3
+      type: hosted_on
+  relationships:
+  - source: c9e2b4e2-0bad
+    target: 752972bc-44b9
+    relationship: connects_to

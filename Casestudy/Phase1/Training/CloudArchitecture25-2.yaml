@@ -1,0 +1,108 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture25
+  stacks:
+  - tier: WebApp_stack
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Java
+      id: 149e638d-ce03
+    - type: Webserver
+      variant: Apache Tomcat
+      id: 68e96f3e-4dd4
+    - type: OS
+      variant: Ubuntu
+      id: 35bff704-e966
+    - type: IaaS
+      variant: Amazon EC2
+      id: 5d699f13-dfc8
+    relationships:
+    - source: 149e638d-ce03
+      target: 68e96f3e-4dd4
+      type: hosted_on
+    - source: 68e96f3e-4dd4
+      target: 35bff704-e966
+      type: hosted_on
+    - source: 35bff704-e966
+      target: 5d699f13-dfc8
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_IaaS
+    components:
+    - type: Queue/Topic
+      variant: Queue
+      id: 2d3c8058-580f
+    - type: Message-Broker
+      variant: RabbitMQ
+      id: 19b5024d-ab84
+    - type: OS
+      variant: Ubuntu
+      id: 89392e82-85fb
+    - type: IaaS
+      variant: Amazon EC2
+      id: e1899c82-d77a
+    relationships:
+    - source: 2d3c8058-580f
+      target: 19b5024d-ab84
+      type: hosted_on
+    - source: 19b5024d-ab84
+      target: 89392e82-85fb
+      type: hosted_on
+    - source: 89392e82-85fb
+      target: e1899c82-d77a
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Java
+      id: 4664cff4-174b
+    - type: Webserver
+      variant: JBoss
+      id: 8774e74a-4034
+    - type: OS
+      variant: Ubuntu
+      id: 7d7207de-ff16
+    - type: IaaS
+      variant: Amazon EC2
+      id: 9821402c-0a71
+    relationships:
+    - source: 4664cff4-174b
+      target: 8774e74a-4034
+      type: hosted_on
+    - source: 8774e74a-4034
+      target: 7d7207de-ff16
+      type: hosted_on
+    - source: 7d7207de-ff16
+      target: 9821402c-0a71
+      type: hosted_on
+  - tier: Storage_stack
+    name: Storage_IaaS
+    components:
+    - type: Storage
+      variant: MinIO
+      id: f698478a-06b9
+    - type: OS
+      variant: Ubuntu
+      id: 920a57f0-686b
+    - type: IaaS
+      variant: Amazon EC2
+      id: 017998ec-e7a2
+    relationships:
+    - source: f698478a-06b9
+      target: 920a57f0-686b
+      type: hosted_on
+    - source: 920a57f0-686b
+      target: 017998ec-e7a2
+      type: hosted_on
+  relationships:
+  - source: 149e638d-ce03
+    target: 2d3c8058-580f
+    relationship: connects_to
+  - source: 4664cff4-174b
+    target: 2d3c8058-580f
+    relationship: connects_to
+  - source: 4664cff4-174b
+    target: f698478a-06b9
+    relationship: connects_to

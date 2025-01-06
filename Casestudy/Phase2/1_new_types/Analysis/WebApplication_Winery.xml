@@ -1,0 +1,155 @@
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12"
+    xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12"
+    xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice"
+    xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org"
+    targetNamespace="http://opentosca.org/servicetemplates"
+    id="winery-defs-for_servicetemplates-Java_Web_Application__MySQL">
+    <Import namespace="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes"
+        location="http://localhost:8080/winery/relationshiptypes/http%253A%252F%252Fdocs.oasis-open.org%252Ftosca%252Fns%252F2011%252F12%252FToscaBaseTypes/HostedOn/?definitions"
+        importType="http://docs.oasis-open.org/tosca/ns/2011/12" />
+    <Import namespace="http://opentosca.org/artifacttemplates"
+        location="http://localhost:8080/winery/artifacttemplates/http%253A%252F%252Fopentosca.org%252Fartifacttemplates/Petclinic-Schema-DA_w1-wip1/?definitions"
+        importType="http://docs.oasis-open.org/tosca/ns/2011/12" />
+    <Import namespace="http://opentosca.org/nodetypes"
+        location="http://localhost:8080/winery/nodetypes/http%253A%252F%252Fopentosca.org%252Fnodetypes/Java_Shop_Application/?definitions"
+        importType="http://docs.oasis-open.org/tosca/ns/2011/12" />
+    <Import namespace="http://opentosca.org/nodetypes"
+        location="http://localhost:8080/winery/nodetypes/http%253A%252F%252Fopentosca.org%252Fnodetypes/MySQL-DB/?definitions"
+        importType="http://docs.oasis-open.org/tosca/ns/2011/12" />
+    <Import namespace="http://opentosca.org/nodetypes"
+        location="http://localhost:8080/winery/nodetypes/http%253A%252F%252Fopentosca.org%252Fnodetypes/MySQL-DBMS_5.7-w1/?definitions"
+        importType="http://docs.oasis-open.org/tosca/ns/2011/12" />
+    <Import namespace="http://opentosca.org/artifacttypes"
+        location="http://localhost:8080/winery/artifacttypes/http%253A%252F%252Fopentosca.org%252Fartifacttypes/WAR/?definitions"
+        importType="http://docs.oasis-open.org/tosca/ns/2011/12" />
+    <Import namespace="http://opentosca.org/nodetypes"
+        location="http://localhost:8080/winery/nodetypes/http%253A%252F%252Fopentosca.org%252Fnodetypes/Ubuntu-VM_18.04-w1/?definitions"
+        importType="http://docs.oasis-open.org/tosca/ns/2011/12" />
+    <Import namespace="http://opentosca.org/nodetypes"
+        location="http://localhost:8080/winery/nodetypes/http%253A%252F%252Fopentosca.org%252Fnodetypes/Amazon EC2/?definitions"
+        importType="http://docs.oasis-open.org/tosca/ns/2011/12" />
+    <Import namespace="http://opentosca.org/artifacttypes"
+        location="http://localhost:8080/winery/artifacttypes/http%253A%252F%252Fopentosca.org%252Fartifacttypes/SQLArtifact/?definitions"
+        importType="http://docs.oasis-open.org/tosca/ns/2011/12" />
+    <Import namespace="http://opentosca.org/nodetypes"
+        location="http://localhost:8080/winery/nodetypes/http%253A%252F%252Fopentosca.org%252Fnodetypes/Tomcat8/?definitions"
+        importType="http://docs.oasis-open.org/tosca/ns/2011/12" />
+    <Import namespace="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes"
+        location="http://localhost:8080/winery/relationshiptypes/http%253A%252F%252Fdocs.oasis-open.org%252Ftosca%252Fns%252F2011%252F12%252FToscaBaseTypes/ConnectsTo/?definitions"
+        importType="http://docs.oasis-open.org/tosca/ns/2011/12" />
+    <Import namespace="http://opentosca.org/artifacttemplates"
+        location="http://localhost:8080/winery/artifacttemplates/http%253A%252F%252Fopentosca.org%252Fartifacttemplates/Java_Shop_Application_DA/?definitions"
+        importType="http://docs.oasis-open.org/tosca/ns/2011/12" />
+    <ServiceTemplate name="Java_Web_Application__MySQL"
+        targetNamespace="http://opentosca.org/servicetemplates" id="Java_Web_Application__MySQL">
+        <BoundaryDefinitions />
+        <TopologyTemplate>
+            <NodeTemplate xmlns:nodetypes="http://opentosca.org/nodetypes" name="MySQL DB"
+                minInstances="1" maxInstances="1" type="nodetypes:MySQL-DB" id="MySQL-DB"
+                winery:location="undefined" winery:x="1034" winery:y="113">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <DBName>shop</DBName>
+                        <DBUser>app</DBUser>
+                        <DBPassword>installed</DBPassword>
+                    </Properties>
+                </Properties>
+                <DeploymentArtifacts>
+                    <DeploymentArtifact xmlns:artifacttypes="http://opentosca.org/artifacttypes"
+                        xmlns:artifacttemplates="http://opentosca.org/artifacttemplates"
+                        name="schema" artifactType="artifacttypes:SQLArtifact"
+                        artifactRef="artifacttemplates:Petclinic-Schema-DA_w1-wip1" />
+                </DeploymentArtifacts>
+            </NodeTemplate>
+            <NodeTemplate xmlns:nodetypes="http://opentosca.org/nodetypes" name="Apache Tomcat"
+                minInstances="1" maxInstances="1" type="nodetypes:Tomcat8" id="Tomcat8"
+                winery:location="undefined" winery:x="390" winery:y="296" />
+            <NodeTemplate xmlns:nodetypes="http://opentosca.org/nodetypes" name="Java"
+                minInstances="1" maxInstances="1" type="nodetypes:Java_Shop_Application"
+                id="Java_Shop_Application" winery:location="undefined" winery:x="393" winery:y="86">
+                <DeploymentArtifacts>
+                    <DeploymentArtifact xmlns:artifacttypes="http://opentosca.org/artifacttypes"
+                        xmlns:artifacttemplates="http://opentosca.org/artifacttemplates" name="shop"
+                        artifactType="artifacttypes:WAR"
+                        artifactRef="artifacttemplates:Java_Shop_Application_DA" />
+                </DeploymentArtifacts>
+            </NodeTemplate>
+            <NodeTemplate xmlns:nodetypes="http://opentosca.org/nodetypes"
+                name="Amazon EC2" minInstances="1" maxInstances="1"
+                type="nodetypes:Amazon EC2" id="Amazon EC2" winery:x="704"
+                winery:y="703">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <HypervisorEndpoint>asflexsm.informatik.uni-stuttgart.de</HypervisorEndpoint>
+                        <HypervisorTenantID>SmartServices</HypervisorTenantID>
+                        <HypervisorUserName>get_input: AmazonEC2User</HypervisorUserName>
+                        <HypervisorUserPassword>get_input: AmazonEC2UserPassword</HypervisorUserPassword>
+                    </Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:nodetypes="http://opentosca.org/nodetypes" name="Ubuntu"
+                minInstances="1" maxInstances="1" type="nodetypes:Ubuntu-VM_18.04-w1"
+                id="Ubuntu-VM_18.04-w1" winery:x="703" winery:y="515">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <VMIP />
+                        <VMInstanceID />
+                        <VMType>m1.small</VMType>
+                        <VMUserName>ubuntu</VMUserName>
+                        <VMUserPassword>N/A</VMUserPassword>
+                        <VMPrivateKey>get_input: VMPrivateKey</VMPrivateKey>
+                        <VMPublicKey>N/A</VMPublicKey>
+                        <VMKeyPairName>get_input: VMKeyPair</VMKeyPairName>
+                    </Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:nodetypes="http://opentosca.org/nodetypes" name="MySQL DBMS"
+                minInstances="1" maxInstances="1" type="nodetypes:MySQL-DBMS_5.7-w1"
+                id="MySQL-DBMS_5.7-w1" winery:x="1039" winery:y="395">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <DBMSUser>root</DBMSUser>
+                        <DBMSPassword>installed</DBMSPassword>
+                        <DBMSPort>3306</DBMSPort>
+                    </Properties>
+                </Properties>
+            </NodeTemplate>
+            <RelationshipTemplate
+                xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes"
+                name="con_171" type="ToscaBaseTypes:HostedOn" id="con_171">
+                <SourceElement ref="Java_Shop_Application" />
+                <TargetElement ref="Tomcat8" />
+            </RelationshipTemplate>
+            <RelationshipTemplate
+                xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes"
+                name="con_183" type="ToscaBaseTypes:ConnectsTo" id="con_183">
+                <SourceElement ref="Java_Shop_Application" />
+                <TargetElement ref="MySQL-DB" />
+            </RelationshipTemplate>
+            <RelationshipTemplate
+                xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes"
+                name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_0">
+                <SourceElement ref="Tomcat8" />
+                <TargetElement ref="Ubuntu-VM_18.04-w1" />
+            </RelationshipTemplate>
+            <RelationshipTemplate
+                xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes"
+                name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_2">
+                <SourceElement ref="Ubuntu-VM_18.04-w1" />
+                <TargetElement ref="Amazon EC2" />
+            </RelationshipTemplate>
+            <RelationshipTemplate
+                xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes"
+                name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_1">
+                <SourceElement ref="MySQL-DB" />
+                <TargetElement ref="MySQL-DBMS_5.7-w1" />
+            </RelationshipTemplate>
+            <RelationshipTemplate
+                xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes"
+                name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_4">
+                <SourceElement ref="MySQL-DBMS_5.7-w1" />
+                <TargetElement ref="Ubuntu-VM_18.04-w1" />
+            </RelationshipTemplate>
+        </TopologyTemplate>
+    </ServiceTemplate>
+</Definitions>

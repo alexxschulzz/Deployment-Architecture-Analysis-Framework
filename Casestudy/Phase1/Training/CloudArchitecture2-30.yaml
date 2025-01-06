@@ -1,0 +1,46 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture2
+  stacks:
+  - tier: WebApp_stack
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: JavaScript
+      id: c1eccc42-4796
+    - type: Webserver
+      variant: Node.js
+      id: 8960cda6-35f0
+    - type: OS
+      variant: Ubuntu
+      id: c08ca3c7-d320
+    - type: IaaS
+      variant: Google Compute Engine
+      id: e39ff0e5-a8a8
+    relationships:
+    - source: c1eccc42-4796
+      target: 8960cda6-35f0
+      type: hosted_on
+    - source: 8960cda6-35f0
+      target: c08ca3c7-d320
+      type: hosted_on
+    - source: c08ca3c7-d320
+      target: e39ff0e5-a8a8
+      type: hosted_on
+  - tier: DB_stack
+    name: DB_aaS
+    components:
+    - type: DB
+      variant: MySQL DB
+      id: 6f3b0ff5-3daa
+    - type: DB-aaS
+      variant: Google Cloud SQL
+      id: a831d690-fc2d
+    relationships:
+    - source: 6f3b0ff5-3daa
+      target: a831d690-fc2d
+      type: hosted_on
+  relationships:
+  - source: c1eccc42-4796
+    target: 6f3b0ff5-3daa
+    relationship: connects_to

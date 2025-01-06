@@ -1,0 +1,36 @@
+{
+    "unknown_components": {
+        "occurence_per_architecture": {
+            "Redis": 23,
+            "Google Cloud Memorystore": 10,
+            "Google Cloud Memorystore Instance": 10,
+            "Amazon ElastiCache": 10,
+            "Amazon ElastiCache Instance": 10,
+            "Azure Cache for Redis": 7,
+            "Azure Cache for Redis Instance": 7
+        },
+        "total_occurence": {
+            "Redis": 23,
+            "Google Cloud Memorystore": 10,
+            "Google Cloud Memorystore Instance": 10,
+            "Amazon ElastiCache": 10,
+            "Amazon ElastiCache Instance": 10,
+            "Azure Cache for Redis": 7,
+            "Azure Cache for Redis Instance": 7
+        }
+    },
+    "unknown_relationships": {
+        "('Redis', 'Ubuntu', 'hosted_on')": 23,
+        "('Java', 'Redis', 'connects_to')": 13,
+        "('Google Cloud Memorystore Instance', 'Google Cloud Memorystore', 'hosted_on')": 10,
+        "('Amazon ElastiCache Instance', 'Amazon ElastiCache', 'hosted_on')": 10,
+        "('JavaScript', 'Redis', 'connects_to')": 10,
+        "('Azure Cache for Redis Instance', 'Azure Cache for Redis', 'hosted_on')": 7,
+        "('Java', 'Amazon ElastiCache Instance', 'connects_to')": 7,
+        "('Java', 'Google Cloud Memorystore Instance', 'connects_to')": 6,
+        "('Java', 'Azure Cache for Redis Instance', 'connects_to')": 4,
+        "('JavaScript', 'Google Cloud Memorystore Instance', 'connects_to')": 4,
+        "('JavaScript', 'Amazon ElastiCache Instance', 'connects_to')": 3,
+        "('JavaScript', 'Azure Cache for Redis Instance', 'connects_to')": 3
+    }
+}

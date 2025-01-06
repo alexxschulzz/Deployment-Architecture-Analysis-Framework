@@ -1,0 +1,218 @@
+components:
+  # allowed_hosts define e.g. which Apps are normally running on which webservers
+
+  - name: "WebApp"
+    variants:
+      - name: "Java"
+        allowed_hosts:
+          - "Apache Tomcat"
+          - "JBoss"
+          - "Amazon Elastic Beanstalk"
+          - "Azure App Service"
+          - "Google App Engine"
+          - "Kubernetes"
+          - "Docker Engine"
+      - name: "JavaScript"
+        allowed_hosts:
+          - "Node.js"
+          - "Amazon Elastic Beanstalk"
+          - "Azure App Service"
+          - "Google App Engine"
+          - "Kubernetes"
+          - "Docker Engine"
+      # - name: "Python"
+      #   allowed_hosts:
+      #     - "Apache HTTP Server"
+      #     - "NGINX"
+      #     - "Amazon Elastic Beanstalk"
+      #     - "Azure App Service"
+      #     - "Google App Engine"
+      #     - "Kubernetes"
+      #     - "Docker Engine"
+      # - name: "C#"
+      #   allowed_hosts:
+      #     - "IIS"
+      #     - "Amazon Elastic Beanstalk"
+      #     - "Azure App Service"
+      #     - "Google App Engine"
+      #     - "Kubernetes"
+      #     - "Docker Engine"
+      # - name: "Go"
+      #   allowed_hosts:
+      #     - "NGINX"
+      #     - "Apache HTTP Server"
+      #     - "Amazon Elastic Beanstalk"
+      #     - "Azure App Service"
+      #     - "Google App Engine"
+      #     - "Kubernetes"
+      #     - "Docker Engine"
+
+  - name: "Cache"
+    variants:
+      - name: "Redis"
+        allowed_hosts:
+          - "Ubuntu"
+          - "CentOS"
+      - name: "Amazon ElastiCache Instance"
+        allowed_hosts:
+          - "Amazon ElastiCache"
+      - name: "Azure Cache for Redis Instance"
+        allowed_hosts:
+          - "Azure Cache for Redis"
+      - name: "Google Cloud Memorystore Instance"
+        allowed_hosts:
+          - "Google Cloud Memorystore"
+
+  - name: "Cache-aaS"
+    variants:
+      - name: "Amazon ElastiCache"
+      - name: "Azure Cache for Redis"
+      - name: "Google Cloud Memorystore"
+
+  - name: "DB"
+    variants:
+      - name: "MySQL DB"
+        allowed_hosts:
+          - "MySQL DBMS"
+          - "Amazon RDS"
+          - "Azure Database"
+          - "Google Cloud SQL"
+      - name: "MongoDB"
+        allowed_hosts:
+          - "MongoDB DBMS"
+          - "Amazon DynamoDB"
+          - "Azure Cosmos DB"
+          - "Google Bigtable"
+      - name: "Amazon RDS for MySQL"
+        allowed_hosts:
+          - "Amazon RDS"
+      - name: "Amazon DynamoDB for NoSQL"
+        allowed_hosts:
+          - "Amazon DynamoDB"
+      - name: "Azure Database for MySQL"
+        allowed_hosts:
+          - "Azure SQL Database"
+      - name: "Azure Cosmos DB for NoSQL"
+        allowed_hosts:
+          - "Azure Cosmos DB"
+      - name: "Google Cloud SQL for MySQL"
+        allowed_hosts:
+          - "Google Cloud SQL"
+      - name: "Google Bigtable for NoSQL"
+        allowed_hosts:
+          - "Google Bigtable"
+
+  - name: "DB-aaS"
+    variants:
+      - name: "Amazon RDS"
+      - name: "Amazon DynamoDB"
+      - name: "Azure SQL Database"
+      - name: "Azure Cosmos DB"
+      - name: "Google Cloud SQL"
+      - name: "Google Bigtable"
+
+  - name: "DBMS"
+    variants:
+      - name: "MySQL DBMS"
+        allowed_hosts:
+          - "all"
+      - name: "MongoDB DBMS"
+        allowed_hosts:
+          - "all"
+
+  - name: "IaaS"
+    variants:
+      - name: "Amazon EC2"
+      - name: "Azure Virtual Machines"
+      - name: "Google Compute Engine"
+
+  - name: "Message-Broker"
+    variants:
+      - name: "RabbitMQ"
+        allowed_hosts:
+          - "all"
+      - name: "Mosquitto"
+        allowed_hosts:
+          - "all"
+
+  - name: "Messaging-aaS"
+    variants:
+      - name: "Amazon MQ"
+      - name: "Azure Service Bus"
+      - name: "Google Cloud Pub/Sub"
+
+  - name: "OS"
+    variants:
+      - name: "Ubuntu"
+        allowed_hosts:
+          - "all"
+      # - name: "CentOS"
+      #   allowed_hosts:
+      #     - "all"
+
+  - name: "Queue/Topic"
+    variants:
+      - name: "Queue"
+        allowed_hosts:
+          - "RabbitMQ"
+          - "Amazon MQ"
+          - "Azure Service Bus"
+          - "Google Cloud Pub/Sub"
+      - name: "Topic"
+        allowed_hosts:
+          - "RabbitMQ"
+          - "Mosquitto"
+          - "Amazon MQ"
+          - "Azure Service Bus"
+          - "Google Cloud Pub/Sub"
+
+  - name: "Storage"
+    variants:
+      - name: "MinIO"
+        allowed_hosts:
+          - "Ubuntu"
+          - "CentOS"
+      - name: "Amazon S3 Instance"
+        allowed_hosts:
+          - "Amazon S3"
+      - name: "Azure Blob Storage Instance"
+        allowed_hosts:
+          - "Azure Blob Storage"
+      - name: "Google Cloud Storage Instance"
+        allowed_hosts:
+          - "Google Cloud Storage"
+
+  - name: "Storage-aaS"
+    variants:
+      - name: "Amazon S3"
+      - name: "Azure Blob Storage"
+      - name: "Google Cloud Storage"
+
+  - name: "Webserver"
+    variants:
+      - name: "Apache HTTP Server"
+        allowed_hosts:
+          - "all"
+      - name: "NGINX"
+        allowed_hosts:
+          - "all"
+      - name: "Node.js"
+        allowed_hosts:
+          - "all"
+      - name: "Apache Tomcat"
+        allowed_hosts:
+          - "all"
+      - name: "JBoss"
+        allowed_hosts:
+          - "all"
+      - name: "IIS"
+        allowed_hosts:
+          - "all"
+
+  - name: "WebApp-aaS"
+    variants:
+      - name: "Amazon Elastic Beanstalk"
+      - name: "Azure App Service"
+      - name: "Google App Engine"
+      - name: "Kubernetes"
+      - name: "Docker Engine"

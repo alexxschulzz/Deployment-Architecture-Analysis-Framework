@@ -1,0 +1,102 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture26
+  stacks:
+  - tier: WebApp_stack
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Java
+      id: 5496477e-e910
+    - type: Webserver
+      variant: Apache Tomcat
+      id: 66d0dae3-f0df
+    - type: OS
+      variant: Ubuntu
+      id: 7418b98d-3505
+    - type: IaaS
+      variant: Google Compute Engine
+      id: 2584244b-986b
+    relationships:
+    - source: 5496477e-e910
+      target: 66d0dae3-f0df
+      type: hosted_on
+    - source: 66d0dae3-f0df
+      target: 7418b98d-3505
+      type: hosted_on
+    - source: 7418b98d-3505
+      target: 2584244b-986b
+      type: hosted_on
+  - tier: Broker_stack
+    name: Broker_IaaS
+    components:
+    - type: Queue/Topic
+      variant: Topic
+      id: dff07004-a806
+    - type: Message-Broker
+      variant: RabbitMQ
+      id: d544b258-0eba
+    - type: OS
+      variant: Ubuntu
+      id: 943bd4ee-ca6c
+    - type: IaaS
+      variant: Google Compute Engine
+      id: 22b10582-366f
+    relationships:
+    - source: dff07004-a806
+      target: d544b258-0eba
+      type: hosted_on
+    - source: d544b258-0eba
+      target: 943bd4ee-ca6c
+      type: hosted_on
+    - source: 943bd4ee-ca6c
+      target: 22b10582-366f
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: Webserver
+    components:
+    - type: WebApp
+      variant: Java
+      id: 82915601-3b4a
+    - type: Webserver
+      variant: JBoss
+      id: 2d9c9150-c5e8
+    - type: OS
+      variant: Ubuntu
+      id: 13153e86-8be1
+    - type: IaaS
+      variant: Google Compute Engine
+      id: f1cd3e08-cdde
+    relationships:
+    - source: 82915601-3b4a
+      target: 2d9c9150-c5e8
+      type: hosted_on
+    - source: 2d9c9150-c5e8
+      target: 13153e86-8be1
+      type: hosted_on
+    - source: 13153e86-8be1
+      target: f1cd3e08-cdde
+      type: hosted_on
+  - tier: Storage_stack
+    name: Storage_aaS
+    components:
+    - type: Storage
+      variant: Google Cloud Storage Instance
+      id: aec15088-3051
+    - type: Storage-aaS
+      variant: Google Cloud Storage
+      id: 2097ba56-e792
+    relationships:
+    - source: aec15088-3051
+      target: 2097ba56-e792
+      type: hosted_on
+  relationships:
+  - source: 5496477e-e910
+    target: dff07004-a806
+    relationship: connects_to
+  - source: 82915601-3b4a
+    target: dff07004-a806
+    relationship: connects_to
+  - source: 82915601-3b4a
+    target: aec15088-3051
+    relationship: connects_to

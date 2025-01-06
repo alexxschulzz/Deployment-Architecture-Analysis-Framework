@@ -1,0 +1,4987 @@
+{
+    "total_invalid_architectures": 50,
+    "invalid_architectures": {
+        "CloudArchitecture_phase2_3-2": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "C#",
+                        "Google App Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Redis",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Redis",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: C# --'hosted_on'--> Google App Engine",
+                "Unknown Graph 2: C# --'connects_to'--> Redis --'hosted_on'--> Ubuntu"
+            ]
+        },
+        "CloudArchitecture_phase2_3-3": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Python",
+                        "Apache HTTP Server",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Apache HTTP Server",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Redis",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Redis",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Python --'hosted_on'--> Apache HTTP Server --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: Python --'hosted_on'--> Docker Engine",
+                "Unknown Graph 3: Python --'connects_to'--> Topic",
+                "Unknown Graph 4: Python --'connects_to'--> Redis --'hosted_on'--> Ubuntu"
+            ]
+        },
+        "CloudArchitecture_phase2_3-4": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Python",
+                        "Apache HTTP Server",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Apache HTTP Server",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Redis",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Redis",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Python --'hosted_on'--> Apache HTTP Server --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: Python --'connects_to'--> Topic",
+                "Unknown Graph 3: Go --'hosted_on'--> Kubernetes",
+                "Unknown Graph 4: Go --'connects_to'--> Topic",
+                "Unknown Graph 5: Go --'connects_to'--> Redis --'hosted_on'--> Ubuntu"
+            ]
+        },
+        "CloudArchitecture_phase2_3-5": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Python",
+                        "NGINX",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "NGINX",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Redis",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Redis",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Python --'hosted_on'--> NGINX --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: Python --'connects_to'--> Queue",
+                "Unknown Graph 3: C# --'hosted_on'--> Docker Engine",
+                "Unknown Graph 4: C# --'connects_to'--> Queue",
+                "Unknown Graph 5: C# --'connects_to'--> Redis --'hosted_on'--> Ubuntu"
+            ]
+        },
+        "CloudArchitecture_phase2_3-6": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Go",
+                        "Apache HTTP Server",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Apache HTTP Server",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Amazon Elastic Beanstalk",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Redis",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Redis",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Go --'hosted_on'--> Apache HTTP Server --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: Go --'hosted_on'--> Amazon Elastic Beanstalk",
+                "Unknown Graph 3: Go --'connects_to'--> Topic",
+                "Unknown Graph 4: Go --'connects_to'--> Redis --'hosted_on'--> Ubuntu"
+            ]
+        },
+        "CloudArchitecture_phase2_3-7": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Amazon ElastiCache",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Amazon ElastiCache Instance",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Amazon ElastiCache",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Amazon ElastiCache Instance",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Python",
+                        "Apache HTTP Server",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Apache HTTP Server",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Amazon ElastiCache Instance",
+                        "Amazon ElastiCache",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Amazon ElastiCache Instance",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Python --'hosted_on'--> Apache HTTP Server --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: Python --'hosted_on'--> Kubernetes",
+                "Unknown Graph 3: Python --'connects_to'--> Queue",
+                "Unknown Graph 4: Python --'connects_to'--> Amazon ElastiCache Instance --'hosted_on'--> Amazon ElastiCache"
+            ]
+        },
+        "CloudArchitecture_phase2_3-8": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis Instance",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis Instance",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Python",
+                        "NGINX",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "NGINX",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Azure App Service",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Azure Cache for Redis Instance",
+                        "Azure Cache for Redis",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Azure Cache for Redis Instance",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Python --'hosted_on'--> NGINX --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: Python --'connects_to'--> Topic",
+                "Unknown Graph 3: Go --'hosted_on'--> Azure App Service",
+                "Unknown Graph 4: Go --'connects_to'--> Topic",
+                "Unknown Graph 5: Go --'connects_to'--> Azure Cache for Redis Instance --'hosted_on'--> Azure Cache for Redis"
+            ]
+        },
+        "CloudArchitecture_phase2_3-9": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Amazon ElastiCache",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Amazon ElastiCache Instance",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "IIS",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Amazon ElastiCache",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Amazon ElastiCache Instance",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "IIS",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "C#",
+                        "IIS",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "IIS",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Amazon Elastic Beanstalk",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Amazon ElastiCache Instance",
+                        "Amazon ElastiCache",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Amazon ElastiCache Instance",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: C# --'hosted_on'--> IIS --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: C# --'connects_to'--> Topic",
+                "Unknown Graph 3: Python --'hosted_on'--> Amazon Elastic Beanstalk",
+                "Unknown Graph 4: Python --'connects_to'--> Topic",
+                "Unknown Graph 5: Python --'connects_to'--> Amazon ElastiCache Instance --'hosted_on'--> Amazon ElastiCache"
+            ]
+        },
+        "CloudArchitecture_phase2_3-10": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis Instance",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "IIS",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis Instance",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "IIS",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "C#",
+                        "IIS",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "IIS",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Azure App Service",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Azure Cache for Redis Instance",
+                        "Azure Cache for Redis",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Azure Cache for Redis Instance",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: C# --'hosted_on'--> IIS --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: C# --'connects_to'--> Topic",
+                "Unknown Graph 3: Python --'hosted_on'--> Azure App Service",
+                "Unknown Graph 4: Python --'connects_to'--> Topic",
+                "Unknown Graph 5: Python --'connects_to'--> Azure Cache for Redis Instance --'hosted_on'--> Azure Cache for Redis"
+            ]
+        },
+        "CloudArchitecture_phase2_3-11": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis Instance",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis Instance",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Go",
+                        "NGINX",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "NGINX",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Azure Cache for Redis Instance",
+                        "Azure Cache for Redis",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Azure Cache for Redis Instance",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Go --'hosted_on'--> NGINX --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: Go --'connects_to'--> Topic",
+                "Unknown Graph 3: Python --'hosted_on'--> Kubernetes",
+                "Unknown Graph 4: Python --'connects_to'--> Topic",
+                "Unknown Graph 5: Python --'connects_to'--> Azure Cache for Redis Instance --'hosted_on'--> Azure Cache for Redis"
+            ]
+        },
+        "CloudArchitecture_phase2_3-12": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "IIS",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "IIS",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Python",
+                        "NGINX",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "NGINX",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "IIS",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "IIS",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Redis",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Redis",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Python --'hosted_on'--> NGINX --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: Python --'connects_to'--> Topic",
+                "Unknown Graph 3: C# --'hosted_on'--> IIS --'hosted_on'--> Ubuntu",
+                "Unknown Graph 4: C# --'connects_to'--> Topic",
+                "Unknown Graph 5: C# --'connects_to'--> Redis --'hosted_on'--> Ubuntu"
+            ]
+        },
+        "CloudArchitecture_phase2_3-13": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "IIS",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "IIS",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "C#",
+                        "IIS",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "IIS",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "NGINX",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "NGINX",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Redis",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Redis",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: C# --'hosted_on'--> IIS --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: C# --'connects_to'--> Queue",
+                "Unknown Graph 3: Python --'hosted_on'--> NGINX --'hosted_on'--> Ubuntu",
+                "Unknown Graph 4: Python --'connects_to'--> Queue",
+                "Unknown Graph 5: Python --'connects_to'--> Redis --'hosted_on'--> Ubuntu"
+            ]
+        },
+        "CloudArchitecture_phase2_3-14": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis Instance",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis Instance",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Python",
+                        "Apache HTTP Server",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Apache HTTP Server",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Apache HTTP Server",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Apache HTTP Server",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Azure Cache for Redis Instance",
+                        "Azure Cache for Redis",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Azure Cache for Redis Instance",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Python --'hosted_on'--> Apache HTTP Server --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: Python --'connects_to'--> Queue",
+                "Unknown Graph 3: Go --'hosted_on'--> Apache HTTP Server --'hosted_on'--> Ubuntu",
+                "Unknown Graph 4: Go --'connects_to'--> Queue",
+                "Unknown Graph 5: Go --'connects_to'--> Azure Cache for Redis Instance --'hosted_on'--> Azure Cache for Redis"
+            ]
+        },
+        "CloudArchitecture_phase2_3-15": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis Instance",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "IIS",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis Instance",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "IIS",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Python",
+                        "Apache HTTP Server",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Apache HTTP Server",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "IIS",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "IIS",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Azure Cache for Redis Instance",
+                        "Azure Cache for Redis",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Azure Cache for Redis Instance",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Python --'hosted_on'--> Apache HTTP Server --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: Python --'connects_to'--> Topic",
+                "Unknown Graph 3: C# --'hosted_on'--> IIS --'hosted_on'--> Ubuntu",
+                "Unknown Graph 4: C# --'connects_to'--> Topic",
+                "Unknown Graph 5: C# --'connects_to'--> Azure Cache for Redis Instance --'hosted_on'--> Azure Cache for Redis"
+            ]
+        },
+        "CloudArchitecture_phase2_3-16": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Amazon ElastiCache",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Amazon ElastiCache Instance",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Amazon ElastiCache",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Amazon ElastiCache Instance",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Python",
+                        "NGINX",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "NGINX",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Apache HTTP Server",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Apache HTTP Server",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Amazon ElastiCache Instance",
+                        "Amazon ElastiCache",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Amazon ElastiCache Instance",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Python --'hosted_on'--> NGINX --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: Python --'connects_to'--> Queue",
+                "Unknown Graph 3: Go --'hosted_on'--> Apache HTTP Server --'hosted_on'--> Ubuntu",
+                "Unknown Graph 4: Go --'connects_to'--> Queue",
+                "Unknown Graph 5: Go --'connects_to'--> Amazon ElastiCache Instance --'hosted_on'--> Amazon ElastiCache"
+            ]
+        },
+        "CloudArchitecture_phase2_3-17": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Google Cloud Memorystore Instance",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Google Cloud Memorystore",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "IIS",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Google Cloud Memorystore Instance",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Google Cloud Memorystore",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "IIS",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "C#",
+                        "IIS",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "IIS",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "NGINX",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "NGINX",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Google Cloud Memorystore Instance",
+                        "Google Cloud Memorystore",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Google Cloud Memorystore Instance",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: C# --'hosted_on'--> IIS --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: C# --'connects_to'--> Topic",
+                "Unknown Graph 3: Python --'hosted_on'--> NGINX --'hosted_on'--> Ubuntu",
+                "Unknown Graph 4: Python --'connects_to'--> Topic",
+                "Unknown Graph 5: Python --'connects_to'--> Google Cloud Memorystore Instance --'hosted_on'--> Google Cloud Memorystore"
+            ]
+        },
+        "CloudArchitecture_phase2_3-18": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis Instance",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis Instance",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Go",
+                        "NGINX",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "NGINX",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Apache HTTP Server",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Apache HTTP Server",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Azure Cache for Redis Instance",
+                        "Azure Cache for Redis",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Azure Cache for Redis Instance",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Go --'hosted_on'--> NGINX --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: Go --'hosted_on'--> Apache HTTP Server --'hosted_on'--> Ubuntu",
+                "Unknown Graph 3: Go --'connects_to'--> Queue",
+                "Unknown Graph 4: Go --'connects_to'--> Azure Cache for Redis Instance --'hosted_on'--> Azure Cache for Redis"
+            ]
+        },
+        "CloudArchitecture_phase2_3-19": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Python",
+                        "NGINX",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "NGINX",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Redis",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Redis",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Python --'hosted_on'--> NGINX --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: Python --'connects_to'--> Queue",
+                "Unknown Graph 3: C# --'hosted_on'--> Kubernetes",
+                "Unknown Graph 4: C# --'connects_to'--> Queue",
+                "Unknown Graph 5: C# --'connects_to'--> Redis --'hosted_on'--> Ubuntu"
+            ]
+        },
+        "CloudArchitecture_phase2_3-20": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Go",
+                        "NGINX",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "NGINX",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Redis",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Redis",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Go --'hosted_on'--> NGINX --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: Go --'hosted_on'--> Kubernetes",
+                "Unknown Graph 3: Go --'connects_to'--> Topic",
+                "Unknown Graph 4: Go --'connects_to'--> Redis --'hosted_on'--> Ubuntu"
+            ]
+        },
+        "CloudArchitecture_phase2_3-21": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis Instance",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "IIS",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis Instance",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "IIS",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "C#",
+                        "IIS",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "IIS",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Azure App Service",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Azure Cache for Redis Instance",
+                        "Azure Cache for Redis",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Azure Cache for Redis Instance",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: C# --'hosted_on'--> IIS --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: C# --'connects_to'--> Topic",
+                "Unknown Graph 3: Go --'hosted_on'--> Azure App Service",
+                "Unknown Graph 4: Go --'connects_to'--> Topic",
+                "Unknown Graph 5: Go --'connects_to'--> Azure Cache for Redis Instance --'hosted_on'--> Azure Cache for Redis"
+            ]
+        },
+        "CloudArchitecture_phase2_3-22": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "C#",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Apache HTTP Server",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Apache HTTP Server",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Redis",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Redis",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: C# --'hosted_on'--> Kubernetes",
+                "Unknown Graph 2: C# --'connects_to'--> Topic",
+                "Unknown Graph 3: Python --'hosted_on'--> Apache HTTP Server --'hosted_on'--> Ubuntu",
+                "Unknown Graph 4: Python --'connects_to'--> Topic",
+                "Unknown Graph 5: Python --'connects_to'--> Redis --'hosted_on'--> Ubuntu"
+            ]
+        },
+        "CloudArchitecture_phase2_3-23": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Go",
+                        "Google App Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "NGINX",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "NGINX",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Redis",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Redis",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Go --'hosted_on'--> Google App Engine",
+                "Unknown Graph 2: Go --'hosted_on'--> NGINX --'hosted_on'--> Ubuntu",
+                "Unknown Graph 3: Go --'connects_to'--> Queue",
+                "Unknown Graph 4: Go --'connects_to'--> Redis --'hosted_on'--> Ubuntu"
+            ]
+        },
+        "CloudArchitecture_phase2_3-24": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Go",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "NGINX",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "NGINX",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Redis",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Redis",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Go --'hosted_on'--> Docker Engine",
+                "Unknown Graph 2: Go --'hosted_on'--> NGINX --'hosted_on'--> Ubuntu",
+                "Unknown Graph 3: Go --'connects_to'--> Topic",
+                "Unknown Graph 4: Go --'connects_to'--> Redis --'hosted_on'--> Ubuntu"
+            ]
+        },
+        "CloudArchitecture_phase2_3-25": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Python",
+                        "Amazon Elastic Beanstalk",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Redis",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Redis",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Python --'hosted_on'--> Amazon Elastic Beanstalk",
+                "Unknown Graph 2: Python --'connects_to'--> Topic",
+                "Unknown Graph 3: C# --'hosted_on'--> Kubernetes",
+                "Unknown Graph 4: C# --'connects_to'--> Topic",
+                "Unknown Graph 5: C# --'connects_to'--> Redis --'hosted_on'--> Ubuntu"
+            ]
+        },
+        "CloudArchitecture_phase2_3-26": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Python",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Azure App Service",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Redis",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Redis",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Python --'hosted_on'--> Kubernetes",
+                "Unknown Graph 2: Python --'connects_to'--> Queue",
+                "Unknown Graph 3: C# --'hosted_on'--> Azure App Service",
+                "Unknown Graph 4: C# --'connects_to'--> Queue",
+                "Unknown Graph 5: C# --'connects_to'--> Redis --'hosted_on'--> Ubuntu"
+            ]
+        },
+        "CloudArchitecture_phase2_3-27": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Python",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Redis",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Redis",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Python --'hosted_on'--> Kubernetes",
+                "Unknown Graph 2: Python --'connects_to'--> Queue",
+                "Unknown Graph 3: C# --'hosted_on'--> Kubernetes",
+                "Unknown Graph 4: C# --'connects_to'--> Queue",
+                "Unknown Graph 5: C# --'connects_to'--> Redis --'hosted_on'--> Ubuntu"
+            ]
+        },
+        "CloudArchitecture_phase2_3-28": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Python",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Redis",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Redis",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Python --'hosted_on'--> Kubernetes",
+                "Unknown Graph 2: Python --'connects_to'--> Topic",
+                "Unknown Graph 3: Python --'connects_to'--> Redis --'hosted_on'--> Ubuntu"
+            ]
+        },
+        "CloudArchitecture_phase2_3-29": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "C#",
+                        "Azure App Service",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Redis",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Redis",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: C# --'hosted_on'--> Azure App Service",
+                "Unknown Graph 2: C# --'connects_to'--> Queue",
+                "Unknown Graph 3: Python --'hosted_on'--> Kubernetes",
+                "Unknown Graph 4: Python --'connects_to'--> Queue",
+                "Unknown Graph 5: Python --'connects_to'--> Redis --'hosted_on'--> Ubuntu"
+            ]
+        },
+        "CloudArchitecture_phase2_3-30": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "C#",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Redis",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Redis",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: C# --'hosted_on'--> Kubernetes",
+                "Unknown Graph 2: C# --'connects_to'--> Topic",
+                "Unknown Graph 3: Python --'hosted_on'--> Kubernetes",
+                "Unknown Graph 4: Python --'connects_to'--> Topic",
+                "Unknown Graph 5: Python --'connects_to'--> Redis --'hosted_on'--> Ubuntu"
+            ]
+        },
+        "CloudArchitecture_phase2_3-31": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Go",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Redis",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Redis",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Go --'hosted_on'--> Docker Engine",
+                "Unknown Graph 2: Go --'connects_to'--> Topic",
+                "Unknown Graph 3: Python --'hosted_on'--> Docker Engine",
+                "Unknown Graph 4: Python --'connects_to'--> Topic",
+                "Unknown Graph 5: Python --'connects_to'--> Redis --'hosted_on'--> Ubuntu"
+            ]
+        },
+        "CloudArchitecture_phase2_3-32": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Amazon ElastiCache",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Amazon ElastiCache Instance",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Amazon ElastiCache",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Amazon ElastiCache Instance",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Python",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Amazon ElastiCache Instance",
+                        "Amazon ElastiCache",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Amazon ElastiCache Instance",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Python --'hosted_on'--> Docker Engine",
+                "Unknown Graph 2: Python --'connects_to'--> Topic",
+                "Unknown Graph 3: C# --'hosted_on'--> Kubernetes",
+                "Unknown Graph 4: C# --'connects_to'--> Topic",
+                "Unknown Graph 5: C# --'connects_to'--> Amazon ElastiCache Instance --'hosted_on'--> Amazon ElastiCache"
+            ]
+        },
+        "CloudArchitecture_phase2_3-33": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Google Cloud Memorystore Instance",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Google Cloud Memorystore",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Google Cloud Memorystore Instance",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Google Cloud Memorystore",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "C#",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Google App Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Google Cloud Memorystore Instance",
+                        "Google Cloud Memorystore",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Google Cloud Memorystore Instance",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: C# --'hosted_on'--> Kubernetes",
+                "Unknown Graph 2: C# --'hosted_on'--> Google App Engine",
+                "Unknown Graph 3: C# --'connects_to'--> Queue",
+                "Unknown Graph 4: C# --'connects_to'--> Google Cloud Memorystore Instance --'hosted_on'--> Google Cloud Memorystore"
+            ]
+        },
+        "CloudArchitecture_phase2_3-34": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Amazon ElastiCache",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Amazon ElastiCache Instance",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Amazon ElastiCache",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Amazon ElastiCache Instance",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "C#",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Amazon ElastiCache Instance",
+                        "Amazon ElastiCache",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Amazon ElastiCache Instance",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: C# --'hosted_on'--> Kubernetes",
+                "Unknown Graph 2: C# --'connects_to'--> Topic",
+                "Unknown Graph 3: Python --'hosted_on'--> Docker Engine",
+                "Unknown Graph 4: Python --'connects_to'--> Topic",
+                "Unknown Graph 5: Python --'connects_to'--> Amazon ElastiCache Instance --'hosted_on'--> Amazon ElastiCache"
+            ]
+        },
+        "CloudArchitecture_phase2_3-35": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis Instance",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis Instance",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Go",
+                        "Azure App Service",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Azure App Service",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Azure Cache for Redis Instance",
+                        "Azure Cache for Redis",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Azure Cache for Redis Instance",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Go --'hosted_on'--> Azure App Service",
+                "Unknown Graph 2: Go --'connects_to'--> Topic",
+                "Unknown Graph 3: Python --'hosted_on'--> Azure App Service",
+                "Unknown Graph 4: Python --'connects_to'--> Topic",
+                "Unknown Graph 5: Python --'connects_to'--> Azure Cache for Redis Instance --'hosted_on'--> Azure Cache for Redis"
+            ]
+        },
+        "CloudArchitecture_phase2_3-36": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Go",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Apache HTTP Server",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Apache HTTP Server",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Redis",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Redis",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Go --'hosted_on'--> Docker Engine",
+                "Unknown Graph 2: Go --'hosted_on'--> Apache HTTP Server --'hosted_on'--> Ubuntu",
+                "Unknown Graph 3: Go --'connects_to'--> Topic",
+                "Unknown Graph 4: Go --'connects_to'--> Redis --'hosted_on'--> Ubuntu"
+            ]
+        },
+        "CloudArchitecture_phase2_3-37": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis Instance",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis Instance",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Go",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "NGINX",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "NGINX",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Azure Cache for Redis Instance",
+                        "Azure Cache for Redis",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Azure Cache for Redis Instance",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Go --'hosted_on'--> Docker Engine",
+                "Unknown Graph 2: Go --'connects_to'--> Topic",
+                "Unknown Graph 3: Python --'hosted_on'--> NGINX --'hosted_on'--> Ubuntu",
+                "Unknown Graph 4: Python --'connects_to'--> Topic",
+                "Unknown Graph 5: Python --'connects_to'--> Azure Cache for Redis Instance --'hosted_on'--> Azure Cache for Redis"
+            ]
+        },
+        "CloudArchitecture_phase2_3-38": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Python",
+                        "Amazon Elastic Beanstalk",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Redis",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Redis",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Python --'hosted_on'--> Amazon Elastic Beanstalk",
+                "Unknown Graph 2: Python --'hosted_on'--> Kubernetes",
+                "Unknown Graph 3: Python --'connects_to'--> Topic",
+                "Unknown Graph 4: Python --'connects_to'--> Redis --'hosted_on'--> Ubuntu"
+            ]
+        },
+        "CloudArchitecture_phase2_3-39": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Go",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Redis",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Redis",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Go --'hosted_on'--> Kubernetes",
+                "Unknown Graph 2: Go --'connects_to'--> Queue",
+                "Unknown Graph 3: C# --'hosted_on'--> Kubernetes",
+                "Unknown Graph 4: C# --'connects_to'--> Queue",
+                "Unknown Graph 5: C# --'connects_to'--> Redis --'hosted_on'--> Ubuntu"
+            ]
+        },
+        "CloudArchitecture_phase2_3-40": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Go",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Redis",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Redis",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Go --'hosted_on'--> Docker Engine",
+                "Unknown Graph 2: Go --'connects_to'--> Queue",
+                "Unknown Graph 3: Python --'hosted_on'--> Docker Engine",
+                "Unknown Graph 4: Python --'connects_to'--> Queue",
+                "Unknown Graph 5: Python --'connects_to'--> Redis --'hosted_on'--> Ubuntu"
+            ]
+        },
+        "CloudArchitecture_phase2_3-41": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Go",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Redis",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Topic",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Redis",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Go --'hosted_on'--> Docker Engine",
+                "Unknown Graph 2: Go --'connects_to'--> Topic",
+                "Unknown Graph 3: C# --'hosted_on'--> Docker Engine",
+                "Unknown Graph 4: C# --'connects_to'--> Topic",
+                "Unknown Graph 5: C# --'connects_to'--> Redis --'hosted_on'--> Ubuntu"
+            ]
+        },
+        "CloudArchitecture_phase2_3-42": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis Instance",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis Instance",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Python",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Azure Cache for Redis Instance",
+                        "Azure Cache for Redis",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Azure Cache for Redis Instance",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Python --'hosted_on'--> Kubernetes",
+                "Unknown Graph 2: Python --'connects_to'--> Queue",
+                "Unknown Graph 3: Go --'hosted_on'--> Docker Engine",
+                "Unknown Graph 4: Go --'connects_to'--> Queue",
+                "Unknown Graph 5: Go --'connects_to'--> Azure Cache for Redis Instance --'hosted_on'--> Azure Cache for Redis"
+            ]
+        },
+        "CloudArchitecture_phase2_3-43": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis Instance",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Azure Cache for Redis Instance",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "C#",
+                        "Azure App Service",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Azure Cache for Redis Instance",
+                        "Azure Cache for Redis",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Azure Cache for Redis Instance",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: C# --'hosted_on'--> Azure App Service",
+                "Unknown Graph 2: C# --'hosted_on'--> Docker Engine",
+                "Unknown Graph 3: C# --'connects_to'--> Queue",
+                "Unknown Graph 4: C# --'connects_to'--> Azure Cache for Redis Instance --'hosted_on'--> Azure Cache for Redis"
+            ]
+        },
+        "CloudArchitecture_phase2_3-44": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Google Cloud Memorystore Instance",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Google Cloud Memorystore",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "C#",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Google Cloud Memorystore Instance",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Google Cloud Memorystore",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Go",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Kubernetes",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Google Cloud Memorystore Instance",
+                        "Google Cloud Memorystore",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Queue",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "C#",
+                        "Google Cloud Memorystore Instance",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Go --'hosted_on'--> Docker Engine",
+                "Unknown Graph 2: Go --'connects_to'--> Queue",
+                "Unknown Graph 3: C# --'hosted_on'--> Kubernetes",
+                "Unknown Graph 4: C# --'connects_to'--> Queue",
+                "Unknown Graph 5: C# --'connects_to'--> Google Cloud Memorystore Instance --'hosted_on'--> Google Cloud Memorystore"
+            ]
+        },
+        "CloudArchitecture_phase2_3-45": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Python",
+                        "Apache HTTP Server",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Apache HTTP Server",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Apache HTTP Server",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Apache HTTP Server",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Redis",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Go",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Redis",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Python --'hosted_on'--> Apache HTTP Server --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: Python --'connects_to'--> Go --'hosted_on'--> Apache HTTP Server Go --'connects_to'--> Redis --'hosted_on'--> Ubuntu"
+            ]
+        },
+        "CloudArchitecture_phase2_3-46": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Amazon ElastiCache",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Amazon ElastiCache Instance",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Apache HTTP Server",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Amazon ElastiCache",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Amazon ElastiCache Instance",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Go",
+                        "NGINX",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "NGINX",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Apache HTTP Server",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Apache HTTP Server",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Amazon ElastiCache Instance",
+                        "Amazon ElastiCache",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Python",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Amazon ElastiCache Instance",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Go --'hosted_on'--> NGINX --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: Go --'connects_to'--> Python --'hosted_on'--> Apache HTTP Server --'hosted_on'--> Ubuntu Python --'connects_to'--> Amazon ElastiCache Instance --'hosted_on'--> Amazon ElastiCache"
+            ]
+        },
+        "CloudArchitecture_phase2_3-47": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Python",
+                        "NGINX",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "NGINX",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Azure App Service",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Redis",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Go",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Redis",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Python --'hosted_on'--> NGINX --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: Python --'connects_to'--> Go --'hosted_on'--> Azure App Service Go --'connects_to'--> Redis --'hosted_on'--> Ubuntu"
+            ]
+        },
+        "CloudArchitecture_phase2_3-48": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Go",
+                        "Docker Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "NGINX",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "NGINX",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Redis",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Python",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Redis",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Go --'hosted_on'--> Docker Engine",
+                "Unknown Graph 2: Go --'connects_to'--> Python --'hosted_on'--> NGINX --'hosted_on'--> Ubuntu Python --'connects_to'--> Redis --'hosted_on'--> Ubuntu"
+            ]
+        },
+        "CloudArchitecture_phase2_3-49": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Google Cloud Memorystore Instance",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Google Cloud Memorystore",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Google Cloud Memorystore Instance",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Python",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Google Cloud Memorystore",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Python",
+                        "Google App Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "NGINX",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "NGINX",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Google Cloud Memorystore Instance",
+                        "Google Cloud Memorystore",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Python",
+                        "Go",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Google Cloud Memorystore Instance",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Python --'hosted_on'--> Google App Engine",
+                "Unknown Graph 2: Python --'connects_to'--> Go --'hosted_on'--> NGINX --'hosted_on'--> Ubuntu Go --'connects_to'--> Google Cloud Memorystore Instance --'hosted_on'--> Google Cloud Memorystore"
+            ]
+        },
+        "CloudArchitecture_phase2_3-50": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Google Cloud Memorystore Instance",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Google Cloud Memorystore",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Google Cloud Memorystore Instance",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Google Cloud Memorystore",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Go",
+                        "Google App Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Google App Engine",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Google Cloud Memorystore Instance",
+                        "Google Cloud Memorystore",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Go",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Google Cloud Memorystore Instance",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Go --'hosted_on'--> Google App Engine",
+                "Unknown Graph 2: Go --'connects_to'--> Go",
+                "Unknown Graph 3: Go --'connects_to'--> Google Cloud Memorystore Instance --'hosted_on'--> Google Cloud Memorystore"
+            ]
+        },
+        "CloudArchitecture_phase2_3-1": {
+            "components": {
+                "occurence_per_architecture": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    }
+                ],
+                "total_occurence": [
+                    {
+                        "component": "Redis",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "Go",
+                        "percentage": 0.0
+                    },
+                    {
+                        "component": "NGINX",
+                        "percentage": 0.0
+                    }
+                ]
+            },
+            "relationships": [
+                {
+                    "relationship": [
+                        "Go",
+                        "NGINX",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "NGINX",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Redis",
+                        "Ubuntu",
+                        "hosted_on"
+                    ],
+                    "percentage": 0.0
+                },
+                {
+                    "relationship": [
+                        "Go",
+                        "Redis",
+                        "connects_to"
+                    ],
+                    "percentage": 0.0
+                }
+            ],
+            "unknown_subgraphs": [
+                "Unknown Graph 1: Go --'hosted_on'--> NGINX --'hosted_on'--> Ubuntu",
+                "Unknown Graph 2: Go --'connects_to'--> Redis --'hosted_on'--> Ubuntu"
+            ]
+        }
+    }
+}

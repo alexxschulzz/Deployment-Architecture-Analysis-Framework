@@ -1,0 +1,56 @@
+# architecture style: ASYaml
+architecture:
+- name: CloudArchitecture55
+  stacks:
+  - tier: WebApp_stack
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: JavaScript
+      id: 28629e32-0c5a
+    - type: WebApp-aaS
+      variant: Docker Engine
+      id: 4e1e5078-42e3
+    relationships:
+    - source: 28629e32-0c5a
+      target: 4e1e5078-42e3
+      type: hosted_on
+  - tier: WebApp_stack-2
+    name: WebApp_aaS
+    components:
+    - type: WebApp
+      variant: Java
+      id: 7872ac9f-c943
+    - type: WebApp-aaS
+      variant: Docker Engine
+      id: 003c7ddc-0283
+    relationships:
+    - source: 7872ac9f-c943
+      target: 003c7ddc-0283
+      type: hosted_on
+  - tier: Storage_stack
+    name: Storage_IaaS
+    components:
+    - type: Storage
+      variant: MinIO
+      id: 44a848ca-aad7
+    - type: OS
+      variant: Ubuntu
+      id: 3b50f69a-69c4
+    - type: IaaS
+      variant: Azure Virtual Machines
+      id: 205cbb3d-e2fe
+    relationships:
+    - source: 44a848ca-aad7
+      target: 3b50f69a-69c4
+      type: hosted_on
+    - source: 3b50f69a-69c4
+      target: 205cbb3d-e2fe
+      type: hosted_on
+  relationships:
+  - source: 28629e32-0c5a
+    target: 7872ac9f-c943
+    relationship: connects_to
+  - source: 7872ac9f-c943
+    target: 44a848ca-aad7
+    relationship: connects_to
