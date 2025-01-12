@@ -1,0 +1,259 @@
+version: '3.8'
+
+ #--------------------------- Message Broker ----------------------------
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: user
+      RABBITMQ_DEFAULT_PASS: password
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    networks:
+      - microservices
+
+  mosquitto:    
+    build: Resources\MessageBroker\Mosquitto
+    image: uwebreitenbuecher/mosquitto
+    container_name: mosquitto
+    restart: unless-stopped
+    ports:
+      - "1883:1883" 
+      - "9001:9001"
+    volumes:
+      - mosquitto_data:/mosquitto/data
+      - mosquitto_log:/mosquitto/log
+    networks:
+      - microservices
+
+ #--------------------------- MinIO ----------------------------
+
+  minioArchitectureFiles:
+    image: minio/minio
+    ports:
+      - "9000:9000"
+      - '9090:9090'
+    volumes:
+      - minioArchitecturesData:/data
+    environment:
+      - "MINIO_ACCESS_KEY=user"
+      - "MINIO_SECRET_KEY=password"
+    command: server --console-address ":9090" /data
+    restart: always
+    networks:
+      - microservices
+
+  minioInput:
+    image: minio/minio
+    ports:
+      - "9002:9000"
+      - '9092:9092'
+    volumes:
+      - minioInputData:/data
+    environment:
+      - "MINIO_ACCESS_KEY=user"
+      - "MINIO_SECRET_KEY=password"
+    command: server --console-address ":9092" /data
+    restart: always
+    networks:
+      - microservices
+
+ #--------------------------- MySQL ----------------------------
+
+  mysqldbArchitectures:
+    platform: linux/x86_64
+    image: mysql:5.7   
+    container_name: mysqldbArchitectures
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: architectureFilesDB
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      TZ: Europe/Berlin
+    ports:
+      - "3306:3306"
+    networks:
+      - microservices  
+    volumes:
+      - mysqlVolumeArchitectures:/var/lib/mysql
+
+  phpmyadminArchitectures:
+    image: phpmyadmin/phpmyadmin  
+    container_name: phpmyadminArchitectures
+    environment:
+      PMA_HOST: mysqldbArchitectures
+    restart: always
+    ports:
+      - 8081:80
+    networks:
+      - microservices
+ 
+ #--------------------------- Microservices ----------------------------
+
+  initialarchitecturefileprocessing-service:
+    build: Resources/Microservices/initialArchitectureFileProcessing/
+    ports:
+      - "10000:10000"
+    restart: always
+    container_name: initialarchitecturefileprocessing-service
+    depends_on:
+      - mysqldbArchitectures
+      - minioArchitectureFiles
+      - minioInput
+      - rabbitmq
+    environment:
+      - DBCONNECTION=mysqldbArchitectures
+      - MINIOCONNECTION=minioArchitectureFiles
+      - MINIOINPUTCONNECTION=minioInput
+      - RABBITMQCONNECTION=rabbitmq
+    networks:
+      - microservices
+
+  architecturefilerouter-service:
+    build: Resources/Microservices/architectureFileRouter/
+    ports:
+      - "10001:10001"
+    restart: always
+    container_name: architecturefilerouter-service
+    depends_on:
+      - minioArchitectureFiles
+      - rabbitmq
+    environment:
+      - MINIOCONNECTION=minioArchitectureFiles
+      - RABBITMQCONNECTION=rabbitmq
+    networks:
+      - microservices
+
+  translatorasyaml-service:
+    build: Resources/Microservices/translatorASYaml/
+    ports:
+      - "10002:10002"
+    restart: always
+    container_name: translatorasyaml-service
+    depends_on:
+      - mysqldbArchitectures
+      - minioArchitectureFiles
+      - rabbitmq
+      - mosquitto
+    environment:
+      - DBCONNECTION=mysqldbArchitectures
+      - MINIOCONNECTION=minioArchitectureFiles
+      - RABBITMQCONNECTION=rabbitmq
+      - MOSQUITTOCONNECTION=mosquitto
+    networks:
+      - microservices
+
+  translatorpafyaml-service:
+    build: Resources/Microservices/translatorPaFYaml/
+    ports:
+      - "10003:10003"
+    restart: always
+    container_name: translatorpafyaml-service
+    depends_on:
+      - mysqldbArchitectures
+      - minioArchitectureFiles
+      - rabbitmq
+      - mosquitto
+    environment:
+      - DBCONNECTION=mysqldbArchitectures
+      - MINIOCONNECTION=minioArchitectureFiles
+      - RABBITMQCONNECTION=rabbitmq
+      - MOSQUITTOCONNECTION=mosquitto
+    networks:
+      - microservices
+
+  translatortoscaxml-service:
+    build: Resources/Microservices/translatorToscaXml/
+    ports:
+      - "10004:10004"
+    restart: always
+    container_name: translatortoscaxml-service
+    depends_on:
+      - mysqldbArchitectures
+      - minioArchitectureFiles
+      - rabbitmq
+      - mosquitto
+    environment:
+      - DBCONNECTION=mysqldbArchitectures
+      - MINIOCONNECTION=minioArchitectureFiles
+      - RABBITMQCONNECTION=rabbitmq
+      - MOSQUITTOCONNECTION=mosquitto
+    networks:
+      - microservices
+
+  translatorarchixml-service:
+    build: Resources/Microservices/translatorArchiXml/
+    ports:
+      - "10005:10005"
+    restart: always
+    container_name: translatorarchixml-service
+    depends_on:
+      - mysqldbArchitectures
+      - minioArchitectureFiles
+      - rabbitmq
+      - mosquitto
+    environment:
+      - DBCONNECTION=mysqldbArchitectures
+      - MINIOCONNECTION=minioArchitectureFiles
+      - RABBITMQCONNECTION=rabbitmq
+      - MOSQUITTOCONNECTION=mosquitto
+    networks:
+      - microservices
+
+  preparegraphanalysis-service:
+    build: Resources/Microservices/prepareGraphAnalysis/
+    ports:
+      - "10006:10006"
+    restart: always
+    container_name: preparegraphanalysis-service
+    depends_on:
+      - mysqldbArchitectures
+      - minioArchitectureFiles
+      - rabbitmq
+      - mosquitto
+    environment:
+      - DBCONNECTION=mysqldbArchitectures
+      - MINIOCONNECTION=minioArchitectureFiles
+      - RABBITMQCONNECTION=rabbitmq
+      - MOSQUITTOCONNECTION=mosquitto
+    networks:
+      - microservices
+
+  graphanalysis-service:
+    build: Resources/Microservices/graphAnalysis/
+    ports:
+      - "10007:10007"
+    restart: always
+    container_name: graphanalysis-service
+    depends_on:
+      - minioArchitectureFiles
+      - rabbitmq
+    environment:
+      - MINIOCONNECTION=minioArchitectureFiles
+      - RABBITMQCONNECTION=rabbitmq
+    networks:
+      - microservices
+
+
+
+ #--------------------------- Volumes ----------------------------
+
+volumes:
+  rabbitmq_data:
+    driver: local
+  mysqlVolumeArchitectures:
+  minioArchitecturesData:
+  minioInputData:
+  mosquitto_data:
+    driver: local
+  mosquitto_log:
+    driver: local
+
+networks:
+  microservices:
+    name: microservices

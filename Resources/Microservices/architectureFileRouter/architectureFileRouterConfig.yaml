@@ -1,0 +1,16 @@
+routes:
+  - queue: "toscaXML"
+    pattern: "<Definitions xmlns=\"http://docs.oasis-open.org/tosca/ns/2011/12\""
+    format: "toscaXML"
+  - queue: "archiXML"
+    pattern: "xmlns:archimate=\"http://www.archimatetool.com/archimate\""
+    format: "archiXML"
+  - queue: "pafYaml"
+    pattern: 
+      - "pipes:"
+      - "filters:"
+    format: "pafYaml"
+  - queue: "ASYaml"
+    pattern: "# architecture style: ASYaml"
+    format: "ASYaml"
+defaultQueue: "garbageCollector"
