@@ -95,12 +95,12 @@ services:
  
  #--------------------------- Microservices ----------------------------
 
-  initialarchitecturefileprocessing-service:
-    build: Resources/Microservices/initialArchitectureFileProcessing/
+  architecturefileprocessing-service:
+    build: Resources/Microservices/architectureFileProcessing/
     ports:
       - "10000:10000"
     restart: always
-    container_name: initialarchitecturefileprocessing-service
+    container_name: architecturefileprocessing-service
     depends_on:
       - mysqldbArchitectures
       - minioArchitectureFiles

@@ -16,4 +16,4 @@ COPY . .
 EXPOSE 10000
 
 # Define the command to run the application
-CMD ["node", "initialArchitectureFileProcessing.js"]
+CMD ["node", "architectureFileProcessing.js"]
