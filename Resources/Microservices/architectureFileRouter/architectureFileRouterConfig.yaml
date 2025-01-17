@@ -13,4 +13,4 @@ routes:
   - queue: "ASYaml"
     pattern: "# architecture style: ASYaml"
     format: "ASYaml"
-defaultQueue: "garbageCollector"
+defaultQueue: "invalidContent"

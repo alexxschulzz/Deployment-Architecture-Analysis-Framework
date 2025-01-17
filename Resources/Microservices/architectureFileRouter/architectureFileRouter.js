@@ -123,10 +123,10 @@ function routeFileContent(channel, fileContent, originalMsg) {
         }
     });
 
-    // If no pattern matches, route to the default queue (e.g., garbage collector)
+    // If no pattern matches, route to the default queue (e.g., invalidContent)
     if (!routed) {
         channel.sendToQueue(config.defaultQueue, Buffer.from(originalMsg.content));
-        console.log(" [!] Format not recognized, routed to garbageCollector");
+        console.log(" [!] Format not recognized, routed to invalidContent");
     }
 
     channel.ack(originalMsg);
