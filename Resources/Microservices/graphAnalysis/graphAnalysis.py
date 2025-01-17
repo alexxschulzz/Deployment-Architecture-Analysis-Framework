@@ -3,6 +3,7 @@ import json
 import pandas as pd
 from minio import Minio
 from io import StringIO
+from io import BytesIO
 from minio.error import S3Error
 from collections import defaultdict
 import re
@@ -28,6 +29,18 @@ minio_client = Minio(
     f"{minioClienthostname}:9000",
     access_key=minioAccesKey,
     secret_key=minioSecretKey,
+    secure=False
+)
+
+minioInOutClienthostname = os.getenv("MINIOINOUTCONNECTION")
+minioInOutaccessKey = "user"
+minioInOutsecretKey = "password"
+results_bucket_name = "results"
+
+minioInOut_client = Minio(
+    f"{minioInOutClienthostname}:9000",
+    access_key=minioInOutaccessKey,
+    secret_key=minioInOutsecretKey,
     secure=False
 )
 
@@ -72,12 +85,8 @@ def convert_keys_to_strings(data):
     else:
         return data
 
-def save_analysis_data(output_dir="analysis_results"):
-
+def save_analysis_data(bucket_name="results"):
     print(f" [!] No new message for {timer_interval} seconds. Save analysis data")
-
-    # Create directory if not exists
-    os.makedirs(output_dir, exist_ok=True)
 
     # ------------------------
     # Save component_analysis_data
@@ -87,10 +96,21 @@ def save_analysis_data(output_dir="analysis_results"):
     local_component_analysis_data["unique_components"] = sort_dict_by_value(local_component_analysis_data["unique_components"])
     local_component_analysis_data["relationships"] = sort_dict_by_value(local_component_analysis_data["relationships"])
     local_component_analysis_data = convert_keys_to_strings(local_component_analysis_data)
-    component_data_path = os.path.join(output_dir, "component_analysis_data.json")
-    with open(component_data_path, "w", encoding="utf-8") as f:
-        json.dump(local_component_analysis_data, f, indent=4)
-    print(f" [i] Component analysis data saved to {component_data_path}")
+
+    component_data_filename = "component_analysis_data.json"
+    component_data_content = json.dumps(local_component_analysis_data, indent=4).encode("utf-8")  # JSON als Bytes
+
+    try:
+        minioInOut_client.put_object(
+            bucket_name,
+            component_data_filename,
+            BytesIO(component_data_content),  # BytesIO für Byte-Daten
+            length=len(component_data_content),
+            content_type="application/json"
+        )
+        print(f" [i] Component analysis data saved to bucket '{bucket_name}' as '{component_data_filename}'")
+    except S3Error as err:
+        print(f" [!] Failed to save component analysis data: {err}")
 
     # ------------------------
     # Save valid_architectures
@@ -103,10 +123,20 @@ def save_analysis_data(output_dir="analysis_results"):
         "valid_architectures": local_valid_architectures
     }
 
-    valid_architectures_path = os.path.join(output_dir, "valid_architectures.json")
-    with open(valid_architectures_path, "w", encoding="utf-8") as f:
-        json.dump(local_valid_architectures_data, f, indent=4)
-    print(f" [i] Valid architectures saved to {valid_architectures_path}")
+    valid_architectures_filename = "valid_architectures.json"
+    valid_architectures_content = json.dumps(local_valid_architectures_data, indent=4).encode("utf-8")
+
+    try:
+        minioInOut_client.put_object(
+            bucket_name,
+            valid_architectures_filename,
+            BytesIO(valid_architectures_content),
+            length=len(valid_architectures_content),
+            content_type="application/json"
+        )
+        print(f" [i] Valid architectures saved to bucket '{bucket_name}' as '{valid_architectures_filename}'")
+    except S3Error as err:
+        print(f" [!] Failed to save valid architectures: {err}")
 
     # ------------------------
     # Save invalid_architectures
@@ -119,10 +149,20 @@ def save_analysis_data(output_dir="analysis_results"):
         "invalid_architectures": local_invalid_architectures
     }
 
-    invalid_architectures_path = os.path.join(output_dir, "invalid_architectures.json")
-    with open(invalid_architectures_path, "w", encoding="utf-8") as f:
-        json.dump(local_invalid_architectures_data, f, indent=4)
-    print(f" [i] Invalid architectures saved to {invalid_architectures_path}")
+    invalid_architectures_filename = "invalid_architectures.json"
+    invalid_architectures_content = json.dumps(local_invalid_architectures_data, indent=4).encode("utf-8")
+
+    try:
+        minioInOut_client.put_object(
+            bucket_name,
+            invalid_architectures_filename,
+            BytesIO(invalid_architectures_content),
+            length=len(invalid_architectures_content),
+            content_type="application/json"
+        )
+        print(f" [i] Invalid architectures saved to bucket '{bucket_name}' as '{invalid_architectures_filename}'")
+    except S3Error as err:
+        print(f" [!] Failed to save invalid architectures: {err}")
 
     # ------------------------
     # Save invalid stats
@@ -134,10 +174,20 @@ def save_analysis_data(output_dir="analysis_results"):
     local_invalid_stats["unknown_subgraphs"] = sort_dict_by_value(local_invalid_stats["unknown_subgraphs"])
     local_invalid_stats = convert_keys_to_strings(local_invalid_stats)
 
-    invalid_stats_path = os.path.join(output_dir, "invalid_stats.json")
-    with open(invalid_stats_path, "w", encoding="utf-8") as f:
-        json.dump(local_invalid_stats, f, indent=4)
-    print(f" [i] Invalid architectures saved to {invalid_stats_path}")
+    invalid_stats_filename = "invalid_stats.json"
+    invalid_stats_content = json.dumps(local_invalid_stats, indent=4).encode("utf-8")
+
+    try:
+        minioInOut_client.put_object(
+            bucket_name,
+            invalid_stats_filename,
+            BytesIO(invalid_stats_content),
+            length=len(invalid_stats_content),
+            content_type="application/json"
+        )
+        print(f" [i] Invalid stats saved to bucket '{bucket_name}' as '{invalid_stats_filename}'")
+    except S3Error as err:
+        print(f" [!] Failed to save invalid stats: {err}")
     
 # Removes '-<number>' from component to count Java and Java-2 each as a Java component
 def simplify_component_name(comp):
@@ -329,7 +379,7 @@ def analyse_components_and_relationships(orig_format, architecture_name, all_com
     print(" [ ]")
     print(" [ ] +++ Analysis complete +++")
     if has_issue:
-        print(f" [i] Architecture '{architecture_name}' is marked as problematic.")
+        print(f" [i] Architecture '{architecture_name}' is marked as invalid.")
         invalid_architectures[architecture_name] = issues
     else:
         print(f" [i] Architecture '{architecture_name}' is marked as valid.")
@@ -475,4 +525,15 @@ def start_rabbitmq_listener():
 
 
 if __name__ == "__main__":
+
+    try:
+        if not minioInOut_client.bucket_exists(results_bucket_name):
+            print(f" [!] Bucket '{results_bucket_name}' does not exist. Creating it...")
+            minioInOut_client.make_bucket(results_bucket_name)
+            print(f" [i] Bucket '{results_bucket_name}' created successfully.")
+        else:
+            print(f" [i] Bucket '{results_bucket_name}' already exists.")
+    except S3Error as err:
+        print(f" [!] Error checking or creating bucket '{results_bucket_name}': {err}")
+
     start_rabbitmq_listener()

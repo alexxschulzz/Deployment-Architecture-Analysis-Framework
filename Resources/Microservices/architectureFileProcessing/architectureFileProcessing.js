@@ -40,16 +40,16 @@ const minioClient = new Minio.Client({
     secretKey: minioClientsecretKey
 });
 
-const minioInputClienthostname = process.env.MINIOINPUTCONNECTION
-const minioInputClientaccessKey = "user"
-const minioInputClientsecretKey = "password"
+const minioInOutClienthostname = process.env.MINIOINOUTCONNECTION
+const minioInOutClientaccessKey = "user"
+const minioInOutClientsecretKey = "password"
 
-const minioInputClient = new Minio.Client({
-    endPoint: minioInputClienthostname,
+const minioInOutClient = new Minio.Client({
+    endPoint: minioInOutClienthostname,
     port: 9000,
     useSSL: false,
-    accessKey: minioInputClientaccessKey,
-    secretKey: minioInputClientsecretKey
+    accessKey: minioInOutClientaccessKey,
+    secretKey: minioInOutClientsecretKey
 });
 
 const inputBuckets = [
@@ -100,7 +100,7 @@ function ensureInputBucketsExist(callback) {
     let pending = inputBuckets.length; // number of buckets
 
     inputBuckets.forEach(({ name: bucketName }) => {
-        minioInputClient.bucketExists(bucketName, (err, exists) => {
+        minioInOutClient.bucketExists(bucketName, (err, exists) => {
             if (err) {
                 console.error(` [!] Error checking bucket existence (${bucketName}):`, err);
                 return callback(err);
@@ -109,7 +109,7 @@ function ensureInputBucketsExist(callback) {
             if (exists) {
                 console.log(` [i] Bucket ${bucketName} already exists.`);
             } else {
-                minioInputClient.makeBucket(bucketName, 'eu-central-1', (err) => {
+                minioInOutClient.makeBucket(bucketName, 'eu-central-1', (err) => {
                     if (err) {
                         console.error(` [!] Error creating bucket (${bucketName}):`, err);
                         return callback(err);
@@ -131,7 +131,7 @@ function ensureInputBucketsExist(callback) {
 function readAndProcessFiles(channel) {
     inputBuckets.forEach(({ name: bucketName, analysisFlag }) => {
         // list all files in the bucket
-        minioInputClient.listObjects(bucketName, '', true)
+        minioInOutClient.listObjects(bucketName, '', true)
             .on('data', (obj) => {
                 const file = obj.name;
                 if (!processedFiles.has(file)) { // check if file was already processed
@@ -147,7 +147,7 @@ function readAndProcessFiles(channel) {
             });
 
         // monitor bucket to check if new files were added
-        minioInputClient.listenBucketNotification(bucketName, '', '', ['s3:ObjectCreated:*'])
+        minioInOutClient.listenBucketNotification(bucketName, '', '', ['s3:ObjectCreated:*'])
             .on('notification', (record) => {
                 const file = record.s3.object.key;
                 if (!processedFiles.has(file)) { // check if file was already processed
@@ -251,10 +251,10 @@ function processFile(channel, file, analysisFlag, callback) {
             return callback();
         } else {
             // download the file from the MinIO inputBucket
-            // minioInputClient.fGetObject(sourceBucket, file, `/tmp/${file}`, (err) => {
+            // minioInOutClient.fGetObject(sourceBucket, file, `/tmp/${file}`, (err) => {
 
             // stream file from MinIO inputBucekts to architectures bucket
-            minioInputClient.getObject(sourceBucket, file, (err, stream) => {
+            minioInOutClient.getObject(sourceBucket, file, (err, stream) => {
                 if (err) {
                     console.error(` [!] Error reading file ${file} from MinIO bucket (${sourceBucket}):`, err);
                     return callback(err);

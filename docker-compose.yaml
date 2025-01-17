@@ -48,13 +48,13 @@ services:
     networks:
       - microservices
 
-  minioInput:
+  minioInOut:
     image: minio/minio
     ports:
       - "9002:9000"
       - '9092:9092'
     volumes:
-      - minioInputData:/data
+      - minioInOutData:/data
     environment:
       - "MINIO_ACCESS_KEY=user"
       - "MINIO_SECRET_KEY=password"
@@ -104,12 +104,12 @@ services:
     depends_on:
       - mysqldbArchitectures
       - minioArchitectureFiles
-      - minioInput
+      - minioInOut
       - rabbitmq
     environment:
       - DBCONNECTION=mysqldbArchitectures
       - MINIOCONNECTION=minioArchitectureFiles
-      - MINIOINPUTCONNECTION=minioInput
+      - MINIOINOUTCONNECTION=minioInOut
       - RABBITMQCONNECTION=rabbitmq
     networks:
       - microservices
@@ -232,9 +232,11 @@ services:
     container_name: graphanalysis-service
     depends_on:
       - minioArchitectureFiles
+      - minioInOut
       - rabbitmq
     environment:
       - MINIOCONNECTION=minioArchitectureFiles
+      - MINIOINOUTCONNECTION=minioInOut
       - RABBITMQCONNECTION=rabbitmq
     networks:
       - microservices
@@ -248,7 +250,7 @@ volumes:
     driver: local
   mysqlVolumeArchitectures:
   minioArchitecturesData:
-  minioInputData:
+  minioInOutData:
   mosquitto_data:
     driver: local
   mosquitto_log:
